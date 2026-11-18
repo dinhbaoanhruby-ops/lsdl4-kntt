@@ -558,7 +558,7 @@ const DATA = {
             },
             {
                 id: "b5_d2_2", type: "mc", level: "Vận dụng",
-                q: "Câu 2: Nhà máy thuỷ điện nào là công trình thuỷ điện đầu tiên của miền Bắc Việt Nam?",
+                q: "Câu 2: Dựa vào kiến thức bổ sung trong Sách giáo viên, nhà máy thuỷ điện nào là công trình thuỷ điện đầu tiên của miền Bắc Việt Nam?",
                 opts: ["Thuỷ điện Hoà Bình", "Thuỷ điện Sơn La", "Thuỷ điện Thác Bà", "Thuỷ điện Lai Châu"],
                 ans: 2,
                 wrongReason: "Thuỷ điện Hoà Bình và Sơn La có công suất lớn hơn nhưng xây dựng sau; Thác Bà khởi công năm 1964 là công trình đầu tiên.",
@@ -1265,46 +1265,82 @@ render();
 if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitted) {
     startTimer();
 }
-</script>
-</body>HTML
-<!-- TỰ ĐỘNG XÁO TRỘN THỨ TỰ CÂU HỎI KHI TẢI LẠI TRANG -->
+</script>HTML
+<!-- KHUNG NỘP BÀI VỀ GOOGLE SHEETS -->
+<div id="submit-box" style="max-width: 600px; margin: 30px auto; padding: 20px; background: #ffffff; border: 2px solid #2563eb; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-family: sans-serif;">
+  <h3 style="margin-top: 0; color: #1e40af; text-align: center;">NỘP KẾT QUẢ ÔN TẬP CHO GIÁO VIÊN</h3>
+  
+  <div style="margin-bottom: 12px;">
+    <label style="display: block; font-weight: bold; margin-bottom: 4px;">Họ và tên học sinh (*):</label>
+    <input type="text" id="student-name" placeholder="Ví dụ: Nguyễn Văn An" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+  </div>
+  
+  <div style="margin-bottom: 15px;">
+    <label style="display: block; font-weight: bold; margin-bottom: 4px;">Lớp (*):</label>
+    <input type="text" id="student-class" placeholder="Ví dụ: 4A1" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+  </div>
+  
+  <button id="btn-submit-sheet" onclick="guiKetQuaVeSheet()" style="width: 100%; padding: 12px; background: #2563eb; color: white; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">
+    GỬI KẾT QUẢ BÀI LÀM
+  </button>
+  
+  <p id="submit-status" style="text-align: center; font-weight: bold; margin-top: 12px; margin-bottom: 0;"></p>
+</div>
+
 <script>
-  window.addEventListener("DOMContentLoaded", function () {
-    // 1. Tìm tất cả các khối chứa câu hỏi (tự động nhận diện các khối có chứa nút chọn radio)
-    const allRadios = Array.from(document.querySelectorAll('input[type="radio"]'));
-    if (allRadios.length === 0) return;
+  // DÁN ĐƯỜNG LINK WEB APP CỦA BẠN VÀO GIỮA HAI DẤU NGOẶC KÉP BÊN DƯỚI:
+  const GOOGLE_SHEET_URL = https://script.google.com/macros/s/AKfycbzb7EY17kYyZ3gVqjv8_JWAbx2FqNI_VQCzsnNHp5kdYLUFB5unldB2_kgy14EA36Rf/exec;
 
-    // Nhóm các radio theo tên (name) để xác định từng khối câu hỏi riêng biệt
-    const questionBlocks = [];
-    const seenNames = new Set();
+  function guiKetQuaVeSheet() {
+    const hoTen = document.getElementById("student-name").value.trim();
+    const lop = document.getElementById("student-class").value.trim();
+    const statusText = document.getElementById("submit-status");
+    const btn = document.getElementById("btn-submit-sheet");
 
-    allRadios.forEach(radio => {
-      if (!seenNames.has(radio.name)) {
-        seenNames.add(radio.name);
-        // Tìm thẻ div/section bao bọc toàn bộ câu hỏi đó
-        let container = radio.closest('.question, .question-card, .quiz-item, .card') || radio.parentElement.parentElement;
-        if (container && !questionBlocks.includes(container)) {
-          questionBlocks.push(container);
-        }
-      }
-    });
-
-    if (questionBlocks.length <= 1) return;
-
-    const parentContainer = questionBlocks[0].parentElement;
-
-    // 2. Thuật toán xáo trộn ngẫu nhiên (Fisher-Yates)
-    for (let i = questionBlocks.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [questionBlocks[i], questionBlocks[j]] = [questionBlocks[j], questionBlocks[i]];
+    if (!hoTen || !lop) {
+      statusText.style.color = "#dc2626";
+      statusText.innerText = "⚠️ Em vui lòng nhập đầy đủ Họ tên và Lớp trước khi gửi!";
+      return;
     }
 
-    // 3. Sắp xếp lại lên giao diện và đánh lại số thứ tự Câu 1, Câu 2...
-    questionBlocks.forEach((block, index) => {
-      parentContainer.appendChild(block);
-      // Tự động cập nhật lại số thứ tự "Câu X:" cho khớp với vị trí mới
-      block.innerHTML = block.innerHTML.replace(/Câu\s+\d+\s*:/i, `Câu ${index + 1}:`);
+    // Tự động quét nội dung hiển thị điểm trên trang web hiện tại
+    const bodyText = document.body.innerText;
+    const matchDiem = bodyText.match(/(?:Điểm|Kết quả|Đúng)[:\s]*([0-9.,\/]+)/i);
+    const diemSo = matchDiem ? matchDiem[1] : "Đã hoàn thành (xem chi tiết)";
+    
+    // Đếm số câu học sinh đã chọn đáp án
+    const soCauDaChon = document.querySelectorAll('input[type="radio"]:checked').length;
+    const chiTiet = "Đã chọn " + soCauDaChon + " câu hỏi";
+
+    btn.disabled = true;
+    btn.innerText = "Đang gửi dữ liệu...";
+    statusText.style.color = "#2563eb";
+    statusText.innerText = "⏳ Đang gửi kết quả lên hệ thống của thầy/cô...";
+
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hoTen: hoTen,
+        lop: lop,
+        diemSo: diemSo,
+        chiTiet: chiTiet
+      })
+    })
+    .then(() => {
+      statusText.style.color = "#059669";
+      statusText.innerText = "✅ Đã nộp bài thành công! Thầy/cô đã nhận được kết quả của " + hoTen + ".";
+      btn.innerText = "ĐÃ NỘP BÀI";
+      btn.style.background = "#059669";
+    })
+    .catch((error) => {
+      statusText.style.color = "#dc2626";
+      statusText.innerText = "❌ Lỗi mạng! Em hãy kiểm tra kết nối và bấm gửi lại.";
+      btn.disabled = false;
+      btn.innerText = "GỬI KẾT QUẢ BÀI LÀM";
     });
-  });
+  }
 </script>
+</body>
 </html>
