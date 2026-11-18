@@ -1266,5 +1266,45 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
     startTimer();
 }
 </script>
-</body>
+</body>HTML
+<!-- TỰ ĐỘNG XÁO TRỘN THỨ TỰ CÂU HỎI KHI TẢI LẠI TRANG -->
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    // 1. Tìm tất cả các khối chứa câu hỏi (tự động nhận diện các khối có chứa nút chọn radio)
+    const allRadios = Array.from(document.querySelectorAll('input[type="radio"]'));
+    if (allRadios.length === 0) return;
+
+    // Nhóm các radio theo tên (name) để xác định từng khối câu hỏi riêng biệt
+    const questionBlocks = [];
+    const seenNames = new Set();
+
+    allRadios.forEach(radio => {
+      if (!seenNames.has(radio.name)) {
+        seenNames.add(radio.name);
+        // Tìm thẻ div/section bao bọc toàn bộ câu hỏi đó
+        let container = radio.closest('.question, .question-card, .quiz-item, .card') || radio.parentElement.parentElement;
+        if (container && !questionBlocks.includes(container)) {
+          questionBlocks.push(container);
+        }
+      }
+    });
+
+    if (questionBlocks.length <= 1) return;
+
+    const parentContainer = questionBlocks[0].parentElement;
+
+    // 2. Thuật toán xáo trộn ngẫu nhiên (Fisher-Yates)
+    for (let i = questionBlocks.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questionBlocks[i], questionBlocks[j]] = [questionBlocks[j], questionBlocks[i]];
+    }
+
+    // 3. Sắp xếp lại lên giao diện và đánh lại số thứ tự Câu 1, Câu 2...
+    questionBlocks.forEach((block, index) => {
+      parentContainer.appendChild(block);
+      // Tự động cập nhật lại số thứ tự "Câu X:" cho khớp với vị trí mới
+      block.innerHTML = block.innerHTML.replace(/Câu\s+\d+\s*:/i, `Câu ${index + 1}:`);
+    });
+  });
+</script>
 </html>
