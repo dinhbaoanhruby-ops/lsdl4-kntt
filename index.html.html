@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Lịch Sử & Địa Lí 4 (KNTT) - Bài 4 đến Bài 7</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #059669;
+            --accent: #d97706;
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #cbd5e1;
+            --success-bg: #dcfce7;
+            --success-border: #16a34a;
+            --error-bg: #fee2e2;
+            --error-border: #dc2626;
+        }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        header p { margin: 0.3rem 0 0; font-size: 0.9rem; opacity: 0.9; }
+        .save-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 10px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* Container */
+        .container { max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; }
+
+        /* Navigation Tabs */
+        .lesson-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            justify-content: center;
+        }
+        .lesson-btn {
+            padding: 0.65rem 1.1rem;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+        .lesson-btn:hover { background: #eff6ff; }
+        .lesson-btn.active { background: var(--primary); color: white; }
+        .lesson-btn.exam-btn { border-color: var(--accent); color: var(--accent); }
+        .lesson-btn.exam-btn.active { background: var(--accent); color: white; }
+
+        /* Sub-tabs inside a lesson */
+        .sub-nav {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .sub-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #e2e8f0;
+            color: var(--text);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .sub-btn.active { background: var(--secondary); color: white; }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 1.5rem;
+        }
+        .summary-box {
+            background: #eff6ff;
+            border-left: 5px solid var(--primary);
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Flashcards / Timeline cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .info-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            background: #f8fafc;
+            transition: transform 0.2s;
+        }
+        .info-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+        .info-card-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        .info-card h4 { margin: 0.2rem 0 0.5rem; color: var(--primary-dark); }
+        .info-card p { margin: 0; font-size: 0.92rem; }
+
+        /* Picture Puzzle / Map Simulation */
+        .puzzle-box {
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            padding: 1.2rem;
+            background: #f8fafc;
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+        .puzzle-img-placeholder {
+            max-width: 100%;
+            margin: 0 auto 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #e2e8f0;
+            padding: 1rem;
+        }
+        .puzzle-img-placeholder img {
+            max-width: 100%;
+            max-height: 320px;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+        .timeline-sim {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin: 1.5rem 0;
+            padding: 0 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .timeline-node {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        /* Quiz Items */
+        .q-item {
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+            background: white;
+            transition: all 0.2s;
+        }
+        .q-item.correct-box {
+            border-color: var(--success-border);
+            background-color: #f0fdf4;
+        }
+        .q-item.wrong-box {
+            border-color: var(--error-border);
+            background-color: #fef2f2;
+        }
+        .q-title { font-weight: 700; margin-bottom: 0.8rem; font-size: 1.02rem; }
+        .q-badge {
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #475569;
+            margin-right: 6px;
+            font-weight: 600;
+        }
+        .options-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .opt-label {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            background: white;
+            transition: 0.15s;
+        }
+        .opt-label:hover { background: #f1f5f9; }
+        .opt-label.opt-correct { background: var(--success-bg); border-color: var(--success-border); font-weight: 600; }
+        .opt-label.opt-wrong { background: var(--error-bg); border-color: var(--error-border); }
+
+        /* Fill in the blank */
+        .fill-group { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .fill-input {
+            padding: 0.55rem 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 240px;
+        }
+        .btn-check {
+            padding: 0.55rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-check:hover { background: var(--primary-dark); }
+
+        /* Feedback Box */
+        .feedback {
+            margin-top: 0.8rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            display: none;
+        }
+        .feedback.show { display: block; }
+        .feedback.ok { background: var(--success-bg); color: #14532d; border-left: 4px solid var(--success-border); }
+        .feedback.err { background: var(--error-bg); color: #7f1d1d; border-left: 4px solid var(--error-border); }
+
+        /* Exam Section */
+        .exam-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fffbeb;
+            border: 2px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .timer-display {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #b45309;
+            background: white;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #fcd34d;
+        }
+        .btn-submit-exam {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn-reset {
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .score-banner {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .score-big { font-size: 2.5rem; font-weight: 800; margin: 0.3rem 0; }
+        table.ans-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        table.ans-table th, table.ans-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: left;
+        }
+        table.ans-table th { background: #f1f5f9; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ÔN TẬP LỊCH SỬ VÀ ĐỊA LÍ LỚP 4 (KNTT)</h1>
+    <p>Chủ đề 2: Trung du và miền núi phía Bắc (Bài 4 – Bài 7)</p>
+    <div class="save-badge" id="saveStatus">💾 Đã bật tự động lưu tiến độ học tập</div>
+</header>
+
+<div class="container">
+    <!-- Main Navigation -->
+    <div class="lesson-nav" id="mainNav">
+        <button class="lesson-btn active" onclick="selectLesson('b4')">Bài 4: Thiên nhiên</button>
+        <button class="lesson-btn" onclick="selectLesson('b5')">Bài 5: Dân cư & Sản xuất</button>
+        <button class="lesson-btn" onclick="selectLesson('b6')">Bài 6: Nét văn hoá</button>
+        <button class="lesson-btn" onclick="selectLesson('b7')">Bài 7: Đền Hùng & Giỗ Tổ</button>
+        <button class="lesson-btn exam-btn" onclick="selectLesson('exam')">⏱️ Đề Tổng Hợp (Bấm giờ)</button>
+    </div>
+
+    <!-- Content Area -->
+    <div id="appContent"></div>
+</div>
+
+<script>
+// ================= DỮ LIỆU BÀI HỌC (BÁM SÁT SGK & SGV KNTT) =================
+const DATA = {
+    b4: {
+        title: "Bài 4: Thiên nhiên vùng Trung du và miền núi phía Bắc",
+        oneLine: "Trung du và miền núi phía Bắc nằm ở phía bắc đất nước, là vùng duy nhất không giáp biển (theo SGK mới), có địa hình đồi núi cao đồ sộ, mùa đông lạnh nhất cả nước, nhiều sông lớn và khoáng sản phong phú bậc nhất nước ta.",
+        cards: [
+            { tag: "Vị trí địa lí", title: "Nơi địa đầu Tổ quốc", desc: "Nằm ở phía bắc đất nước, tiếp giáp Trung Quốc, Lào, vùng Đồng bằng Bắc Bộ và Bắc Trung Bộ & Nam Trung Bộ. Cột cờ Lũng Cú (Tuyên Quang) có lá cờ rộng 54 m² tượng trưng cho 54 dân tộc." },
+            { tag: "Địa hình", title: "Đồi núi cao & Trung du", desc: "Chủ yếu là đồi núi. Dãy Hoàng Liên Sơn cao và đồ sộ nhất nước ta với đỉnh Phan-xi-păng cao 3 147 m (đo năm 2019) – 'Nóc nhà Đông Dương'. Vùng trung du có đồi đỉnh tròn, sườn thoải." },
+            { tag: "Khí hậu", title: "Mùa đông lạnh nhất cả nước", desc: "Khí hậu nhiệt đới ẩm gió mùa, mùa đông lạnh nhất cả nước. Vùng núi cao (Phan-xi-păng, Mẫu Sơn) nhiệt độ hạ thấp, đôi khi có tuyết rơi, băng giá." },
+            { tag: "Sông ngòi & Khoáng sản", title: "Tiềm năng thuỷ điện & mỏ", desc: "Nhiều sông lớn (Hồng, Đà, Chảy, Lô, Gâm) nhiều thác ghềnh → phát triển thuỷ điện. Khoáng sản phong phú bậc nhất nước ta (sắt, a-pa-tít, đá vôi, than đá...)." },
+            { tag: "Thiên tai & Biện pháp", title: "Phòng chống thiên tai", desc: "Thường có lũ quét, sạt lở đất, rét đậm, rét hại, sương muối. Biện pháp: trồng và bảo vệ rừng, xây công trình thuỷ lợi, di dời dân khỏi vùng nguy hiểm." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Lược đồ Địa hình & Khoáng sản (Hình 2 - SGK tr.19)",
+            imgSrc: "images/bai4_luocdo.jpg",
+            svgFallback: `<svg width="100%" height="210" viewBox="0 0 600 210" style="background:#e0f2fe; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="190" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">MÔ PHỎNG LƯỢC ĐỒ ĐỊA HÌNH TRUNG DU VÀ MIỀN NÚI PHÍA BẮC</text>
+                <polygon points="120,140 165,60 210,140" fill="#b45309"/>
+                <text x="165" y="158" font-size="12" font-weight="bold" text-anchor="middle" fill="#78350f">▲ Phan-xi-păng (3.147m)</text>
+                <ellipse cx="260" cy="125" rx="55" ry="22" fill="#fcd34d" stroke="#b45309"/>
+                <text x="260" y="129" font-size="11" font-weight="bold" text-anchor="middle" fill="#78350f">CN Mộc Châu</text>
+                <path d="M 100 55 Q 250 110 380 175" stroke="#0284c7" stroke-width="4" fill="none"/>
+                <text x="330" y="150" font-size="12" font-weight="bold" fill="#0369a1">Sông Hồng & Sông Đà</text>
+                <rect x="420" y="70" width="140" height="80" fill="#fff" stroke="#94a3b8" rx="6"/>
+                <text x="490" y="92" font-size="11" font-weight="bold" text-anchor="middle">CHÚ GIẢI MẪU</text>
+                <text x="430" y="112" font-size="11">▲ Đỉnh núi cao</text>
+                <text x="430" y="130" font-size="11">■ Than đá  ▲ Sắt</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b4_p1",
+                    type: "mc",
+                    q: "Quan sát lược đồ địa hình (Hình 2), đỉnh núi cao nhất nước ta nằm trên dãy Hoàng Liên Sơn có độ cao bao nhiêu?",
+                    opts: ["3 143 m", "3 147 m", "2 985 m", "2 419 m"],
+                    ans: 1,
+                    wrongReason: "Số liệu 3 143 m là số đo cũ trước năm 2019; 2 985 m là đỉnh Phu Luông và 2 419 m là đỉnh Tây Côn Lĩnh.",
+                    ref: "SGK Bài 4 (Mục Em có biết?, tr.20): 'Theo đo đạc mới nhất (năm 2019), độ cao của đỉnh núi Phan-xi-păng là 3 147 m.'"
+                },
+                {
+                    id: "b4_p2",
+                    type: "mc",
+                    q: "Trên lược đồ Hình 2, vùng Trung du và miền núi phía Bắc tiếp giáp với hai quốc gia nào?",
+                    opts: ["Lào và Cam-pu-chia", "Trung Quốc và Lào", "Trung Quốc và Thái Lan", "Lào và Mi-an-ma"],
+                    ans: 1,
+                    wrongReason: "Vùng nằm ở phía bắc nước ta nên không giáp Cam-pu-chia, Thái Lan hay Mi-an-ma.",
+                    ref: "SGK Bài 4 (Lược đồ Hình 2, tr.19 & Luyện tập tr.23): Phía bắc giáp Trung Quốc, phía tây giáp Lào."
+                }
+            ]
+        },
+        de1: [
+            {
+                id: "b4_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Đặc điểm nổi bật về vị trí địa lí của vùng Trung du và miền núi phía Bắc được nêu trong SGK là gì?",
+                opts: ["Nằm ở trung tâm đất nước", "Là vùng duy nhất của nước ta không giáp biển", "Có đường bờ biển dài nhất nước ta", "Tiếp giáp với Cam-pu-chia ở phía tây"],
+                ans: 1,
+                wrongReason: "Vùng nằm ở phía bắc đất nước và theo SGK Lịch sử & Địa lí 4 mới, đây là vùng duy nhất không giáp biển.",
+                ref: "SGK Bài 4 (Mục 1, tr.19): 'Trung du và miền núi phía Bắc là vùng lãnh thổ nằm ở phía bắc của đất nước. Đây là vùng duy nhất của nước ta không giáp biển.'"
+            },
+            {
+                id: "b4_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Vùng trung du ở phía Bắc có đặc điểm địa hình như thế nào?",
+                opts: ["Núi cao chót vót, vách dựng đứng", "Đồng bằng rộng lớn, bằng phẳng", "Các đồi có đỉnh tròn, sườn thoải", "Các cồn cát ven biển"],
+                ans: 2,
+                wrongReason: "Núi cao chót vót là đặc điểm của dãy Hoàng Liên Sơn, còn vùng chuyển tiếp trung du có dạng đồi bát úp.",
+                ref: "SGK Bài 4 (Mục 2a, tr.20): 'Các đồi có đặc điểm đỉnh tròn, sườn thoải, nằm ở nơi chuyển tiếp giữa vùng núi và đồng bằng, được gọi là vùng trung du.'"
+            },
+            {
+                id: "b4_d1_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Vì sao sông ngòi ở vùng Trung du và miền núi phía Bắc có tiềm năng lớn để phát triển thuỷ điện?",
+                opts: ["Vì sông chảy qua đồng bằng rộng lớn", "Vì có nhiều sông lớn và nhiều thác ghềnh", "Vì sông không bao giờ cạn nước", "Vì sông đổ trực tiếp ra biển"],
+                ans: 1,
+                wrongReason: "Sông chảy qua vùng địa hình dốc, bị chia cắt mạnh tạo nhiều thác ghềnh nên sức nước lớn để làm thuỷ điện.",
+                ref: "SGK Bài 4 (Mục 2c, tr.21): 'Các sông trong vùng nhiều thác ghềnh, có khả năng phát triển thuỷ điện.'"
+            },
+            {
+                id: "b4_d1_4", type: "fill", level: "Nhận biết",
+                q: "Câu 4: Điền từ thích hợp vào chỗ trống: 'Loại đất chính của vùng Trung du và miền núi phía Bắc là đất ..............., thích hợp trồng nhiều loại cây ăn quả và cây công nghiệp.'",
+                ans: ["phe-ra-lít", "feralit", "đất phe-ra-lít", "đất feralit"],
+                displayAns: "phe-ra-lít (feralit)",
+                wrongReason: "Đất phù sa là của vùng đồng bằng; đất chính ở vùng đồi núi này là đất phe-ra-lít (đất đỏ vàng).",
+                ref: "SGK Bài 4 (Mục Em có biết?, tr.21): 'Loại đất chính của vùng Trung du và miền núi phía Bắc là đất phe-ra-lít (feralit)...'"
+            }
+        ],
+        de2: [
+            {
+                id: "b4_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Hiện tượng tuyết rơi vào mùa đông ở đỉnh Phan-xi-păng (Lào Cai) và Mẫu Sơn (Lạng Sơn) chứng tỏ điều gì?",
+                opts: ["Khí hậu vùng chịu ảnh hưởng sâu sắc bởi độ cao địa hình", "Vùng này nằm ở vùng cực Bắc của Trái Đất", "Vùng này không có mùa hạ", "Khí hậu ở đây quanh năm băng giá"],
+                ans: 0,
+                wrongReason: "Nước ta có khí hậu nhiệt đới ẩm gió mùa, chỉ những đỉnh núi rất cao mới hạ nhiệt độ xuống dưới 0°C vào mùa đông.",
+                ref: "SGK Bài 4 (Mục 2b, tr.20): 'Khí hậu của vùng cũng chịu ảnh hưởng sâu sắc bởi độ cao địa hình. Ở các vùng núi cao nhiệt độ hạ thấp, vào các tháng mùa đông đôi khi có tuyết rơi...'"
+            },
+            {
+                id: "b4_d2_2", type: "mc", level: "Vận dụng",
+                q: "Câu 2: Theo Sách giáo viên, hiện tượng băng giá, tuyết rơi ở vùng núi cao gây ra tác động hai mặt nào?",
+                opts: ["Làm lúa chín nhanh hơn nhưng khó thu hoạch", "Gây hại cho cây trồng, vật nuôi nhưng lại thu hút khách du lịch", "Giúp giao thông thuận lợi nhưng thiếu nước sinh hoạt", "Làm đất màu mỡ hơn nhưng gây lũ quét"],
+                ans: 1,
+                wrongReason: "Băng giá làm chết cây trồng, gia súc nhưng vẻ đẹp độc đáo của tuyết rơi lại thu hút đông khách du lịch đến trải nghiệm.",
+                ref: "SGV Bài 4 (Hoạt động 3, tr.45): 'Băng giá gây ảnh hưởng đến sự sinh trưởng, phát triển của cây trồng, vật nuôi... Tuy nhiên, hiện tượng này lại thu hút số lượng lớn khách du lịch.'"
+            },
+            {
+                id: "b4_d2_3", type: "mc", level: "Vận dụng",
+                q: "Câu 3: Biện pháp nào sau đây vừa giúp bảo vệ thiên nhiên vừa hạn chế lũ quét, sạt lở đất ở vùng núi?",
+                opts: ["Khai thác thật nhiều khoáng sản", "Trồng rừng và bảo vệ rừng", "Chặt cây làm nương rẫy", "Xây nhà sát bờ suối"],
+                ans: 1,
+                wrongReason: "Chặt cây làm nương rẫy hay ở sát bờ suối làm tăng nguy cơ lũ quét; rừng giúp giữ đất, giữ nước hiệu quả nhất.",
+                ref: "SGK Bài 4 (Sơ đồ Hình 15, tr.23): Biện pháp đầu tiên là 'Trồng rừng và bảo vệ rừng'."
+            },
+            {
+                id: "b4_d2_4", type: "fill", level: "Thông hiểu",
+                q: "Câu 4: Điền tên địa danh: Cột cờ Lũng Cú nằm ở địa đầu Tổ quốc, trên đỉnh cột là Quốc kì Việt Nam rộng ...... m², tượng trưng cho 54 dân tộc của nước ta.",
+                ans: ["54"],
+                displayAns: "54",
+                wrongReason: "Diện tích lá cờ gắn liền với con số 54 dân tộc anh em trên đất nước Việt Nam.",
+                ref: "SGK Bài 4 (Mục Em có biết?, tr.19): 'Trên đỉnh cột là Quốc kì Việt Nam rộng 54 m², tượng trưng cho 54 dân tộc của nước ta.'"
+            }
+        ]
+    },
+    b5: {
+        title: "Bài 5: Dân cư và hoạt động sản xuất ở vùng Trung du và miền núi phía Bắc",
+        oneLine: "Vùng có gần 13 triệu dân (năm 2024) thuộc nhiều dân tộc phân bố thưa thớt, không đồng đều; người dân khai thác tự nhiên sáng tạo qua làm ruộng bậc thang, xây thuỷ điện và khai thác khoáng sản.",
+        cards: [
+            { tag: "Dân cư & Dân tộc", title: "Đa dạng bản sắc văn hoá", desc: "Số dân gần 13 triệu người (năm 2024). Gồm nhiều dân tộc: Mường, Thái, Dao, Mông, Tày, Nùng, Kinh... Mỗi dân tộc có tiếng nói, tập quán, trang phục riêng." },
+            { tag: "Phân bố dân cư", title: "Thưa thớt, không đồng đều", desc: "Mật độ dân số thấp. Phân bố không đồng đều giữa các tỉnh, giữa miền núi (dưới 100 người/km² như Lai Châu, Điện Biên, Sơn La, Cao Bằng, Lạng Sơn) và trung du (trên 300 người/km² như Phú Thọ)." },
+            { tag: "Ruộng bậc thang", title: "Trồng lúa trên đất dốc", desc: "Xẻ sườn núi thành bậc phẳng để trồng lúa nước. Giúp đảm bảo lương thực, hạn chế phá rừng làm nương rẫy và phát triển du lịch (Mù Cang Chải, Sa Pa, Hoàng Su Phì)." },
+            { tag: "Thuỷ điện", title: "Nguồn điện lớn của Tổ quốc", desc: "Các nhà máy thuỷ điện lớn: Sơn La, Hoà Bình (sông Đà), Thác Bà (sông Chảy), Tuyên Quang (sông Gâm). Cung cấp điện và giảm lũ cho đồng bằng." },
+            { tag: "Khoáng sản", title: "Nguyên liệu công nghiệp", desc: "Khai thác than đá, sắt (Thái Nguyên, Lào Cai), a-pa-tít (Lào Cai) sản xuất phân lân, đá vôi làm vật liệu xây dựng, bô-xít (Cao Bằng)." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Lược đồ Mật độ dân số (Hình 3) & Thuỷ điện, Khoáng sản (Hình 6)",
+            imgSrc: "images/bai5_luocdo.jpg",
+            svgFallback: `<svg width="100%" height="210" viewBox="0 0 600 210" style="background:#fefce8; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="190" fill="#fffbeb" stroke="#ca8a04" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#854d0e">SƠ ĐỒ PHÂN BỐ DÂN CƯ & THUỶ ĐIỆN TRUNG DU MIỀN NÚI PHÍA BẮC</text>
+                <rect x="40" y="55" width="240" height="125" fill="#fef08a" stroke="#eab308" rx="6"/>
+                <text x="160" y="78" font-size="12" font-weight="bold" text-anchor="middle" fill="#713f12">MẬT ĐỘ DÂN SỐ (2024)</text>
+                <text x="55" y="102" font-size="11">🟧 Trên 300 người/km²: Phú Thọ</text>
+                <text x="55" y="124" font-size="11">🟨 Dưới 100 người/km²: Lai Châu,</text>
+                <text x="70" y="140" font-size="11">Điện Biên, Sơn La, Cao Bằng, Lạng Sơn</text>
+                <rect x="310" y="55" width="250" height="125" fill="#e0f2fe" stroke="#0284c7" rx="6"/>
+                <text x="435" y="78" font-size="12" font-weight="bold" text-anchor="middle" fill="#0369a1">CÁC NHÀ MÁY THUỶ ĐIỆN LỚN</text>
+                <text x="325" y="102" font-size="11">⭐ Sông Đà: Sơn La, Hoà Bình, Lai Châu</text>
+                <text x="325" y="124" font-size="11">⭐ Sông Chảy: Thác Bà</text>
+                <text x="325" y="146" font-size="11">⭐ Sông Gâm: Tuyên Quang</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b5_p1",
+                    type: "mc",
+                    q: "Quan sát lược đồ Hình 3 (SGK tr.25), tỉnh nào sau đây có mật độ dân số trên 300 người/km²?",
+                    opts: ["Lai Châu", "Cao Bằng", "Phú Thọ", "Điện Biên"],
+                    ans: 2,
+                    wrongReason: "Lai Châu, Cao Bằng, Điện Biên là các tỉnh miền núi cao có mật độ dân số thưa thớt dưới 100 người/km².",
+                    ref: "SGK Bài 5 (Lược đồ Hình 3, tr.25): Tỉnh Phú Thọ được tô màu cam đậm ứng với mức 'Trên 300 người/km²'."
+                },
+                {
+                    id: "b5_p2",
+                    type: "mc",
+                    q: "Quan sát lược đồ Hình 6 (SGK tr.27), hai nhà máy thuỷ điện lớn Sơn La và Hoà Bình được xây dựng trên dòng sông nào?",
+                    opts: ["Sông Hồng", "Sông Đà", "Sông Lô", "Sông Gâm"],
+                    ans: 1,
+                    wrongReason: "Trên sông Chảy có thuỷ điện Thác Bà, trên sông Gâm có thuỷ điện Tuyên Quang; còn Sơn La và Hoà Bình nằm trên sông Đà.",
+                    ref: "SGK Bài 5 (Lược đồ Hình 6, tr.27 & SGV tr.53): Nhà máy thuỷ điện Hoà Bình và Sơn La đều xây dựng trên sông Đà."
+                }
+            ]
+        },
+        de1: [
+            {
+                id: "b5_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Khu ruộng bậc thang nổi tiếng nào sau đây KHÔNG nằm ở tỉnh Lào Cai theo mục 'Em có biết?' trong SGK?",
+                opts: ["Mù Cang Chải", "Sa Pa", "Hoàng Su Phì", "Cả Mù Cang Chải và Sa Pa"],
+                ans: 2,
+                wrongReason: "Theo SGK mới (tr.26), Mù Cang Chải và Sa Pa thuộc tỉnh Lào Cai, còn Hoàng Su Phì thuộc tỉnh Tuyên Quang.",
+                ref: "SGK Bài 5 (Mục Em có biết?, tr.26): 'Ruộng bậc thang Mù Cang Chải, Sa Pa (Lào Cai), Hoàng Su Phì (Tuyên Quang)...'"
+            },
+            {
+                id: "b5_d1_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Việc làm ruộng bậc thang của người dân miền núi mang lại lợi ích môi trường quan trọng nào?",
+                opts: ["Tạo ra nhiều khoáng sản quý", "Hạn chế tình trạng phá rừng làm nương rẫy", "Cung cấp điện cho cả nước", "Ngăn chặn hoàn toàn tuyết rơi"],
+                ans: 1,
+                wrongReason: "Khi có ruộng bậc thang canh tác ổn định, người dân không phải đốt rừng làm rẫy du canh du cư nữa.",
+                ref: "SGK Bài 5 (Mục 2a, tr.26): 'Làm ruộng bậc thang không chỉ giúp người dân đảm bảo nguồn lương thực mà còn hạn chế tình trạng phá rừng làm nương rẫy.'"
+            },
+            {
+                id: "b5_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Khoáng sản a-pa-tít khai thác ở Lào Cai chủ yếu được dùng làm nguyên liệu để sản xuất mặt hàng gì?",
+                opts: ["Phân lân", "Vật liệu xây dựng", "Than đá", "Đồ trang sức"],
+                ans: 0,
+                wrongReason: "Đá vôi dùng làm vật liệu xây dựng, còn quặng a-pa-tít dùng để sản xuất phân bón (phân lân).",
+                ref: "SGK Bài 5 (Mục 2c, tr.27): '...a-pa-tít để sản xuất phân lân, đá vôi làm vật liệu xây dựng...'"
+            },
+            {
+                id: "b5_d1_4", type: "fill", level: "Nhận biết",
+                q: "Câu 4: Điền từ còn thiếu: 'Để có thể trồng lúa nước trên đất dốc, người dân ở khu vực miền núi đã xẻ sườn núi thành những bậc phẳng, gọi là .........................'",
+                ans: ["ruộng bậc thang"],
+                displayAns: "ruộng bậc thang",
+                wrongReason: "Hình thức canh tác xẻ sườn núi thành từng bậc phẳng để giữ nước trồng lúa gọi là ruộng bậc thang.",
+                ref: "SGK Bài 5 (Mục 2a, tr.26): '...xẻ sườn núi thành những bậc phẳng, gọi là ruộng bậc thang.'"
+            }
+        ],
+        de2: [
+            {
+                id: "b5_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Ngoài nhiệm vụ sản xuất điện, các công trình thuỷ điện ở vùng Trung du và miền núi phía Bắc còn có vai trò gì đối với vùng đồng bằng?",
+                opts: ["Cung cấp gỗ quý", "Giúp giảm lũ cho vùng đồng bằng", "Cung cấp khoáng sản", "Làm tăng diện tích ruộng bậc thang"],
+                ans: 1,
+                wrongReason: "Hồ chứa nước của các đập thuỷ điện giúp điều tiết dòng chảy mùa mưa, ngăn lũ cho hạ lưu đồng bằng.",
+                ref: "SGK Bài 5 (Mục 2b, tr.26): '...cung cấp điện cho sinh hoạt và sản xuất, đồng thời giảm lũ cho vùng đồng bằng.'"
+            },
+            {
+                id: "b5_d2_2", type: "mc", level: "Vận dụng",
+                q: "Câu 2: Dựa vào kiến thức bổ sung trong Sách giáo viên, nhà máy thuỷ điện nào là công trình thuỷ điện đầu tiên của miền Bắc Việt Nam?",
+                opts: ["Thuỷ điện Hoà Bình", "Thuỷ điện Sơn La", "Thuỷ điện Thác Bà", "Thuỷ điện Lai Châu"],
+                ans: 2,
+                wrongReason: "Thuỷ điện Hoà Bình và Sơn La có công suất lớn hơn nhưng xây dựng sau; Thác Bà khởi công năm 1964 là công trình đầu tiên.",
+                ref: "SGV Bài 5 (Thông tin tham khảo mục 2, tr.53): 'Được khởi công vào tháng 8/1964, nhà máy thuỷ điện Thác Bà là công trình đầu tiên của thuỷ điện miền Bắc Việt Nam.'"
+            },
+            {
+                id: "b5_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Nhận xét nào đúng nhất về sự phân bố dân cư ở vùng Trung du và miền núi phía Bắc?",
+                opts: ["Dân cư đông đúc và phân bố đều khắp các tỉnh", "Dân cư thưa thớt, phân bố không đồng đều giữa miền núi và trung du", "Khu vực núi cao đông dân hơn khu vực trung du", "Tất cả các tỉnh đều có mật độ trên 300 người/km²"],
+                ans: 1,
+                wrongReason: "Địa hình núi cao đi lại khó khăn nên dân cư thưa thớt, chủ yếu tập trung đông hơn ở vùng đồi thấp trung du.",
+                ref: "SGK Bài 5 (Mục 1, tr.25) & SGV tr.50: 'Trung du và miền núi phía Bắc là vùng dân cư thưa thớt. Dân cư của vùng phân bố không đồng đều giữa các tỉnh, giữa khu vực miền núi và khu vực trung du.'"
+            },
+            {
+                id: "b5_d2_4", type: "fill", level: "Vận dụng",
+                q: "Câu 4: Điền tên nhà máy thuỷ điện: Nhà máy thuỷ điện ............ trên sông Đà (khánh thành năm 2012) là nhà máy thuỷ điện lớn nhất Việt Nam và khu vực Đông Nam Á.",
+                ans: ["Sơn La", "thuỷ điện Sơn La"],
+                displayAns: "Sơn La",
+                wrongReason: "Thuỷ điện Hoà Bình giữ kỉ lục từ 1994–2012, sau đó thuỷ điện Sơn La hoàn thành năm 2012 đã vượt qua trở thành lớn nhất.",
+                ref: "SGV Bài 5 (Thông tin tham khảo mục 2, tr.53): '...thuỷ điện Sơn La vượt qua thuỷ điện Hoà Bình, trở thành nhà máy thuỷ điện lớn nhất Việt Nam và khu vực Đông Nam Á.'"
+            }
+        ]
+    },
+    b6: {
+        title: "Bài 6: Một số nét văn hoá ở vùng Trung du và miền núi phía Bắc",
+        oneLine: "Vùng Trung du và miền núi phía Bắc có nền văn hoá đa dạng, giàu bản sắc với các lễ hội đặc sắc (Gầu Tào, Lồng Tồng), nghệ thuật hát Then, múa Xoè Thái và nét sinh hoạt độc đáo của chợ phiên vùng cao.",
+        cards: [
+            { tag: "Lễ hội Gầu Tào", title: "Lễ hội của dân tộc Mông", desc: "Tổ chức vào đầu năm (mồng 1 đến 15 tháng Giêng) để cầu phúc, cầu mệnh, mùa màng bội thu. Trò chơi: múa khèn, ném pao, đi thăng bằng, đẩy gậy." },
+            { tag: "Lễ hội Lồng Tồng", title: "Hội Xuống đồng (Tày, Nùng)", desc: "Tổ chức trên cánh đồng rộng vào đầu xuân. Nghi thức quan trọng nhất là cày ruộng (cày tịch điền), kèm trò chơi tung còn, kéo co, đẩy gậy." },
+            { tag: "Hát Then", title: "Di sản văn hoá phi vật thể", desc: "Loại hình diễn xướng âm nhạc dân gian của dân tộc Tày, Nùng, Thái (được UNESCO ghi danh). Hát trong dịp lễ quan trọng để cầu may mắn, cuộc sống tốt lành." },
+            { tag: "Múa Xoè Thái", title: "Điệu múa cộng đồng người Thái", desc: "Biểu diễn trong dịp lễ, Tết, ngày vui bản mường. Mọi người nắm tay nhau múa vòng tròn, thể hiện tinh thần đoàn kết, ước mơ và niềm tự hào dân tộc." },
+            { tag: "Chợ phiên vùng cao", title: "Nơi mua bán & giao lưu", desc: "Họp vào những ngày nhất định (như chợ phiên Bắc Hà họp Chủ nhật, chợ San Thàng họp thứ Năm và Chủ nhật). Là nơi trao đổi hàng hoá và gặp gỡ, kết bạn." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Nhận diện Lễ hội & Nghệ thuật dân gian (Hình 1 – Hình 7 SGK)",
+            imgSrc: "images/bai6_vanhoa.jpg",
+            svgFallback: `<svg width="100%" height="200" viewBox="0 0 600 200" style="background:#fdf2f8; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="180" fill="#fff1f2" stroke="#e11d48" stroke-width="2" rx="8"/>
+                <text x="300" y="34" font-size="14" font-weight="bold" text-anchor="middle" fill="#9f1239">BỨC TRANH VĂN HOÁ TRUNG DU VÀ MIỀN NÚI PHÍA BẮC</text>
+                <g transform="translate(30,52)">
+                    <rect width="165" height="115" fill="white" stroke="#fda4af" rx="6"/>
+                    <text x="82" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#be123c">1. Lễ hội Gầu Tào</text>
+                    <text x="82" y="48" font-size="11" text-anchor="middle">Dân tộc Mông</text>
+                    <text x="82" y="70" font-size="11" text-anchor="middle">Múa khèn, ném pao,</text>
+                    <text x="82" y="88" font-size="11" text-anchor="middle">đẩy gậy đầu xuân</text>
+                </g>
+                <g transform="translate(217,52)">
+                    <rect width="165" height="115" fill="white" stroke="#fda4af" rx="6"/>
+                    <text x="82" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#be123c">2. Lễ hội Lồng Tồng</text>
+                    <text x="82" y="48" font-size="11" text-anchor="middle">Dân tộc Tày, Nùng</text>
+                    <text x="82" y="70" font-size="11" text-anchor="middle">Nghi thức cày ruộng,</text>
+                    <text x="82" y="88" font-size="11" text-anchor="middle">tung còn, hát Then</text>
+                </g>
+                <g transform="translate(405,52)">
+                    <rect width="165" height="115" fill="white" stroke="#fda4af" rx="6"/>
+                    <text x="82" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#be123c">3. Chợ phiên Bắc Hà</text>
+                    <text x="82" y="48" font-size="11" text-anchor="middle">Tỉnh Lào Cai</text>
+                    <text x="82" y="70" font-size="11" text-anchor="middle">Họp Chủ nhật hằng tuần,</text>
+                    <text x="82" y="88" font-size="11" text-anchor="middle">bán thổ cẩm, gia súc</text>
+                </g>
+            </svg>`,
+            questions: [
+                {
+                    id: "b6_p1",
+                    type: "mc",
+                    q: "Quan sát Hình 2 và Hình 3 (SGK tr.29), trò chơi 'ném pao' thuộc lễ hội nào và nghi thức 'cày ruộng' thuộc lễ hội nào?",
+                    opts: [
+                        "Ném pao thuộc lễ hội Lồng Tồng; cày ruộng thuộc lễ hội Gầu Tào",
+                        "Ném pao thuộc lễ hội Gầu Tào; cày ruộng thuộc lễ hội Lồng Tồng",
+                        "Cả hai đều thuộc lễ hội Hoa ban",
+                        "Cả hai đều thuộc lễ hội Đền Hùng"
+                    ],
+                    ans: 1,
+                    wrongReason: "Hình 2 chú thích 'Trò chơi ném pao trong lễ hội Gầu Tào', còn Hình 3 là 'Nghi thức cày ruộng trong lễ hội Lồng Tồng (hội Xuống đồng)'.",
+                    ref: "SGK Bài 6 (Hình 2 & Hình 3, tr.29): Lễ hội Gầu Tào có múa khèn, ném pao; lễ hội Lồng Tồng có nghi thức cày ruộng."
+                },
+                {
+                    id: "b6_p2",
+                    type: "mc",
+                    q: "Quan sát Hình 7 (SGK tr.30) và thông tin SGV, chợ phiên Bắc Hà (tỉnh Lào Cai) họp vào ngày nào trong tuần?",
+                    opts: ["Thứ Hai hằng tuần", "Thứ Năm hằng tuần", "Chủ nhật hằng tuần", "Ngày rằm hằng tháng"],
+                    ans: 2,
+                    wrongReason: "Chợ San Thàng (Lai Châu) họp vào thứ Năm và Chủ nhật; còn chợ phiên Bắc Hà họp vào các ngày Chủ nhật hằng tuần.",
+                    ref: "SGV Bài 6 (Hoạt động 3, tr.57): 'Chợ phiên Bắc Hà họp các ngày Chủ nhật hằng tuần, từ sáng sớm đến 3 giờ chiều tại thị trấn Bắc Hà.'"
+                }
+            ]
+        },
+        de1: [
+            {
+                id: "b6_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Lễ hội Gầu Tào là lễ hội truyền thống tiêu biểu của dân tộc nào?",
+                opts: ["Dân tộc Thái", "Dân tộc Mông", "Dân tộc Tày", "Dân tộc Mường"],
+                ans: 1,
+                wrongReason: "Người Thái nổi tiếng với múa Xoè, lễ hội Hoa ban; người Tày, Nùng có lễ hội Lồng Tồng; lễ hội Gầu Tào là của người Mông.",
+                ref: "SGK Bài 6 (Mục 1, tr.29): 'Lễ hội Gầu Tào là lễ hội truyền thống của người Mông, được tổ chức vào đầu năm...'"
+            },
+            {
+                id: "b6_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Lễ hội Lồng Tồng của người Tày, Nùng còn có tên gọi khác là gì?",
+                opts: ["Hội Chọi trâu", "Hội Xuống đồng", "Hội Đua voi", "Hội Cồng chiêng"],
+                ans: 1,
+                wrongReason: "'Lồng Tồng' theo tiếng Tày – Nùng có nghĩa là 'Xuống đồng', gắn liền với nghi thức cày ruộng đầu năm.",
+                ref: "SGK Bài 6 (Mục 1, tr.29): 'Lễ hội Lồng Tồng (còn gọi là hội Xuống đồng) là lễ hội truyền thống của người Tày, Nùng...'"
+            },
+            {
+                id: "b6_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Hát Then là loại hình diễn xướng âm nhạc dân gian của các dân tộc nào?",
+                opts: ["Mông, Dao, Hà Nhì", "Tày, Nùng, Thái", "Kinh, Mường, Hoa", "Ê-đê, Ba-na, Gia-rai"],
+                ans: 1,
+                wrongReason: "Hát Then gắn liền với đời sống tâm linh và văn hoá của đồng bào Tày, Nùng, Thái ở vùng núi phía Bắc.",
+                ref: "SGK Bài 6 (Mục 2, tr.29): 'Hát Then là một loại hình diễn xướng âm nhạc dân gian của các dân tộc Tày, Nùng, Thái...'"
+            },
+            {
+                id: "b6_d1_4", type: "fill", level: "Nhận biết",
+                q: "Câu 4: Điền từ thích hợp vào chỗ trống: 'Múa ......... Thái là loại hình nghệ thuật truyền thống đặc sắc của dân tộc Thái, thường được biểu diễn trong dịp lễ, Tết, ngày vui của bản mường.'",
+                ans: ["Xoè", "xoè", "xòe", "Xòe"],
+                displayAns: "Xoè",
+                wrongReason: "Điệu múa vòng tròn truyền thống nổi tiếng của người Thái là múa Xoè Thái.",
+                ref: "SGK Bài 6 (Mục 2, tr.29–30): Giới thiệu về hát Then và múa Xoè Thái."
+            }
+        ],
+        de2: [
+            {
+                id: "b6_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Điểm khác biệt nổi bật của chợ phiên vùng cao so với chợ thông thường là gì?",
+                opts: [
+                    "Chỉ bán các mặt hàng điện tử hiện đại",
+                    "Họp hằng ngày từ sáng đến tối muộn",
+                    "Không chỉ mua bán hàng hoá mà còn là nơi giao lưu, gặp gỡ, kết bạn của người dân",
+                    "Chỉ dành cho khách du lịch nước ngoài"
+                ],
+                ans: 2,
+                wrongReason: "Chợ phiên không họp hằng ngày mà họp theo phiên nhất định, mang đậm tính cộng đồng và giao lưu văn hoá.",
+                ref: "SGV Bài 6 (Hoạt động 3, tr.57): 'Đây không chỉ là nơi mua bán, trao đổi hàng hoá mà còn là nơi giao lưu, gặp gỡ của mọi người, nơi kết bạn của các nam nữ thanh niên.'"
+            },
+            {
+                id: "b6_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Điểm chung về mục đích tổ chức của lễ hội Gầu Tào và lễ hội Lồng Tồng là gì?",
+                opts: [
+                    "Cầu mong sức khoẻ, may mắn và mùa màng bội thu",
+                    "Kỉ niệm ngày thành lập các nhà máy thuỷ điện",
+                    "Thi đấu thể thao chuyên nghiệp",
+                    "Giới thiệu các loại khoáng sản quý"
+                ],
+                ans: 0,
+                wrongReason: "Cư dân nông nghiệp miền núi tổ chức lễ hội đầu xuân để gửi gắm ước vọng mưa thuận gió hoà, cuộc sống ấm no.",
+                ref: "SGK Bài 6 (Mục 1, tr.28): 'Các lễ hội được tổ chức nhằm cầu cho mọi người có một năm khoẻ mạnh, nhiều may mắn, mùa màng bội thu...'"
+            },
+            {
+                id: "b6_d2_3", type: "mc", level: "Vận dụng",
+                q: "Câu 3: Theo Sách giáo viên, loại hình nghệ thuật nào của vùng Trung du và miền núi phía Bắc đã được UNESCO ghi danh là Di sản văn hoá phi vật thể đại diện của nhân loại?",
+                opts: ["Trò chơi ném pao", "Hát Then", "Nghi thức cày tịch điền", "Trò chơi đẩy gậy"],
+                ans: 1,
+                wrongReason: "Hát Then của người Tày, Nùng, Thái đã được UNESCO chính thức ghi danh là Di sản văn hoá phi vật thể đại diện của nhân loại.",
+                ref: "SGV Bài 6 (Hoạt động 2, tr.56): '...hát Then là loại hình nghệ thuật dân gian của các dân tộc Tày, Nùng, Thái, được UNESCO ghi danh là Di sản văn hoá phi vật thể đại diện của nhân loại.'"
+            },
+            {
+                id: "b6_d2_4", type: "fill", level: "Thông hiểu",
+                q: "Câu 4: Điền tên địa danh: Lễ hội Hoa ban là lễ hội nổi tiếng ở tỉnh ................. (vùng Tây Bắc).",
+                ans: ["Điện Biên", "Sơn La"],
+                displayAns: "Điện Biên (hoặc Sơn La)",
+                wrongReason: "Lễ hội Hoa ban gắn liền với núi rừng Tây Bắc, tiêu biểu nhất là ở tỉnh Điện Biên (và Sơn La).",
+                ref: "SGK Bài 6 (Mục 1, tr.29): '...lễ hội Hoa ban (tỉnh Điện Biên)...'"
+            }
+        ]
+    },
+    b7: {
+        title: "Bài 7: Đền Hùng và lễ giỗ Tổ Hùng Vương",
+        oneLine: "Khu di tích lịch sử Đền Hùng nằm trên núi Nghĩa Lĩnh (tỉnh Phú Thọ) là nơi thờ các vua Hùng – những người có công dựng nước; hằng năm vào ngày 10 tháng 3 âm lịch, nhân dân cả nước trang trọng tổ chức lễ giỗ Tổ Hùng Vương.",
+        cards: [
+            { tag: "Vị trí Đền Hùng", title: "Núi Nghĩa Lĩnh (Phú Thọ)", desc: "Khu di tích lịch sử Đền Hùng nằm trên núi Nghĩa Lĩnh, thuộc thành phố Việt Trì, tỉnh Phú Thọ – vùng đất Tổ cội nguồn của dân tộc." },
+            { tag: "Kiến trúc tiêu biểu", title: "Hệ thống đền, chùa, lăng", desc: "Gồm Đền Hạ, Đền Trung, Đền Thượng (trên đỉnh núi Nghĩa Lĩnh), Đền Giếng, chùa Thiên Quang, Lăng vua Hùng và Bảo tàng Hùng Vương." },
+            { tag: "Thời gian Giỗ Tổ", title: "Mồng 10 tháng 3 âm lịch", desc: "Lễ giỗ Tổ Hùng Vương được tổ chức hằng năm từ ngày mồng 1 đến ngày 10 tháng 3 âm lịch, trong đó ngày chính hội là mồng 10 tháng 3 âm lịch." },
+            { tag: "Nghi lễ & Phần hội", title: "Trang nghiêm & Rộn ràng", desc: "Phần lễ: dâng hương, rước kiệu của các xã vùng ven về Đền Hùng. Phần hội: hát Xoan, thi gói bánh chưng, giã bánh giầy, bơi chải, đánh trống đồng..." },
+            { tag: "Ý nghĩa & Di sản", title: "Uống nước nhớ nguồn", desc: "Thể hiện lòng biết ơn công lao dựng nước của các vua Hùng, tinh thần đại đoàn kết dân tộc. Tín ngưỡng thờ cúng Hùng Vương là Di sản văn hoá phi vật thể của nhân loại (UNESCO, 2012)." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Sơ đồ Khu di tích Đền Hùng & Trục thời gian Giỗ Tổ",
+            imgSrc: "images/bai7_denhung.jpg",
+            svgFallback: `<svg width="100%" height="205" viewBox="0 0 600 205" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="185" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">MÔ PHỎNG NÚI NGHĨA LĨNH & TRỤC THỜI GIAN LỄ GIỖ TỔ</text>
+                <polygon points="80,165 180,55 280,165" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+                <text x="180" y="78" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532d">🏛️ Đền Thượng (Đỉnh núi)</text>
+                <text x="180" y="110" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532d">🏛️ Đền Trung</text>
+                <text x="180" y="140" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532d">🏛️ Đền Hạ & Chùa</text>
+                <text x="260" y="160" font-size="11" font-weight="bold" fill="#0369a1">💧 Đền Giếng</text>
+                <line x1="320" y1="105" x2="570" y2="105" stroke="#b45309" stroke-width="3"/>
+                <circle cx="350" cy="105" r="8" fill="#dc2626"/>
+                <text x="350" y="88" font-size="10" font-weight="bold" text-anchor="middle">1–9/3 ÂL</text>
+                <text x="350" y="128" font-size="10" text-anchor="middle">Phần hội sôi nổi</text>
+                <circle cx="445" cy="105" r="10" fill="#dc2626"/>
+                <text x="445" y="85" font-size="11" font-weight="bold" text-anchor="middle" fill="#dc2626">10/3 ÂL</text>
+                <text x="445" y="128" font-size="10" font-weight="bold" text-anchor="middle">Chính lễ Giỗ Tổ</text>
+                <circle cx="535" cy="105" r="8" fill="#059669"/>
+                <text x="535" y="88" font-size="10" font-weight="bold" text-anchor="middle">Năm 2012</text>
+                <text x="535" y="128" font-size="10" text-anchor="middle">UNESCO ghi danh</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b7_p1",
+                    type: "mc",
+                    q: "Quan sát sơ đồ khu di tích Đền Hùng trên núi Nghĩa Lĩnh, ngôi đền nào nằm ở vị trí cao nhất trên đỉnh núi?",
+                    opts: ["Đền Hạ", "Đền Trung", "Đền Thượng", "Đền Giếng"],
+                    ans: 2,
+                    wrongReason: "Theo thứ tự đi từ chân núi lên đỉnh núi Nghĩa Lĩnh: Đền Hạ → Đền Trung → Đền Thượng (trên đỉnh núi), còn Đền Giếng ở chân núi phía đông nam.",
+                    ref: "SGK Bài 7 (Sơ đồ khu di tích lịch sử Đền Hùng): Đền Thượng nằm trên đỉnh núi Nghĩa Lĩnh."
+                },
+                {
+                    id: "b7_p2",
+                    type: "mc",
+                    q: "Theo trục thời gian lịch sử, lễ chính của Giỗ Tổ Hùng Vương diễn ra vào ngày nào hằng năm?",
+                    opts: ["Ngày 10 tháng 3 dương lịch", "Ngày 10 tháng 3 âm lịch", "Ngày 15 tháng Giêng âm lịch", "Ngày 2 tháng 9 dương lịch"],
+                    ans: 1,
+                    wrongReason: "Giỗ Tổ Hùng Vương tính theo lịch âm truyền thống của dân tộc Việt Nam, không tính theo dương lịch.",
+                    ref: "SGK Bài 7 (Mục Lễ giỗ Tổ Hùng Vương): Lễ giỗ Tổ được tổ chức hằng năm vào ngày mồng 10 tháng 3 âm lịch."
+                }
+            ]
+        },
+        de1: [
+            {
+                id: "b7_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Khu di tích lịch sử Đền Hùng nằm trên ngọn núi nào và thuộc tỉnh nào?",
+                opts: ["Núi Ba Vì (Hà Nội)", "Núi Nghĩa Lĩnh (Phú Thọ)", "Núi Mẫu Sơn (Lạng Sơn)", "Núi Hàm Rồng (Thanh Hoá)"],
+                ans: 1,
+                wrongReason: "Khu di tích lịch sử Đền Hùng nằm trên núi Nghĩa Lĩnh, thành phố Việt Trì, tỉnh Phú Thọ.",
+                ref: "SGK Bài 7 (Mục 1): Khu di tích lịch sử Đền Hùng nằm trên núi Nghĩa Lĩnh, tỉnh Phú Thọ."
+            },
+            {
+                id: "b7_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Câu ca dao nào sau đây nhắc nhở người dân Việt Nam về ngày Giỗ Tổ Hùng Vương?",
+                opts: [
+                    "Nhiễu điều phủ lấy giá gương / Người trong một nước phải thương nhau cùng",
+                    "Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ mồng Mười tháng Ba",
+                    "Công cha như núi Thái Sơn / Nghĩa mẹ như nước trong nguồn chảy ra",
+                    "Bầu ơi thương lấy bí cùng / Tuy rằng khác giống nhưng chung một giàn"
+                ],
+                ans: 1,
+                wrongReason: "Các câu khác nói về tình yêu thương gia đình, đồng bào; câu 'Dù ai đi ngược về xuôi...' trực tiếp nhắc về ngày Giỗ Tổ 10/3.",
+                ref: "SGK Bài 7 (Phần Khởi động / Khám phá): Câu ca dao 'Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ mồng Mười tháng Ba'."
+            },
+            {
+                id: "b7_d1_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Hội thi gói bánh chưng, giã bánh giầy trong lễ hội Đền Hùng gắn liền với truyền thuyết nào thời Hùng Vương?",
+                opts: ["Truyền thuyết Sơn Tinh – Thuỷ Tinh", "Truyền thuyết Thánh Gióng", "Truyền thuyết Bánh chưng, bánh giầy (Lang Liêu)", "Truyền thuyết Mai An Tiêm"],
+                ans: 2,
+                wrongReason: "Bánh chưng tượng trưng cho Đất, bánh giầy tượng trưng cho Trời gắn với sự tích hoàng tử Lang Liêu dâng vua Hùng.",
+                ref: "SGK & SGV Bài 7: Hội thi gói bánh chưng, giã bánh giầy dâng cúng vua Hùng gắn với truyền thuyết Lang Liêu."
+            },
+            {
+                id: "b7_d1_4", type: "fill", level: "Nhận biết",
+                q: "Câu 4: Điền từ còn thiếu: 'Lễ giỗ Tổ Hùng Vương là dịp để nhân dân cả nước tưởng nhớ, biết ơn công lao ...................... của các vua Hùng.'",
+                ans: ["dựng nước"],
+                displayAns: "dựng nước",
+                wrongReason: "Các vua Hùng là những người mở đầu lịch sử dựng nước Văn Lang của dân tộc Việt Nam.",
+                ref: "SGK Bài 7 (Mục Ý nghĩa lễ giỗ Tổ Hùng Vương): Tưởng nhớ công lao dựng nước của các vua Hùng."
+            }
+        ],
+        de2: [
+            {
+                id: "b7_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Hoạt động nào sau đây thuộc PHẦN LỄ trong lễ giỗ Tổ Hùng Vương?",
+                opts: ["Thi bơi chải trên sông Lô", "Lễ dâng hương và rước kiệu của các xã vùng ven", "Thi đấu vật dân tộc và kéo co", "Biểu diễn hát Xoan và đánh trống đồng"],
+                ans: 1,
+                wrongReason: "Bơi chải, đấu vật, hát Xoan là các hoạt động văn hoá – thể thao thuộc phần hội; dâng hương và rước kiệu là nghi thức trang nghiêm của phần lễ.",
+                ref: "SGK Bài 7 (Mục 2): Phần lễ gồm lễ dâng hương tại Đền Thượng và lễ rước kiệu của các địa phương."
+            },
+            {
+                id: "b7_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Tín ngưỡng thờ cúng Hùng Vương ở Phú Thọ đã được UNESCO ghi danh là Di sản văn hoá phi vật thể đại diện của nhân loại vào năm nào?",
+                opts: ["Năm 2003", "Năm 2012", "Năm 2019", "Năm 2024"],
+                ans: 1,
+                wrongReason: "Năm 2012, UNESCO chính thức ghi danh 'Tín ngưỡng thờ cúng Hùng Vương ở Phú Thọ' là Di sản văn hoá phi vật thể đại diện của nhân loại.",
+                ref: "SGK Bài 7 (Mục Em có biết?): Năm 2012, Tín ngưỡng thờ cúng Hùng Vương ở Phú Thọ được UNESCO ghi danh."
+            },
+            {
+                id: "b7_d2_3", type: "mc", level: "Vận dụng",
+                q: "Câu 3: Việc làm nào dưới đây thể hiện ý thức giữ gìn và phát huy giá trị của Khu di tích lịch sử Đền Hùng khi em đi tham quan?",
+                opts: [
+                    "Khắc tên mình lên thân cây hoặc tường đền để làm kỉ niệm",
+                    "Ăn mặc lịch sự, giữ gìn vệ sinh chung và tìm hiểu lịch sử các vua Hùng",
+                    "Xả rác bừa bãi dọc đường lên Đền Thượng",
+                    "Chen lấn, xô đẩy khi dâng hương"
+                ],
+                ans: 1,
+                wrongReason: "Khắc tên lên di tích, xả rác hay chen lấn đều làm tổn hại di tích và mất đi sự trang nghiêm nơi đất Tổ.",
+                ref: "SGK Bài 7 (Phần Luyện tập / Vận dụng): Giữ gìn vệ sinh, bảo vệ cảnh quan và tôn trọng giá trị lịch sử văn hoá."
+            },
+            {
+                id: "b7_d2_4", type: "fill", level: "Thông hiểu",
+                q: "Câu 4: Điền tên di sản: Nghệ thuật hát dân ca truyền thống đặc sắc của vùng đất Tổ Phú Thọ thường được biểu diễn trong lễ hội Đền Hùng là hát ............",
+                ans: ["Xoan", "xoan"],
+                displayAns: "Xoan",
+                wrongReason: "Hát Then là của người Tày, Nùng, Thái; còn làn điệu dân ca đặc trưng của đất Tổ Phú Thọ là hát Xoan.",
+                ref: "SGK & SGV Bài 7: Hát Xoan Phú Thọ là hoạt động văn nghệ đặc sắc trong phần hội Đền Hùng."
+            }
+        ]
+    }
+};
+
+// ================= ĐỀ TỔNG HỢP BẤM GIỜ (10 CÂU = THANG ĐIỂM 10) =================
+const EXAM_QUESTIONS = [
+    {
+        id: "ex1", q: "Câu 1 (Bài 4): Vùng Trung du và miền núi phía Bắc có đặc điểm vị trí địa lí nào đặc biệt nhất theo SGK?",
+        opts: ["Có diện tích nhỏ nhất cả nước", "Là vùng duy nhất của nước ta không giáp biển", "Nằm ở cực Nam của Tổ quốc", "Tiếp giáp với 3 quốc gia"],
+        ans: 1, ref: "SGK Bài 4 (tr.19): Đây là vùng duy nhất của nước ta không giáp biển."
+    },
+    {
+        id: "ex2", q: "Câu 2 (Bài 4): Dãy núi nào cao và đồ sộ nhất nước ta, có đỉnh Phan-xi-păng cao 3 147 m?",
+        opts: ["Dãy Trường Sơn", "Dãy Hoàng Liên Sơn", "Cánh cung Ngân Sơn", "Cánh cung Bắc Sơn"],
+        ans: 1, ref: "SGK Bài 4 (tr.20): Hoàng Liên Sơn là dãy núi cao và đồ sộ nhất nước ta, đỉnh cao nhất là Phan-xi-păng (3 147 m)."
+    },
+    {
+        id: "ex3", q: "Câu 3 (Bài 4): Loại khoáng sản nào sau đây được khai thác nhiều ở Lào Cai để sản xuất phân lân?",
+        opts: ["Than đá", "A-pa-tít", "Đá vôi", "Bô-xít"],
+        ans: 1, ref: "SGK Bài 5 (tr.27) & Lược đồ Hình 2 (tr.19): A-pa-tít ở Lào Cai dùng để sản xuất phân lân."
+    },
+    {
+        id: "ex4", q: "Câu 4 (Bài 4): Biện pháp nào sau đây KHÔNG thuộc sơ đồ phòng, chống thiên tai ở vùng Trung du và miền núi phía Bắc?",
+        opts: ["Trồng rừng và bảo vệ rừng", "Di chuyển người dân khỏi nơi có nguy cơ thiên tai", "Chặt phá rừng đầu nguồn để mở rộng diện tích", "Xây dựng các công trình thuỷ lợi"],
+        ans: 2, ref: "SGK Bài 4 (Hình 15, tr.23): Chặt phá rừng làm gia tăng lũ quét và sạt lở đất."
+    },
+    {
+        id: "ex5", q: "Câu 5 (Bài 5): Dân cư vùng Trung du và miền núi phía Bắc phân bố như thế nào?",
+        opts: ["Đông đúc và đồng đều ở mọi nơi", "Thưa thớt, phân bố không đồng đều giữa các tỉnh, giữa miền núi và trung du", "Tập trung đông nhất ở các đỉnh núi cao trên 2 000 m", "Chỉ có dân tộc Kinh sinh sống"],
+        ans: 1, ref: "SGK Bài 5 (tr.25) & SGV (tr.50): Vùng dân cư thưa thớt, phân bố không đồng đều giữa miền núi và trung du."
+    },
+    {
+        id: "ex6", q: "Câu 6 (Bài 5): Ngoài đảm bảo nguồn lương thực và tạo cảnh quan du lịch, ruộng bậc thang còn có ý nghĩa gì?",
+        opts: ["Hạn chế tình trạng phá rừng làm nương rẫy", "Cung cấp điện cho vùng đồng bằng", "Tạo ra nhiều mỏ khoáng sản mới", "Thay thế hoàn toàn các nhà máy thuỷ điện"],
+        ans: 0, ref: "SGK Bài 5 (tr.26): Làm ruộng bậc thang giúp hạn chế tình trạng phá rừng làm nương rẫy."
+    },
+    {
+        id: "ex7", q: "Câu 7 (Bài 5): Hai nhà máy thuỷ điện lớn nhất của vùng là Sơn La và Hoà Bình cùng nằm trên dòng sông nào?",
+        opts: ["Sông Hồng", "Sông Đà", "Sông Chảy", "Sông Lô"],
+        ans: 1, ref: "SGK Bài 5 (Hình 6, tr.27): Thuỷ điện Sơn La và Hoà Bình đều nằm trên sông Đà."
+    },
+    {
+        id: "ex8", q: "Câu 8 (Bài 6): Lễ hội Lồng Tồng (hội Xuống đồng) gắn liền với nghi thức quan trọng nào?",
+        opts: ["Ném pao", "Cày ruộng", "Đua thuyền", "Đấu vật"],
+        ans: 1, ref: "SGK Bài 6 (tr.29): Cày ruộng là nghi thức quan trọng trong lễ hội Lồng Tồng của người Tày, Nùng."
+    },
+    {
+        id: "ex9", q: "Câu 9 (Bài 6): Loại hình nghệ thuật diễn xướng dân gian nào của người Tày, Nùng, Thái đã được UNESCO ghi danh là Di sản văn hoá phi vật thể đại diện của nhân loại?",
+        opts: ["Hát Then", "Múa khèn", "Hát Quan họ", "Nhã nhạc cung đình"],
+        ans: 0, ref: "SGV Bài 6 (tr.56): Hát Then của các dân tộc Tày, Nùng, Thái được UNESCO ghi danh."
+    },
+    {
+        id: "ex10", q: "Câu 10 (Bài 7): Khu di tích lịch sử Đền Hùng nằm trên núi Nghĩa Lĩnh thuộc tỉnh nào và tổ chức Giỗ Tổ vào ngày nào?",
+        opts: ["Tỉnh Tuyên Quang – ngày 15 tháng Giêng âm lịch", "Tỉnh Phú Thọ – ngày 10 tháng 3 âm lịch", "Tỉnh Lào Cai – ngày 10 tháng 3 dương lịch", "Tỉnh Sơn La – ngày 30 tháng 4 dương lịch"],
+        ans: 1, ref: "SGK Bài 7: Đền Hùng nằm trên núi Nghĩa Lĩnh (tỉnh Phú Thọ), lễ chính Giỗ Tổ vào mồng 10 tháng 3 âm lịch."
+    }
+];
+
+// ================= TRẠNG THÁI & LƯU TRỮ TỰ ĐỘNG (LOCALSTORAGE) =================
+const STORAGE_KEY = "lsdl4_kntt_b4_b7_v1";
+let state = {
+    currentLesson: "b4",
+    currentSubTab: "summary", // summary | puzzle | de1 | de2
+    answers: {}, // { qId: { userVal, isCorrect } }
+    exam: {
+        started: false,
+        submitted: false,
+        timeLeft: 600, // 10 phút = 600 giây
+        userAnswers: {}, // { ex1: 0, ... }
+        score: 0
+    }
+};
+
+let timerInterval = null;
+
+function loadState() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            state = { ...state, ...parsed, exam: { ...state.exam, ...(parsed.exam || {}) } };
+        }
+    } catch (e) { console.error(e); }
+}
+
+function saveState() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        const badge = document.getElementById("saveStatus");
+        if (badge) {
+            badge.textContent = "✅ Đã tự động lưu tiến độ lúc " + new Date().toLocaleTimeString("vi-VN");
+        }
+    } catch (e) { console.error(e); }
+}
+
+// ================= ĐIỀU HƯỚNG =================
+function selectLesson(lessonKey) {
+    state.currentLesson = lessonKey;
+    if (lessonKey !== "exam" && !["summary", "puzzle", "de1", "de2"].includes(state.currentSubTab)) {
+        state.currentSubTab = "summary";
+    }
+    saveState();
+    render();
+}
+
+function selectSubTab(subKey) {
+    state.currentSubTab = subKey;
+    saveState();
+    render();
+}
+
+// ================= XỬ LÝ TRẢ LỜI LUYỆN TẬP & ĐỐ TRANH =================
+function handleMC(qId, optIndex, correctIndex) {
+    const isCorrect = (optIndex === correctIndex);
+    state.answers[qId] = { userVal: optIndex, isCorrect };
+    saveState();
+    render();
+}
+
+function handleFill(qId, validAnswers) {
+    const inputEl = document.getElementById("input_" + qId);
+    if (!inputEl) return;
+    const raw = inputEl.value.trim();
+    if (!raw) {
+        alert("Em hãy nhập câu trả lời trước khi kiểm tra nhé!");
+        return;
+    }
+    const norm = raw.toLowerCase().replace(/\s+/g, " ");
+    const isCorrect = validAnswers.some(ans => ans.toLowerCase().replace(/\s+/g, " ") === norm);
+    state.answers[qId] = { userVal: raw, isCorrect };
+    saveState();
+    render();
+}
+
+function resetLessonProgress(lessonKey) {
+    if (!confirm("Em có chắc muốn xoá kết quả làm bài của phần này để làm lại từ đầu không?")) return;
+    const prefix = lessonKey + "_";
+    Object.keys(state.answers).forEach(k => {
+        if (k.startsWith(prefix)) delete state.answers[k];
+    });
+    saveState();
+    render();
+}
+
+// ================= RENDER CÂU HỎI TƯƠNG TÁC =================
+function renderQuestionList(questions, lessonKey) {
+    let html = `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span style="color:var(--text-light); font-size:0.9rem;">💡 Chọn đáp án để xem giải thích và căn cứ SGK ngay lập tức.</span>
+        <button class="btn-reset" onclick="resetLessonProgress('${lessonKey}')">🔄 Làm lại phần này</button>
+    </div>`;
+
+    questions.forEach(item => {
+        const saved = state.answers[item.id];
+        let boxClass = "q-item";
+        if (saved) boxClass += saved.isCorrect ? " correct-box" : " wrong-box";
+
+        html += `<div class="${boxClass}">`;
+        html += `<div class="q-title">`;
+        if (item.level) html += `<span class="q-badge">${item.level}</span>`;
+        html += `${item.q}</div>`;
+
+        if (item.type === "mc") {
+            html += `<div class="options-list">`;
+            item.opts.forEach((opt, idx) => {
+                let optClass = "opt-label";
+                let checked = "";
+                if (saved) {
+                    if (saved.userVal === idx) {
+                        checked = "checked";
+                        optClass += saved.isCorrect ? " opt-correct" : " opt-wrong";
+                    } else if (!saved.isCorrect && idx === item.ans) {
+                        optClass += " opt-correct";
+                    }
+                }
+                html += `<label class="${optClass}" onclick="handleMC('${item.id}', ${idx}, ${item.ans})">
+                    <input type="radio" name="${item.id}" ${checked} style="pointer-events:none;">
+                    <span><b>${String.fromCharCode(65 + idx)}.</b> ${opt}</span>
+                </label>`;
+            });
+            html += `</div>`;
+        } else if (item.type === "fill") {
+            const val = saved ? saved.userVal : "";
+            const validStr = JSON.stringify(item.ans).replace(/"/g, '&quot;');
+            html += `<div class="fill-group">
+                <input type="text" id="input_${item.id}" class="fill-input" placeholder="Nhập từ còn thiếu..." value="${val}" onkeydown="if(event.key==='Enter') handleFill('${item.id}', ${validStr})">
+                <button class="btn-check" onclick="handleFill('${item.id}', ${validStr})">Kiểm tra</button>
+            </div>`;
+        }
+
+        if (saved) {
+            if (saved.isCorrect) {
+                html += `<div class="feedback show ok">
+                    <strong>✅ Chính xác!</strong><br>
+                    📖 <em>Căn cứ sách giáo khoa:</em> ${item.ref}
+                </div>`;
+            } else {
+                const rightText = item.type === "mc" ? `${String.fromCharCode(65 + item.ans)}. ${item.opts[item.ans]}` : item.displayAns;
+                html += `<div class="feedback show err">
+                    <strong>❌ Chưa chính xác!</strong> Đáp án đúng là: <b>${rightText}</b><br>
+                    💡 <em>Lý do sai:</em> ${item.wrongReason}<br>
+                    📖 <em>Căn cứ sách:</em> ${item.ref}
+                </div>`;
+            }
+        }
+        html += `</div>`;
+    });
+    return html;
+}
+
+// ================= XỬ LÝ ĐỀ TỔNG HỢP BẤM GIỜ =================
+function startExam() {
+    state.exam.started = true;
+    state.exam.submitted = false;
+    state.exam.timeLeft = 600;
+    state.exam.userAnswers = {};
+    saveState();
+    startTimer();
+    render();
+}
+
+function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    if (!state.exam.started || state.exam.submitted) return;
+    timerInterval = setInterval(() => {
+        if (state.exam.timeLeft > 0) {
+            state.exam.timeLeft--;
+            saveState();
+            const timerEl = document.getElementById("timerDisplay");
+            if (timerEl) timerEl.textContent = formatTime(state.exam.timeLeft);
+        } else {
+            clearInterval(timerInterval);
+            submitExam(true);
+        }
+    }, 1000);
+}
+
+function formatTime(sec) {
+    const m = Math.floor(sec / 60).toString().padStart(2, "0");
+    const s = (sec % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+}
+
+function selectExamOpt(qId, optIdx) {
+    if (state.exam.submitted) return;
+    state.exam.userAnswers[qId] = optIdx;
+    saveState();
+    render();
+}
+
+function submitExam(auto = false) {
+    if (!auto) {
+        const answeredCount = Object.keys(state.exam.userAnswers).length;
+        if (answeredCount < EXAM_QUESTIONS.length) {
+            if (!confirm(`Em mới làm ${answeredCount}/${EXAM_QUESTIONS.length} câu. Em vẫn muốn nộp bài chứ?`)) return;
+        }
+    }
+    if (timerInterval) clearInterval(timerInterval);
+    let correctCount = 0;
+    EXAM_QUESTIONS.forEach(q => {
+        if (state.exam.userAnswers[q.id] === q.ans) correctCount++;
+    });
+    state.exam.submitted = true;
+    state.exam.score = (correctCount / EXAM_QUESTIONS.length) * 10;
+    saveState();
+    render();
+}
+
+function renderExam() {
+    const ex = state.exam;
+    let html = `<div class="card">`;
+    html += `<h2 style="margin-top:0; color:var(--accent);">⏱️ ĐỀ KIỂM TRA TỔNG HỢP (BÀI 4 – BÀI 7)</h2>`;
+    html += `<p>Gồm 10 câu hỏi trắc nghiệm bao quát kiến thức Bài 4, 5, 6, 7. Thời gian làm bài: <b>10 phút</b>. Chấm điểm thang 10.</p>`;
+
+    if (!ex.started && !ex.submitted) {
+        html += `<div style="text-align:center; padding:2rem 0;">
+            <button class="btn-submit-exam" onclick="startExam()">▶️ Bắt đầu làm bài (10:00)</button>
+        </div></div>`;
+        return html;
+    }
+
+    if (ex.submitted) {
+        html += `<div class="score-banner">
+            <div>KẾT QUẢ BÀI KIỂM TRA TỔNG HỢP</div>
+            <div class="score-big">${ex.score.toFixed(1)} / 10 điểm</div>
+            <div>Số câu trả lời đúng: <b>${Math.round(ex.score)} / ${EXAM_QUESTIONS.length} câu</b></div>
+            <button class="btn-reset" style="margin-top:1rem; background:white; color:#059669; font-weight:700;" onclick="startExam()">🔄 Làm lại đề tổng hợp</button>
+        </div>`;
+
+        html += `<h3>📋 Bảng đáp án & Căn cứ chi tiết</h3>`;
+        html += `<table class="ans-table">
+            <thead>
+                <tr>
+                    <th>Câu</th>
+                    <th>Đáp án em chọn</th>
+                    <th>Đáp án đúng</th>
+                    <th>Kết quả & Căn cứ SGK</th>
+                </tr>
+            </thead><tbody>`;
+        EXAM_QUESTIONS.forEach((q, i) => {
+            const uIdx = ex.userAnswers[q.id];
+            const uText = uIdx !== undefined ? `${String.fromCharCode(65 + uIdx)}. ${q.opts[uIdx]}` : "<em>Bỏ trống</em>";
+            const rText = `${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans]}`;
+            const isOk = uIdx === q.ans;
+            html += `<tr style="background:${isOk ? '#f0fdf4' : '#fef2f2'};">
+                <td><b>Câu ${i + 1}</b></td>
+                <td>${uText}</td>
+                <td><b>${rText}</b></td>
+                <td>${isOk ? '✅ Đúng' : '❌ Sai'} – ${q.ref}</td>
+            </tr>`;
+        });
+        html += `</tbody></table></div>`;
+        return html;
+    }
+
+    // Đang làm bài
+    html += `<div class="exam-header">
+        <div>Đã làm: <b>${Object.keys(ex.userAnswers).length} / ${EXAM_QUESTIONS.length}</b> câu</div>
+        <div class="timer-display" id="timerDisplay">⏳ ${formatTime(ex.timeLeft)}</div>
+        <button class="btn-submit-exam" onclick="submitExam(false)">📩 Nộp bài & Chấm điểm</button>
+    </div>`;
+
+    EXAM_QUESTIONS.forEach(q => {
+        const chosen = ex.userAnswers[q.id];
+        html += `<div class="q-item">
+            <div class="q-title">${q.q}</div>
+            <div class="options-list">`;
+        q.opts.forEach((opt, idx) => {
+            const isChecked = chosen === idx ? "checked" : "";
+            const bg = chosen === idx ? "background:#eff6ff; border-color:var(--primary);" : "";
+            html += `<label class="opt-label" style="${bg}" onclick="selectExamOpt('${q.id}', ${idx})">
+                <input type="radio" name="exam_${q.id}" ${isChecked} style="pointer-events:none;">
+                <span><b>${String.fromCharCode(65 + idx)}.</b> ${opt}</span>
+            </label>`;
+        });
+        html += `</div></div>`;
+    });
+
+    html += `<div style="text-align:center; margin-top:1.5rem;">
+        <button class="btn-submit-exam" onclick="submitExam(false)">📩 Nộp bài & Xem điểm</button>
+    </div></div>`;
+    return html;
+}
+
+// ================= RENDER CHÍNH =================
+function render() {
+    // Cập nhật nút nav chính
+    const navBtns = document.querySelectorAll("#mainNav .lesson-btn");
+    const keys = ["b4", "b5", "b6", "b7", "exam"];
+    navBtns.forEach((btn, idx) => {
+        btn.classList.toggle("active", keys[idx] === state.currentLesson);
+    });
+
+    const container = document.getElementById("appContent");
+    if (state.currentLesson === "exam") {
+        container.innerHTML = renderExam();
+        return;
+    }
+
+    const lesson = DATA[state.currentLesson];
+    let html = `<div class="card">
+        <h2 style="margin-top:0; color:var(--primary-dark);">${lesson.title}</h2>
+        <div class="sub-nav">
+            <button class="sub-btn ${state.currentSubTab === 'summary' ? 'active' : ''}" onclick="selectSubTab('summary')">1. Ý chính & Thẻ ghi nhớ</button>
+            <button class="sub-btn ${state.currentSubTab === 'puzzle' ? 'active' : ''}" onclick="selectSubTab('puzzle')">2. Đố tranh & Lược đồ</button>
+            <button class="sub-btn ${state.currentSubTab === 'de1' ? 'active' : ''}" onclick="selectSubTab('de1')">3. Đề 1 (Cơ bản)</button>
+            <button class="sub-btn ${state.currentSubTab === 'de2' ? 'active' : ''}" onclick="selectSubTab('de2')">4. Đề 2 (Nâng cao)</button>
+        </div>`;
+
+    if (state.currentSubTab === "summary") {
+        html += `<div class="summary-box">📌 Tóm tắt 1 câu: ${lesson.oneLine}</div>`;
+        html += `<div class="cards-grid">`;
+        lesson.cards.forEach(c => {
+            html += `<div class="info-card">
+                <span class="info-card-tag">${c.tag}</span>
+                <h4>${c.title}</h4>
+                <p>${c.desc}</p>
+            </div>`;
+        });
+        html += `</div>`;
+    } else if (state.currentSubTab === "puzzle") {
+        const pz = lesson.puzzle;
+        html += `<div class="puzzle-box">
+            <h3 style="margin-top:0; color:#1e3a8a;">🖼️ ${pz.title}</h3>
+            <div class="puzzle-img-placeholder">
+                <img src="${pz.imgSrc}" alt="${pz.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display:none;">
+                    ${pz.svgFallback}
+                    <p style="font-size:0.82rem; color:#64748b; margin-top:8px;">
+                        🔧 <em>Hướng dẫn thầy/cô:</em> Hiện đang hiển thị lược đồ mô phỏng trực quan. Khi lưu ảnh thật từ SGK vào thư mục <code>${pz.imgSrc}</code>, trang web sẽ tự động hiển thị ảnh thật của sách!
+                    </p>
+                </div>
+            </div>
+        </div>`;
+        html += renderQuestionList(pz.questions, state.currentLesson);
+    } else if (state.currentSubTab === "de1") {
+        html += renderQuestionList(lesson.de1, state.currentLesson);
+    } else if (state.currentSubTab === "de2") {
+        html += renderQuestionList(lesson.de2, state.currentLesson);
+    }
+
+    html += `</div>`;
+    container.innerHTML = html;
+}
+
+// Khởi chạy ứng dụng
+loadState();
+render();
+if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitted) {
+    startTimer();
+}
+</script>
+</body>
+</html>
