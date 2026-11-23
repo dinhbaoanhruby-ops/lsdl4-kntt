@@ -3605,5 +3605,8 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
     });
   }
 </script>
+    <script>
+  document.body.innerHTML = document.body.innerHTML.replace(/\[cite:[^\]]+\]/g, '');
+</script>
 </body>
 </html>
