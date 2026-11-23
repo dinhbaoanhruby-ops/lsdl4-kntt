@@ -3252,13 +3252,25 @@ function handleFill(qId, validAnswers) {
 
 function resetLessonProgress(lessonKey) {
   if (!confirm("Em có chắc muốn xoá kết quả làm bài của phần này để làm lại từ đầu không?")) return;
-  const match = String(lessonKey).match(/b\d+/i);
-  const shortPrefix = match ? match[0].toLowerCase() + "_" : lessonKey + "_";
+  const numMatch = String(lessonKey).match(/\d+/);
+  const bPrefix = numMatch ? "b" + numMatch[0] + "_" : "";
   Object.keys(state.answers).forEach(k => {
-    if (k.startsWith(lessonKey + "_") || k.toLowerCase().startsWith(shortPrefix)) {
+    if (k.startsWith(lessonKey + "_") || (bPrefix && k.toLowerCase().startsWith(bPrefix))) {
       delete state.answers[k];
     }
   });
+  // Cho phép tráo lại đáp án mới khi làm lại bài
+  for (let key in window) {
+    try {
+      if (Array.isArray(window[key])) {
+        window[key].forEach(item => {
+          if (item && bPrefix && String(item.id || '').toLowerCase().startsWith(bPrefix)) {
+            item._shuffled = false;
+          }
+        });
+      }
+    } catch (e) {}
+  }
   saveState();
   render();
 }
