@@ -3475,8 +3475,10 @@ function render() {
     }
 
     const lesson = DATA[state.currentLesson];
+    if (!lesson && state.currentLesson.startsWith('b')) state.currentLesson = state.currentLesson.replace('b', 'bai');
+const activeLesson = DATA[state.currentLesson] || DATA.b4;
     let html = `<div class="card">
-        <h2 style="margin-top:0; color:var(--primary-dark);">${lesson.title}</h2>
+        <h2 style="margin-top:0; color:var(--primary-dark);">${activeLesson.title}</h2>
         <div class="sub-nav">
             <button class="sub-btn ${state.currentSubTab === 'summary' ? 'active' : ''}" onclick="selectSubTab('summary')">1. Ý chính & Thẻ ghi nhớ</button>
             <button class="sub-btn ${state.currentSubTab === 'puzzle' ? 'active' : ''}" onclick="selectSubTab('puzzle')">2. Đố tranh & Lược đồ</button>
@@ -3485,7 +3487,7 @@ function render() {
         </div>`;
 
     if (state.currentSubTab === "summary") {
-        html += `<div class="summary-box">📌 Tóm tắt 1 câu: ${lesson.oneLine}</div>`;
+        html += `<div class="summary-box">📌 Tóm tắt 1 câu: ${activeLesson.oneLine}</div>`;
         html += `<div class="cards-grid">`;
         lesson.cards.forEach(c => {
             html += `<div class="info-card">
