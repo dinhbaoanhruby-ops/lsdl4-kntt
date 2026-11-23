@@ -3605,69 +3605,16 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
     });
   }
 </script>
-  <script>
+ <script>
 (function() {
-  // 1. Xóa sạch toàn bộ ký hiệu trên trang
-  document.body.innerHTML = document.body.innerHTML.replace(/\[cite:[^\]]+\]/g, '');
-
-  // 2. Hàm tráo ngẫu nhiên mảng (Fisher-Yates)
-  function shuffleWithAnswer(arr, ansIdx) {
-    let indices = arr.map((_, i) => i);
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
+  // 1. Xóa sạch chữ mà không làm hỏng sự kiện bấm nút trên web
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (/\[cite:[^\]]+\]/.test(node.nodeValue)) {
+      node.nodeValue = node.nodeValue.replace(/\[cite:[^\]]+\]/g, '');
     }
-    return {
-      newArr: indices.map(i => arr[i]),
-      newAns: indices.indexOf(ansIdx)
-    };
   }
-
-  // 3. Tự động quét và tráo đáp án cho Bài 8 đến Bài 13
-  const targetLessons = ['bài 8', 'bài 9', 'bài 10', 'bài 11', 'bài 12', 'bài 13'];
-  const letters = ['A', 'B', 'C', 'D'];
-
-  for (let key in window) {
-    try {
-      let data = window[key];
-      if (!data || typeof data !== 'object') continue;
-      let items = Array.isArray(data) ? data : Object.values(data);
-
-      items.forEach(item => {
-        if (!item || typeof item !== 'object') return;
-        let title = String(item.title || item.name || item.lesson || '').toLowerCase();
-        let isTarget = targetLessons.some(t => title.includes(t));
-        let qList = item.questions || item.quiz || (item.options || item.choices ? [item] : null);
-
-        if ((isTarget || !title) && Array.isArray(qList)) {
-          qList.forEach(q => {
-            let opts = q.options || q.choices || q.answers;
-            if (!Array.isArray(opts) || opts.length < 2) return;
-
-            // Nhận diện đáp án đúng đang lưu dạng số (0, 1, 2, 3) hay chữ ("A", "B", "C", "D")
-            let ansKey = ['answer', 'correct', 'correctAnswer', 'ans'].find(k => q[k] !== undefined);
-            if (!ansKey) return;
-
-            let rawAns = q[ansKey];
-            let ansIdx = typeof rawAns === 'number' ? rawAns : letters.indexOf(String(rawAns).trim().toUpperCase());
-            if (ansIdx < 0 || ansIdx >= opts.length) return;
-
-            let shuffled = shuffleWithAnswer(opts, ansIdx);
-            if (q.options) q.options = shuffled.newArr;
-            else if (q.choices) q.choices = shuffled.newArr;
-            else if (q.answers) q.answers = shuffled.newArr;
-
-            q[ansKey] = typeof rawAns === 'number' ? shuffled.newAns : letters[shuffled.newAns];
-          });
-        }
-      });
-    } catch (e) {}
-  }
-})();
-<script>
-(function() {
-  // 1. Xóa sạch toàn bộ ký hiệu cite trên trang
-  document.body.innerHTML = document.body.innerHTML.replace(/\[cite:[^\]]+\]/g, '');
 
   // 2. Hàm tráo ngẫu nhiên đáp án và cập nhật chỉ số ans
   function traoDapAn(q) {
@@ -3683,7 +3630,7 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
     q.ans = indices.indexOf(q.ans);
   }
 
-  // 3. Quét toàn bộ dữ liệu câu hỏi trong trang để áp dụng
+  // 3. Quét dữ liệu câu hỏi để áp dụng tráo đáp án
   function quetDuLieu(obj, visited = new Set()) {
     if (!obj || typeof obj !== 'object' || visited.has(obj)) return;
     visited.add(obj);
