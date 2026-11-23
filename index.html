@@ -3251,17 +3251,36 @@ function handleFill(qId, validAnswers) {
 }
 
 function resetLessonProgress(lessonKey) {
-    if (!confirm("Em có chắc muốn xoá kết quả làm bài của phần này để làm lại từ đầu không?")) return;
-    const prefix = lessonKey + "_";
-    Object.keys(state.answers).forEach(k => {
-        if (k.startsWith(prefix)) delete state.answers[k];
-    });
-    saveState();
-    render();
+  if (!confirm("Em có chắc muốn xoá kết quả làm bài của phần này để làm lại từ đầu không?")) return;
+  const match = String(lessonKey).match(/b\d+/i);
+  const shortPrefix = match ? match[0].toLowerCase() + "_" : lessonKey + "_";
+  Object.keys(state.answers).forEach(k => {
+    if (k.startsWith(lessonKey + "_") || k.toLowerCase().startsWith(shortPrefix)) {
+      delete state.answers[k];
+    }
+  });
+  saveState();
+  render();
 }
 
 // ================= RENDER CÂU HỎI TƯƠNG TÁC =================
 function renderQuestionList(questions, lessonKey) {
+    questions.forEach(item => {
+    if (typeof item.q === 'string') item.q = item.q.replace(/\[cite:[^\]]+\]/g, '');
+    if (item.type === 'mc' && Array.isArray(item.opts)) {
+      item.opts = item.opts.map(o => typeof o === 'string' ? o.replace(/\[cite:[^\]]+\]/g, '') : o);
+      if (!item._shuffled && /^b(8|9|10|11|12|13)_/i.test(String(item.id || ''))) {
+        let idxArr = item.opts.map((_, i) => i);
+        for (let i = idxArr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [idxArr[i], idxArr[j]] = [idxArr[j], idxArr[i]];
+        }
+        item.opts = idxArr.map(i => item.opts[i]);
+        item.ans = idxArr.indexOf(item.ans);
+        item._shuffled = true;
+      }
+    }
+  });
     let html = `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
         <span style="color:var(--text-light); font-size:0.9rem;">💡 Chọn đáp án để xem giải thích và căn cứ SGK ngay lập tức.</span>
         <button class="btn-reset" onclick="resetLessonProgress('${lessonKey}')">🔄 Làm lại phần này</button>
@@ -3604,56 +3623,6 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
       btn.innerText = "GỬI KẾT QUẢ BÀI LÀM";
     });
   }
-</script>
- <script>
-(function() {
-  // 1. Xóa sạch chữ mà không làm hỏng sự kiện bấm nút trên web
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-  let node;
-  while ((node = walker.nextNode())) {
-    if (/\[cite:[^\]]+\]/.test(node.nodeValue)) {
-      node.nodeValue = node.nodeValue.replace(/\[cite:[^\]]+\]/g, '');
-    }
-  }
-
-  // 2. Hàm tráo ngẫu nhiên đáp án và cập nhật chỉ số ans
-  function traoDapAn(q) {
-    if (!q || q.type !== 'mc' || !Array.isArray(q.opts) || typeof q.ans !== 'number') return;
-    if (!/^b(8|9|10|11|12|13)_/i.test(String(q.id || ''))) return;
-
-    let indices = q.opts.map((_, i) => i);
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
-    q.opts = indices.map(i => q.opts[i]);
-    q.ans = indices.indexOf(q.ans);
-  }
-
-  // 3. Quét dữ liệu câu hỏi để áp dụng tráo đáp án
-  function quetDuLieu(obj, visited = new Set()) {
-    if (!obj || typeof obj !== 'object' || visited.has(obj)) return;
-    visited.add(obj);
-
-    if (Array.isArray(obj)) {
-      obj.forEach(item => {
-        traoDapAn(item);
-        quetDuLieu(item, visited);
-      });
-    } else {
-      traoDapAn(obj);
-      Object.values(obj).forEach(val => quetDuLieu(val, visited));
-    }
-  }
-
-  for (let key in window) {
-    try {
-      if (window[key] && typeof window[key] === 'object' && key !== 'window' && key !== 'document') {
-        quetDuLieu(window[key]);
-      }
-    } catch (e) {}
-  }
-})();
 </script>
 </body>
 </html>
