@@ -3664,6 +3664,49 @@ if (state.currentLesson === "exam" && state.exam.started && !state.exam.submitte
     } catch (e) {}
   }
 })();
+<script>
+(function() {
+  // 1. Xóa sạch toàn bộ ký hiệu cite trên trang
+  document.body.innerHTML = document.body.innerHTML.replace(/\[cite:[^\]]+\]/g, '');
+
+  // 2. Hàm tráo ngẫu nhiên đáp án và cập nhật chỉ số ans
+  function traoDapAn(q) {
+    if (!q || q.type !== 'mc' || !Array.isArray(q.opts) || typeof q.ans !== 'number') return;
+    if (!/^b(8|9|10|11|12|13)_/i.test(String(q.id || ''))) return;
+
+    let indices = q.opts.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    q.opts = indices.map(i => q.opts[i]);
+    q.ans = indices.indexOf(q.ans);
+  }
+
+  // 3. Quét toàn bộ dữ liệu câu hỏi trong trang để áp dụng
+  function quetDuLieu(obj, visited = new Set()) {
+    if (!obj || typeof obj !== 'object' || visited.has(obj)) return;
+    visited.add(obj);
+
+    if (Array.isArray(obj)) {
+      obj.forEach(item => {
+        traoDapAn(item);
+        quetDuLieu(item, visited);
+      });
+    } else {
+      traoDapAn(obj);
+      Object.values(obj).forEach(val => quetDuLieu(val, visited));
+    }
+  }
+
+  for (let key in window) {
+    try {
+      if (window[key] && typeof window[key] === 'object' && key !== 'window' && key !== 'document') {
+        quetDuLieu(window[key]);
+      }
+    } catch (e) {}
+  }
+})();
 </script>
 </body>
 </html>
