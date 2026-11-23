@@ -338,7 +338,13 @@
         <button class="lesson-btn" onclick="selectLesson('b5')">Bài 5: Dân cư & Sản xuất</button>
         <button class="lesson-btn" onclick="selectLesson('b6')">Bài 6: Nét văn hoá</button>
         <button class="lesson-btn" onclick="selectLesson('b7')">Bài 7: Đền Hùng & Giỗ Tổ</button>
-        <button class="lesson-btn exam-btn" onclick="selectLesson('exam')">⏱️ Đề Tổng Hợp (Bấm giờ)</button>
+       
+<button class="lesson-btn" onclick="selectLesson('b8')">Bài 8: Thiên nhiên ĐBBB</button>
+        <button class="lesson-btn" onclick="selectLesson('b9')">Bài 9: Dân cư & Sản xuất</button>
+        <button class="lesson-btn" onclick="selectLesson('b10')">Bài 10: Nét văn hoá ĐBBB</button>
+        <button class="lesson-btn" onclick="selectLesson('b11')">Bài 11: Văn minh sông Hồng</button>
+        <button class="lesson-btn" onclick="selectLesson('b12')">Bài 12: Thăng Long – Hà Nội</button>
+        <button class="lesson-btn" onclick="selectLesson('b13')">Bài 13: Văn Miếu – Quốc Tử Giám</button> <button class="lesson-btn exam-btn" onclick="selectLesson('exam')">⏱️ Đề Tổng Hợp (Bấm giờ)</button>
     </div>
 
     <!-- Content Area -->
@@ -857,7 +863,2029 @@ const DATA = {
             }
         ]
     }
-};
+};,
+    bai8: {
+        title: "Bài 8: Thiên nhiên vùng Đồng bằng Bắc Bộ",
+        oneLine: "Đồng bằng Bắc Bộ là đồng bằng lớn thứ hai cả nước, địa hình thấp và tương đối bằng phẳng, đất phù sa màu mỡ do hệ thống sông Hồng và sông Thái Bình bồi đắp, khí hậu nhiệt đới gió mùa có một mùa đông lạnh.",
+        cards: [
+            { tag: "Vị trí địa lí", title: "Tiếp giáp 2 vùng, 1 nước & Biển", desc: "Nằm ở phía bắc nước ta; tiếp giáp vùng Trung du và miền núi phía Bắc, vùng Bắc Trung Bộ và Nam Trung Bộ, nước láng giềng Trung Quốc và phía đông giáp Vịnh Bắc Bộ rộng lớn." },
+            { tag: "Địa hình", title: "Bằng phẳng, dưới 25 m", desc: "Phần lớn địa hình tương đối bằng phẳng, độ cao trung bình dưới 25 m, có dạng hình tam giác mở rộng ra biển. Phía đông bắc có một số đồi núi thấp." },
+            { tag: "Khí hậu", title: "Có một mùa đông lạnh", desc: "Khí hậu nhiệt đới gió mùa, nhiệt độ trung bình năm trên 23°C, lượng mưa 1 500 – 2 000 mm. Mùa đông lạnh, ít mưa; mùa hạ nóng, mưa nhiều." },
+            { tag: "Sông ngòi, đất & sinh vật", title: "Sông Hồng & Sông Thái Bình", desc: "Mạng lưới sông dày đặc với hai hệ thống lớn là sông Hồng và sông Thái Bình. Đất phù sa màu mỡ chiếm chủ yếu; ven biển có rừng ngập mặn (VQG Xuân Thuỷ), đảo có VQG Cát Bà." },
+            { tag: "Thuận lợi & Khó khăn", title: "Giao thông, nông nghiệp & Thiên tai", desc: "Thuận lợi cho cư trú, giao thông, trồng lúa và phát triển kinh tế biển. Khó khăn: mùa đông rét đậm ảnh hưởng cây trồng, vật nuôi; mùa hạ thường có bão, mưa lớn gây ngập lụt." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Lược đồ tự nhiên & Bảo vệ môi trường Đồng bằng Bắc Bộ",
+            imgSrc: "images/bai8_dbbb.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#f0fdf4; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#dcfce7" stroke="#15803d" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#14532d">SƠ ĐỒ TỰ NHIÊN VÙNG ĐỒNG BẰNG BẮC BỘ</text>
+                <polygon points="110,65 280,55 245,175 135,165" fill="#bbf7d0" stroke="#166534" stroke-width="2"/>
+                <text x="195" y="48" font-size="10" font-weight="bold" text-anchor="middle" fill="#1e3a8a">↑ Trung du & MN phía Bắc | Trung Quốc</text>
+                <text x="85" y="175" font-size="10" font-weight="bold" fill="#7c2d12">↙ Bắc Trung Bộ</text>
+                <text x="315" y="120" font-size="12" font-weight="bold" fill="#0284c7">🌊 VỊNH BẮC BỘ (Phía Đông)</text>
+                <path d="M 125 75 Q 185 110 235 155" stroke="#dc2626" stroke-width="3" fill="none"/>
+                <text x="160" y="102" font-size="11" font-weight="bold" fill="#b91c1c">Sông Hồng</text>
+                <path d="M 185 65 Q 215 95 250 125" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                <text x="225" y="85" font-size="11" font-weight="bold" fill="#1d4ed8">Sông Thái Bình</text>
+                <rect x="330" y="140" width="240" height="50" fill="#fef9c3" stroke="#ca8a04" rx="6"/>
+                <text x="450" y="160" font-size="11" font-weight="bold" text-anchor="middle" fill="#854d0e">Địa hình: Bằng phẳng, dưới 25 m</text>
+                <text x="450" y="178" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">Đất chính: Phù sa màu mỡ</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b8_p1",
+                    type: "mc",
+                    q: "Quan sát lược đồ tự nhiên vùng Đồng bằng Bắc Bộ, phía đông của vùng tiếp giáp với khu vực nào?",
+                    opts: ["Vịnh Bắc Bộ", "Nước Lào", "Vùng Tây Nguyên", "Vùng Đồng bằng Nam Bộ"],
+                    ans: 0,
+                    wrongReason: "Phía bắc và tây bắc giáp Trung du và miền núi phía Bắc, phía nam giáp Bắc Trung Bộ, còn phía đông giáp Vịnh Bắc Bộ rộng lớn.",
+                    ref: "Vùng Đồng bằng Bắc Bộ có phía đông giáp Vịnh Bắc Bộ với nhiều đảo và quần đảo như Cát Bà, Cô Tô, Bạch Long Vĩ."
+                },
+                {
+                    id: "b8_p2",
+                    type: "mc",
+                    q: "Quan sát hình ảnh phân loại rác thải và trồng rừng ngập mặn ven biển, các hoạt động này nhằm mục đích gì?",
+                    opts: [
+                        "Bảo vệ thiên nhiên và ứng phó với biến đổi khí hậu ở Đồng bằng Bắc Bộ",
+                        "Mở rộng diện tích khai thác than đá ở vùng núi",
+                        "Chuyển toàn bộ đất trồng lúa sang xây dựng khu công nghiệp",
+                        "Ngăn không cho nước sông chảy ra biển"
+                    ],
+                    ans: 0,
+                    wrongReason: "Phân loại rác đúng nơi quy định và trồng rừng ngập mặn là hai biện pháp thiết thực giúp giảm ô nhiễm môi trường, chống sạt lở và bảo vệ đa dạng sinh học.",
+                    ref: "Trồng rừng ngập mặn ven biển và phân loại rác thải là biện pháp quan trọng để bảo vệ thiên nhiên vùng Đồng bằng Bắc Bộ."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b8_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Vùng Đồng bằng Bắc Bộ tiếp giáp với nước láng giềng nào sau đây?",
+                opts: ["Trung Quốc", "Lào", "Cam-pu-chia", "Thái Lan"],
+                ans: 0,
+                wrongReason: "Đồng bằng Bắc Bộ nằm ở phía bắc nước ta, có đoạn biên giới phía đông bắc tiếp giáp với Trung Quốc.",
+                ref: "Vùng Đồng bằng Bắc Bộ tiếp giáp với Trung du và miền núi phía Bắc, Bắc Trung Bộ và Nam Trung Bộ, Trung Quốc và Vịnh Bắc Bộ."
+            },
+            {
+                id: "b8_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Địa hình vùng Đồng bằng Bắc Bộ có đặc điểm nổi bật nào?",
+                opts: [
+                    "Phần lớn tương đối bằng phẳng, độ cao trung bình dưới 25 m",
+                    "Toàn bộ là núi cao hiểm trở trên 1 000 m",
+                    "Có nhiều cao nguyên xếp tầng rộng lớn",
+                    "Bị chia cắt bởi nhiều dãy núi cao đâm ngang ra biển"
+                ],
+                ans: 0,
+                wrongReason: "Đồng bằng Bắc Bộ có bề mặt tương đối bằng phẳng với độ cao trung bình dưới 25 m, chỉ có một ít đồi núi thấp ở phía đông bắc.",
+                ref: "Địa hình vùng Đồng bằng Bắc Bộ phần lớn tương đối bằng phẳng, độ cao trung bình dưới 25 m."
+            },
+            {
+                id: "b8_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Nhiệt độ trung bình năm của vùng Đồng bằng Bắc Bộ là bao nhiêu?",
+                opts: ["Dưới 15°C", "Trên 23°C", "Khoảng 18°C", "Luôn dưới 20°C"],
+                ans: 1,
+                wrongReason: "Vùng Đồng bằng Bắc Bộ có khí hậu nhiệt đới gió mùa nên nhiệt độ trung bình năm cao, đạt mức trên 23°C.",
+                ref: "Vùng Đồng bằng Bắc Bộ có khí hậu nhiệt đới gió mùa với nhiệt độ trung bình năm trên 23°C."
+            },
+            {
+                id: "b8_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Lượng mưa trung bình năm ở vùng Đồng bằng Bắc Bộ khoảng bao nhiêu?",
+                opts: ["Từ 500 mm đến 800 mm", "Từ 1 500 mm đến 2 000 mm", "Từ 3 000 mm đến 4 000 mm", "Dưới 500 mm"],
+                ans: 1,
+                wrongReason: "Do chịu ảnh hưởng của gió mùa, lượng mưa trung bình năm của vùng đạt từ 1 500 mm đến 2 000 mm, tập trung chủ yếu vào mùa hạ.",
+                ref: "Lượng mưa trung bình năm ở vùng Đồng bằng Bắc Bộ từ 1 500 mm đến 2 000 mm."
+            },
+            {
+                id: "b8_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: Hai hệ thống sông lớn nhất ở vùng Đồng bằng Bắc Bộ là gì?",
+                opts: ["Sông Hồng và sông Thái Bình", "Sông Tiền và sông Hậu", "Sông Đà và sông Lô", "Sông Mã và sông Cả"],
+                ans: 0,
+                wrongReason: "Sông Tiền và sông Hậu ở Đồng bằng Nam Bộ; sông Hồng và sông Thái Bình là hai hệ thống sông chính bồi đắp Đồng bằng Bắc Bộ.",
+                ref: "Vùng Đồng bằng Bắc Bộ có hệ thống sông Hồng và sông Thái Bình với nhiều nhánh toả khắp vùng."
+            },
+            {
+                id: "b8_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Loại đất chiếm diện tích chủ yếu và màu mỡ nhất ở vùng Đồng bằng Bắc Bộ là gì?",
+                opts: ["Đất phù sa", "Đất đỏ ba-dan", "Đất cát pha", "Đất xám bạc màu"],
+                ans: 0,
+                wrongReason: "Hằng năm hệ thống sông Hồng và sông Thái Bình bồi đắp lượng phù sa lớn tạo nên lớp đất phù sa màu mỡ khắp đồng bằng.",
+                ref: "Vùng Đồng bằng Bắc Bộ chủ yếu là đất phù sa màu mỡ; khu vực đồi núi có đất phe-ra-lít và ven biển có đất phèn, đất mặn."
+            },
+            {
+                id: "b8_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Vườn quốc gia nào sau đây nổi tiếng với hệ sinh thái rừng ngập mặn ở tỉnh Ninh Bình?",
+                opts: ["Vườn quốc gia Xuân Thuỷ", "Vườn quốc gia Cúc Phương", "Vườn quốc gia Phong Nha – Kẻ Bàng", "Vườn quốc gia Cát Tiên"],
+                ans: 0,
+                wrongReason: "Vườn quốc gia Xuân Thuỷ nằm ở vùng cửa sông ven biển tỉnh Ninh Bình, nổi tiếng với rừng ngập mặn và các loài chim di cư.",
+                ref: "Rừng ngập mặn ở Vườn quốc gia Xuân Thuỷ (tỉnh Ninh Bình) là nơi bảo tồn nhiều loài động, thực vật tự nhiên."
+            },
+            {
+                id: "b8_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền từ còn thiếu: 'Khí hậu vùng Đồng bằng Bắc Bộ chia thành hai mùa rõ rệt: mùa đông lạnh, ít mưa; mùa hạ nóng, ......................'",
+                ans: ["mưa nhiều"],
+                displayAns: "mưa nhiều",
+                wrongReason: "Vào mùa hạ (từ tháng 5 đến tháng 10), gió mùa mang hơi ẩm từ biển vào gây nắng nóng kèm theo mưa nhiều.",
+                ref: "Khí hậu vùng Đồng bằng Bắc Bộ có mùa đông lạnh, ít mưa; mùa hạ nóng, mưa nhiều."
+            },
+            {
+                id: "b8_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền tên con sông: 'Đoạn sông chảy qua tỉnh Ninh Bình được giới thiệu trong bài học thiên nhiên Đồng bằng Bắc Bộ là sông ......................'",
+                ans: ["Đáy", "đáy"],
+                displayAns: "Đáy",
+                wrongReason: "Sông Đáy là một chi lưu lớn của hệ thống sông Hồng chảy qua địa phận tỉnh Ninh Bình.",
+                ref: "Sông Đáy là một nhánh lớn thuộc hệ thống sông Hồng chảy qua vùng Đồng bằng Bắc Bộ."
+            },
+            {
+                id: "b8_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Địa hình đồi núi thấp ở vùng Đồng bằng Bắc Bộ tập trung chủ yếu ở phía nào?",
+                opts: ["Phía đông bắc", "Phía tây nam", "Ở chính giữa trung tâm đồng bằng", "Dọc theo cửa Ba Lạt"],
+                ans: 0,
+                wrongReason: "Khu vực phía đông bắc của vùng (thuộc tỉnh Quảng Ninh, Bắc Ninh...) có các dãy đồi núi thấp như cánh cung Đông Triều.",
+                ref: "Bên cạnh địa hình bằng phẳng, vùng Đồng bằng Bắc Bộ còn có địa hình đồi núi thấp tập trung chủ yếu ở phía đông bắc."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b8_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Hệ thống sông Hồng và sông Thái Bình mang lại giá trị tự nhiên quan trọng nhất nào cho vùng Đồng bằng Bắc Bộ?",
+                opts: [
+                    "Cung cấp nguồn nước dồi dào và bồi đắp lượng phù sa lớn",
+                    "Cung cấp nguồn khoáng sản dầu mỏ và khí đốt lớn nhất cả nước",
+                    "Tạo ra các thác nước cao để xây dựng thuỷ điện lớn",
+                    "Làm cho khí hậu của vùng quanh năm mát mẻ như vùng núi cao"
+                ],
+                ans: 0,
+                wrongReason: "Sông ngòi ở đồng bằng chảy êm đềm, không có nhiều thác dốc làm thuỷ điện lớn mà giữ vai trò cấp nước và bồi tụ phù sa màu mỡ.",
+                ref: "Hệ thống sông Hồng và sông Thái Bình toả khắp vùng, cung cấp lượng nước và phù sa lớn cho sản xuất và đời sống."
+            },
+            {
+                id: "b8_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Mạng lưới sông ngòi dày đặc và vùng biển rộng với nhiều đảo ở Đồng bằng Bắc Bộ thuận lợi cho việc phát triển ngành kinh tế nào?",
+                opts: [
+                    "Giao thông đường thuỷ, đánh bắt và nuôi trồng hải sản, du lịch biển",
+                    "Khai thác gỗ quý và trồng cây công nghiệp lâu năm trên núi cao",
+                    "Chăn nuôi tuần lộc và khai thác băng tuyết",
+                    "Khai thác quặng bô-xít trên cao nguyên"
+                ],
+                ans: 0,
+                wrongReason: "Sông ngòi dày đặc giúp phát triển giao thông đường sông, còn vùng biển rộng với các đảo Cát Bà, Cô Tô thuận lợi cho nghề cá và du lịch biển.",
+                ref: "Sông ngòi dày đặc giúp phát triển giao thông đường thuỷ; vùng biển rộng với nhiều đảo thuận lợi phát triển kinh tế biển."
+            },
+            {
+                id: "b8_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Để giảm tình trạng đất bạc màu ở vùng Đồng bằng Bắc Bộ, người nông dân nên tăng cường sử dụng phân bón ......................'",
+                ans: ["hữu cơ"],
+                displayAns: "hữu cơ",
+                wrongReason: "Lạm dụng phân bón hoá học làm đất chai cứng và bạc màu; sử dụng phân bón hữu cơ giúp cải tạo đất tơi xốp, bền vững.",
+                ref: "Sử dụng phân bón hữu cơ là một trong những biện pháp quan trọng để bảo vệ đất và thiên nhiên vùng Đồng bằng Bắc Bộ."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b8_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Vào mùa hạ, thiên nhiên vùng Đồng bằng Bắc Bộ thường gây ra khó khăn nào cho đời sống và sản xuất của người dân?",
+                opts: [
+                    "Thường có mưa lớn, bão và ngập lụt gây thiệt hại về người và tài sản",
+                    "Nhiệt độ hạ xuống dưới 0°C gây băng giá kéo dài",
+                    "Hạn hán gay gắt làm toàn bộ sông ngòi cạn trơ đáy",
+                    "Gió Lào khô nóng thổi liên tục suốt cả mùa"
+                ],
+                ans: 0,
+                wrongReason: "Mùa hạ ở Đồng bằng Bắc Bộ là mùa mưa bão; nước sông dâng cao kết hợp mưa lớn dễ gây ngập lụt.",
+                ref: "Vào mùa hạ, vùng Đồng bằng Bắc Bộ thường có mưa lớn, bão, ngập lụt gây thiệt hại về người và tài sản."
+            },
+            {
+                id: "b8_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Thời tiết mùa đông ở vùng Đồng bằng Bắc Bộ gây ảnh hưởng như thế nào đến hoạt động sản xuất nông nghiệp?",
+                opts: [
+                    "Nhiệt độ xuống thấp ảnh hưởng đến sự sinh trưởng của cây trồng, vật nuôi",
+                    "Nước biển dâng cao làm ngập toàn bộ vùng đồi núi phía đông bắc",
+                    "Nắng nóng gay gắt làm cháy khô toàn bộ hoa màu",
+                    "Mưa bão liên miên làm gãy đổ toàn bộ nhà cửa"
+                ],
+                ans: 0,
+                wrongReason: "Mùa đông có những đợt rét đậm, rét hại làm nhiệt độ giảm sâu, dễ gây chết rét gia súc và làm cây trồng chậm phát triển.",
+                ref: "Vào mùa đông, nhiệt độ của vùng xuống thấp ảnh hưởng đến sự sinh trưởng của cây trồng, vật nuôi và sức khoẻ con người."
+            },
+            {
+                id: "b8_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Vì sao ở khu vực ven biển của vùng Đồng bằng Bắc Bộ lại có đất phèn, đất mặn ít màu mỡ hơn vùng trung tâm đồng bằng?",
+                opts: [
+                    "Do chịu ảnh hưởng trực tiếp của nước biển và thuỷ triều lên xuống hằng ngày",
+                    "Do ở ven biển không có con sông nào chảy qua",
+                    "Do vùng ven biển có địa hình núi đá vôi cao trên 1 000 m",
+                    "Do lượng mưa ở ven biển bằng không"
+                ],
+                ans: 0,
+                wrongReason: "Vùng đất ven biển thường xuyên bị nước biển ngập mặn theo thuỷ triều nên hình thành đất mặn, đất phèn.",
+                ref: "Vùng trung tâm là đất phù sa màu mỡ, khu vực đồi núi có đất phe-ra-lít và ven biển có đất phèn, đất mặn ít màu mỡ hơn."
+            },
+            {
+                id: "b8_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Hiện nay, thiên nhiên vùng Đồng bằng Bắc Bộ đang phải đối mặt với những vấn đề môi trường đáng lo ngại nào?",
+                opts: [
+                    "Đất bạc màu, nguồn nước và không khí ô nhiễm, sinh vật tự nhiên suy giảm",
+                    "Diện tích băng tuyết vĩnh cửu ngày càng mở rộng",
+                    "Núi lửa phun trào thường xuyên ở khu vực ven biển",
+                    "Thiếu dân cư sinh sống nên đồng ruộng bị bỏ hoang hết"
+                ],
+                ans: 0,
+                wrongReason: "Do tác động của hoạt động sản xuất, đô thị hoá đông đúc và biến đổi khí hậu nên môi trường đất, nước, không khí và sinh vật đang bị suy giảm.",
+                ref: "Thiên nhiên vùng Đồng bằng Bắc Bộ đang đối mặt với tình trạng đất bạc màu, nguồn nước và không khí ô nhiễm, sinh vật tự nhiên suy giảm."
+            },
+            {
+                id: "b8_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Khu bảo tồn thiên nhiên Vườn quốc gia Cát Bà thuộc tỉnh/thành phố nào của vùng Đồng bằng Bắc Bộ?",
+                opts: ["Thành phố Hải Phòng", "Thành phố Hà Nội", "Tỉnh Hưng Yên", "Tỉnh Bắc Ninh"],
+                ans: 0,
+                wrongReason: "Vườn quốc gia Cát Bà nằm trên quần đảo Cát Bà thuộc thành phố Hải Phòng, là nơi bảo tồn nhiều loài động thực vật quý hiếm (như voọc Cát Bà).",
+                ref: "Vườn quốc gia Cát Bà thuộc thành phố Hải Phòng là khu vực bảo tồn đa dạng sinh học tiêu biểu của vùng."
+            },
+            {
+                id: "b8_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Ý nghĩa của việc thành lập các vườn quốc gia (Cát Bà, Xuân Thuỷ) và khu dự trữ sinh quyển ở vùng Đồng bằng Bắc Bộ là gì?",
+                opts: [
+                    "Bảo vệ các loài động, thực vật tự nhiên và giữ gìn đa dạng sinh học",
+                    "Để khai thác triệt để các loài chim quý hiếm đem bán",
+                    "Để xây dựng các nhà máy luyện kim quy mô lớn",
+                    "Để ngăn không cho người dân đánh bắt cá ngoài khơi"
+                ],
+                ans: 0,
+                wrongReason: "Sinh vật tự nhiên của vùng chịu tác động mạnh mẽ của con người nên việc lập khu bảo tồn giúp bảo vệ các loài quý hiếm.",
+                ref: "Nhiều loài động, thực vật tự nhiên ở Đồng bằng Bắc Bộ được bảo vệ trong các vườn quốc gia và khu dự trữ sinh quyển."
+            },
+            {
+                id: "b8_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Địa hình vùng Đồng bằng Bắc Bộ bằng phẳng rất thuận lợi cho giao thông, ...................... và sản xuất của người dân.'",
+                ans: ["sinh hoạt"],
+                displayAns: "sinh hoạt",
+                wrongReason: "Mặt bằng rộng lớn, bằng phẳng giúp việc xây dựng nhà cửa, khu dân cư (sinh hoạt), đường sá và đồng ruộng thuận lợi.",
+                ref: "Địa hình của vùng bằng phẳng thuận lợi cho giao thông, sinh hoạt và sản xuất của người dân."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b8_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Nhờ có một mùa đông lạnh, người nông dân vùng Đồng bằng Bắc Bộ có lợi thế đặc biệt nào trong sản xuất nông nghiệp so với vùng Đồng bằng Nam Bộ?",
+                opts: [
+                    "Có thể trồng được nhiều loại rau màu ôn đới ưa lạnh như su hào, bắp cải, khoai tây vào vụ đông",
+                    "Có thể trồng được cây cao su và cà phê trên diện tích rộng lớn",
+                    "Có thể thu hoạch 4 vụ lúa trong cùng một năm trên một thửa ruộng",
+                    "Không bao giờ cần phải tưới nước cho cây trồng"
+                ],
+                ans: 0,
+                wrongReason: "Đồng bằng Nam Bộ nóng quanh năm không có mùa đông lạnh; ngược lại, mùa đông lạnh ở Đồng bằng Bắc Bộ tạo điều kiện trồng thêm vụ đông với các cây ưa lạnh.",
+                ref: "Khí hậu có một mùa đông lạnh tạo điều kiện cho Đồng bằng Bắc Bộ phát triển nông nghiệp đa dạng, trồng được cả cây ưa lạnh."
+            },
+            {
+                id: "b8_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Vì sao vùng Đồng bằng Bắc Bộ có dạng hình tam giác (đỉnh ở Việt Trì, đáy hướng ra Vịnh Bắc Bộ) và hiện nay vẫn tiếp tục mở rộng về phía biển?",
+                opts: [
+                    "Do lượng phù sa khổng lồ của hệ thống sông Hồng và sông Thái Bình bồi tụ hằng năm ở vùng cửa sông ven biển",
+                    "Do con người đổ đất đá lấp biển để xây dựng sân bay",
+                    "Do nước biển ở Vịnh Bắc Bộ ngày càng bốc hơi cạn kiệt",
+                    "Do các dãy núi ở phía tây đang dịch chuyển dần ra biển"
+                ],
+                ans: 0,
+                wrongReason: "Hằng năm sông Hồng và sông Thái Bình mang hàng trăm triệu tấn phù sa bồi đắp ở các cửa sông khiến đất liền tiến dần ra biển.",
+                ref: "Đồng bằng Bắc Bộ có dạng hình tam giác do phù sa sông Hồng, sông Thái Bình bồi đắp và hiện vẫn tiếp tục mở rộng về phía biển."
+            },
+            {
+                id: "b8_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Việc trồng rừng ngập mặn ở vùng ven biển Đồng bằng Bắc Bộ (như ở Ninh Bình, Hưng Yên, Hải Phòng) có tác dụng gì trong việc ứng phó với biến đổi khí hậu?",
+                opts: [
+                    "Tạo lá chắn xanh chắn sóng, chống sạt lở bờ biển, bảo vệ đê biển và làm nơi sinh sống cho thuỷ sản",
+                    "Làm giảm lượng mưa vào mùa hạ trên toàn bộ khu vực miền núi",
+                    "Biến nước biển mặn thành nước ngọt dùng trực tiếp cho sinh hoạt",
+                    "Ngăn cản tàu thuyền nước ngoài đi vào cảng Hải Phòng"
+                ],
+                ans: 0,
+                wrongReason: "Rừng ngập mặn có bộ rễ chằng chịt giúp cản sóng gió, giữ phù sa lấn biển, bảo vệ tuyến đê biển và nuôi dưỡng nguồn lợi hải sản.",
+                ref: "Trồng rừng ngập mặn ven biển giúp phòng chống thiên tai, gió bão, bảo vệ đê biển và thích ứng với biến đổi khí hậu."
+            },
+            {
+                id: "b8_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Nếu em là học sinh sống ở vùng Đồng bằng Bắc Bộ, hành động nào sau đây của em góp phần thiết thực nhất vào việc bảo vệ nguồn nước sông ngòi địa phương?",
+                opts: [
+                    "Không vứt rác thải xuống sông, mương và tuyên truyền mọi người cùng giữ vệ sinh nguồn nước",
+                    "Đổ thẳng nước thải sinh hoạt chưa qua xử lí ra kênh rạch cho sạch nhà",
+                    "Dùng thuốc trừ sâu hoá học thật nhiều rồi rửa bình ngay tại bờ sông",
+                    "Đánh bắt cá bằng xung điện trên các nhánh sông"
+                ],
+                ans: 0,
+                wrongReason: "Xả rác, rửa bình thuốc sâu hay đánh bắt bằng xung điện đều huỷ hoại môi trường nước và sinh vật thuỷ sinh.",
+                ref: "Phân loại rác, bỏ rác đúng nơi quy định và tuyên truyền bảo vệ môi trường là hành động thiết thực để bảo vệ thiên nhiên."
+            },
+            {
+                id: "b8_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Khu dự trữ sinh quyển đất ngập nước ven biển liên tỉnh Châu thổ sông Hồng có Vườn quốc gia ...................... là vùng lõi quan trọng.'",
+                ans: ["Xuân Thuỷ", "Xuân Thủy"],
+                displayAns: "Xuân Thuỷ",
+                wrongReason: "Vườn quốc gia Xuân Thuỷ (tỉnh Ninh Bình) nằm trong vùng lõi khu dự trữ sinh quyển Châu thổ sông Hồng, là khu Ramsar đầu tiên của Việt Nam.",
+                ref: "Vườn quốc gia Xuân Thuỷ nằm trong vùng lõi khu dự trữ sinh quyển Châu thổ sông Hồng, bảo tồn nhiều loài chim quý hiếm."
+            }
+        ]
+    },,
+    bai9: {
+        title: "Bài 9: Dân cư và hoạt động sản xuất ở vùng Đồng bằng Bắc Bộ",
+        oneLine: "Đồng bằng Bắc Bộ là vùng có dân cư tập trung đông đúc nhất cả nước (chủ yếu là người Kinh), nổi tiếng với nghề trồng lúa nước lâu đời, nhiều làng nghề thủ công truyền thống và hệ thống đê sông Hồng lớn nhất Việt Nam.",
+        cards: [
+            { tag: "Dân cư", title: "Đông đúc nhất cả nước", desc: "Số dân gần 25 triệu người (năm 2024), tập trung đông đúc nhất nước ta nhờ tự nhiên thuận lợi. Dân cư chủ yếu là người Kinh và một số dân tộc như Mường, Sán Dìu." },
+            { tag: "Trồng lúa nước", title: "Vùng trồng lúa lớn thứ hai", desc: "Nhờ đất phù sa màu mỡ, nguồn nước dồi dào và kinh nghiệm sản xuất, trồng lúa nước là nghề truyền thống. Các công việc chính gồm: làm đất, cấy lúa, chăm sóc lúa và thu hoạch lúa." },
+            { tag: "Làng nghề thủ công", title: "Bát Tràng, Đại Bái, Văn Lâm...", desc: "Nhiều làng nghề nổi tiếng: làm gốm ở Bát Tràng (Hà Nội), đúc đồng ở Đại Bái (Bắc Ninh), thêu ren ở Văn Lâm (Ninh Bình), chạm bạc ở Đồng Xâm (Hưng Yên)." },
+            { tag: "Hệ thống đê điều", title: "Đê sông Hồng dài hơn 1 000 km", desc: "Là hệ thống đê lớn nhất nước ta, đắp dọc hai bên bờ sông, ngày nay phần lớn mặt đê đã được trải nhựa hoặc bê tông kiên cố." },
+            { tag: "Vai trò của đê", title: "Trị thuỷ & Tăng vụ lúa", desc: "Hệ thống đê giúp ngăn lũ lụt, bảo vệ cuộc sống người dân và giúp vùng Đồng bằng Bắc Bộ có thể trồng lúa nhiều vụ trong năm." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Làng nghề truyền thống & Hệ thống đê sông Hồng",
+            imgSrc: "images/bai9_sanxuat.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">LÀNG NGHỀ THỦ CÔNG & HỆ THỐNG ĐÊ ĐỒNG BẰNG BẮC BỘ</text>
+                <rect x="25" y="48" width="130" height="75" fill="#ffffff" stroke="#0369a1" rx="6"/>
+                <text x="90" y="72" font-size="12" font-weight="bold" text-anchor="middle" fill="#0369a1">🏺 Bát Tràng</text>
+                <text x="90" y="92" font-size="10" text-anchor="middle">Hà Nội · Nghề gốm</text>
+                <rect x="165" y="48" width="130" height="75" fill="#ffffff" stroke="#b45309" rx="6"/>
+                <text x="230" y="72" font-size="12" font-weight="bold" text-anchor="middle" fill="#b45309">🔔 Đại Bái</text>
+                <text x="230" y="92" font-size="10" text-anchor="middle">Bắc Ninh · Đúc đồng</text>
+                <rect x="305" y="48" width="130" height="75" fill="#ffffff" stroke="#15803d" rx="6"/>
+                <text x="370" y="72" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">🧵 Văn Lâm</text>
+                <text x="370" y="92" font-size="10" text-anchor="middle">Ninh Bình · Thêu ren</text>
+                <rect x="445" y="48" width="130" height="75" fill="#ffffff" stroke="#6d28d9" rx="6"/>
+                <text x="510" y="72" font-size="12" font-weight="bold" text-anchor="middle" fill="#6d28d9">💍 Đồng Xâm</text>
+                <text x="510" y="92" font-size="10" text-anchor="middle">Hưng Yên · Chạm bạc</text>
+                <rect x="25" y="138" width="550" height="52" fill="#dcfce7" stroke="#166534" rx="6"/>
+                <text x="300" y="160" font-size="12" font-weight="bold" text-anchor="middle" fill="#14532d">🛡️ ĐÊ SÔNG HỒNG: Dài hơn 1 000 km (lớn nhất nước ta)</text>
+                <text x="300" y="178" font-size="11" text-anchor="middle" fill="#166534">Vai trò: Ngăn lũ lụt, bảo vệ dân cư và giúp trồng lúa nhiều vụ trong năm</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b9_p1",
+                    type: "mc",
+                    q: "Quan sát sơ đồ các làng nghề truyền thống, làng Đại Bái (tỉnh Bắc Ninh) nổi tiếng với nghề thủ công nào?",
+                    opts: ["Đúc đồng", "Làm gốm", "Thêu ren", "Chạm bạc"],
+                    ans: 0,
+                    wrongReason: "Bát Tràng (Hà Nội) làm gốm; Văn Lâm (Ninh Bình) thêu ren; Đồng Xâm (Hưng Yên) chạm bạc; còn Đại Bái (Bắc Ninh) nổi tiếng với nghề đúc đồng.",
+                    ref: "Làng Đại Bái (tỉnh Bắc Ninh) chuyên nghề đúc đồng truyền thống."
+                },
+                {
+                    id: "b9_p2",
+                    type: "mc",
+                    q: "Quan sát hình ảnh một đoạn đê sông Hồng ngày nay, mặt đê được nâng cấp như thế nào để kiên cố và thuận tiện đi lại?",
+                    opts: [
+                        "Phần lớn mặt đê đã được trải nhựa hoặc bê tông",
+                        "Mặt đê được lát hoàn toàn bằng gỗ lim",
+                        "Mặt đê được phủ cát trắng để làm bãi tắm",
+                        "Đê được đào thành các kênh dẫn nước mặn vào đồng"
+                    ],
+                    ans: 0,
+                    wrongReason: "Ngày nay, phần lớn mặt đê sông Hồng đã được trải nhựa hoặc bê tông vừa tăng độ kiên cố chống lũ vừa phục vụ giao thông.",
+                    ref: "Ngày nay, phần lớn mặt đê sông Hồng đã được trải nhựa hoặc bê tông và nâng cấp để kiên cố hơn."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b9_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Dân cư ở vùng Đồng bằng Bắc Bộ chủ yếu thuộc dân tộc nào?",
+                opts: ["Dân tộc Kinh", "Dân tộc Thái", "Dân tộc Ê-đê", "Dân tộc Khơ-me"],
+                ans: 0,
+                wrongReason: "Người Kinh chiếm phần lớn dân số vùng Đồng bằng Bắc Bộ, bên cạnh một số dân tộc khác như Mường, Sán Dìu.",
+                ref: "Dân cư ở vùng Đồng bằng Bắc Bộ chủ yếu là người Kinh và một số dân tộc như Mường, Sán Dìu."
+            },
+            {
+                id: "b9_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: So với các vùng khác ở nước ta, mật độ dân số của vùng Đồng bằng Bắc Bộ đứng ở vị trí nào?",
+                opts: [
+                    "Tập trung đông đúc nhất cả nước",
+                    "Thưa thớt nhất cả nước",
+                    "Chỉ đông hơn vùng Tây Nguyên",
+                    "Đứng thứ năm cả nước"
+                ],
+                ans: 0,
+                wrongReason: "Với số dân gần 25 triệu người (năm 2024), Đồng bằng Bắc Bộ là vùng có dân cư tập trung đông đúc nhất Việt Nam.",
+                ref: "Đồng bằng Bắc Bộ là vùng có dân cư tập trung đông đúc nhất nước ta."
+            },
+            {
+                id: "b9_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Đồng bằng Bắc Bộ là vùng trồng lúa lớn thứ mấy của nước ta?",
+                opts: ["Lớn thứ hai cả nước", "Lớn nhất cả nước", "Lớn thứ tư cả nước", "Lớn thứ năm cả nước"],
+                ans: 0,
+                wrongReason: "Đồng bằng Nam Bộ là vùng trồng lúa lớn nhất cả nước, còn Đồng bằng Bắc Bộ là vùng trồng lúa lớn thứ hai nước ta.",
+                ref: "Đồng bằng Bắc Bộ là vùng trồng lúa lớn thứ hai của nước ta."
+            },
+            {
+                id: "b9_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Làng Bát Tràng (thành phố Hà Nội) nổi tiếng với nghề thủ công truyền thống nào?",
+                opts: ["Làm gốm", "Đúc đồng", "Thêu ren", "Chạm bạc"],
+                ans: 0,
+                wrongReason: "Bát Tràng (Hà Nội) là làng nghề làm gốm sứ truyền thống nổi tiếng trong và ngoài nước.",
+                ref: "Làng Bát Tràng (thành phố Hà Nội) chuyên làm gốm."
+            },
+            {
+                id: "b9_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: Làng nghề Văn Lâm (tỉnh Ninh Bình) chuyên làm nghề thủ công truyền thống nào sau đây?",
+                opts: ["Thêu ren", "Làm gốm", "Đúc đồng", "Dệt lụa"],
+                ans: 0,
+                wrongReason: "Làng Văn Lâm (tỉnh Ninh Bình) có nghề thêu ren truyền thống lâu đời.",
+                ref: "Làng Văn Lâm (tỉnh Ninh Bình) chuyên thêu ren."
+            },
+            {
+                id: "b9_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Làng Đồng Xâm (tỉnh Hưng Yên) nổi tiếng với nghề thủ công truyền thống nào?",
+                opts: ["Chạm bạc", "Làm gốm", "Đúc đồng", "Làm nón"],
+                ans: 0,
+                wrongReason: "Làng Đồng Xâm (tỉnh Hưng Yên) chuyên nghề chạm bạc tinh xảo.",
+                ref: "Làng Đồng Xâm (tỉnh Hưng Yên) chuyên chạm bạc."
+            },
+            {
+                id: "b9_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Hệ thống đê sông Hồng có chiều dài khoảng bao nhiêu ki-lô-mét?",
+                opts: ["Hơn 1 000 km", "Khoảng 100 km", "Khoảng 300 km", "Dưới 50 km"],
+                ans: 0,
+                wrongReason: "Đê sông Hồng là hệ thống đê lớn nhất nước ta với chiều dài hơn 1 000 km dọc hai bên bờ sông.",
+                ref: "Đê sông Hồng là hệ thống đê lớn nhất nước ta với chiều dài hơn 1 000 km."
+            },
+            {
+                id: "b9_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền từ còn thiếu: 'Gốm, sứ là các sản phẩm thủ công truyền thống được tạo nên từ ......................, trải qua quá trình phơi sấy, nung và tráng men.'",
+                ans: ["đất sét"],
+                displayAns: "đất sét",
+                wrongReason: "Nguyên liệu chính để tạo hình các sản phẩm gốm, sứ là đất sét dẻo mịn.",
+                ref: "Gốm, sứ là các sản phẩm thủ công truyền thống được tạo nên từ đất sét."
+            },
+            {
+                id: "b9_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền tên dân tộc: 'Ngoài người Kinh là chủ yếu, vùng Đồng bằng Bắc Bộ còn có một số dân tộc như Mường, ......................'",
+                ans: ["Sán Dìu"],
+                displayAns: "Sán Dìu",
+                wrongReason: "Mường và Sán Dìu là hai dân tộc thiểu số sinh sống ở khu vực rìa đồi núi của vùng Đồng bằng Bắc Bộ.",
+                ref: "Dân cư ở vùng Đồng bằng Bắc Bộ chủ yếu là người Kinh và một số dân tộc như Mường, Sán Dìu."
+            },
+            {
+                id: "b9_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Bốn công việc cơ bản trong trồng lúa nước ở vùng Đồng bằng Bắc Bộ được minh hoạ theo trình tự nào?",
+                opts: [
+                    "Làm đất → Cấy lúa → Chăm sóc lúa → Thu hoạch lúa",
+                    "Thu hoạch lúa → Làm đất → Cấy lúa → Chăm sóc lúa",
+                    "Cấy lúa → Làm đất → Thu hoạch lúa → Chăm sóc lúa",
+                    "Chăm sóc lúa → Thu hoạch lúa → Làm đất → Cấy lúa"
+                ],
+                ans: 0,
+                wrongReason: "Người nông dân phải làm đất trước rồi mới cấy mạ, chăm sóc cây lúa lớn lên và cuối cùng là thu hoạch.",
+                ref: "Một số công việc chính trong trồng lúa nước gồm: làm đất, cấy lúa, chăm sóc lúa và thu hoạch lúa."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b9_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Vì sao vùng Đồng bằng Bắc Bộ lại có dân cư tập trung đông đúc nhất cả nước?",
+                opts: [
+                    "Vì có điều kiện tự nhiên thuận lợi cho sinh sống, giao thông và sản xuất",
+                    "Vì vùng có diện tích đất liền lớn nhất cả nước",
+                    "Vì ở đây không bao giờ xảy ra thiên tai bão lũ",
+                    "Vì toàn bộ dân cư chỉ làm nghề đánh bắt cá biển"
+                ],
+                ans: 0,
+                wrongReason: "Địa hình bằng phẳng, đất phù sa màu mỡ, nguồn nước dồi dào giúp cư trú, đi lại và trồng trọt thuận lợi nên dân cư tập trung rất đông.",
+                ref: "Do điều kiện tự nhiên thuận lợi cho sinh sống, giao thông và sản xuất nên Đồng bằng Bắc Bộ có dân cư tập trung đông đúc nhất nước ta."
+            },
+            {
+                id: "b9_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Những điều kiện thuận lợi nào giúp vùng Đồng bằng Bắc Bộ phát triển mạnh nghề trồng lúa nước truyền thống?",
+                opts: [
+                    "Đất đai màu mỡ, nguồn nước dồi dào, người dân giàu kinh nghiệm sản xuất",
+                    "Địa hình đồi núi cao dốc, khí hậu khô hạn quanh năm",
+                    "Nhiều khoáng sản than đá, sắt và dầu mỏ",
+                    "Rừng ngập mặn bao phủ toàn bộ diện tích đồng bằng"
+                ],
+                ans: 0,
+                wrongReason: "Cây lúa nước cần đất phù sa màu mỡ, nhiều nước tưới và kĩ thuật canh tác lâu đời của người nông dân.",
+                ref: "Trồng lúa nước phát triển mạnh ở vùng do có đất đai màu mỡ, nguồn nước dồi dào và người dân giàu kinh nghiệm sản xuất."
+            },
+            {
+                id: "b9_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Để ngăn ...................... và có thể trồng lúa nhiều vụ trong năm, người dân vùng Đồng bằng Bắc Bộ đã đắp đê dọc hai bên bờ sông.'",
+                ans: ["lũ lụt"],
+                displayAns: "lũ lụt",
+                wrongReason: "Vào mùa mưa bão nước sông dâng cao dễ tràn vào đồng ruộng; đê điều được đắp lên để ngăn lũ lụt.",
+                ref: "Hệ thống đê giúp vùng Đồng bằng Bắc Bộ ngăn lũ lụt và có thể trồng lúa nhiều vụ trong năm."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b9_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Quan sát bản đồ mật độ dân số vùng Đồng bằng Bắc Bộ năm 2024, địa phương nào có mật độ dân số cao nhất (trên 1 500 người/km²)?",
+                opts: ["Hà Nội", "Quảng Ninh", "Ninh Bình", "Hưng Yên"],
+                ans: 0,
+                wrongReason: "Thủ đô Hà Nội là trung tâm kinh tế – chính trị lớn nên tập trung dân cư đông đúc nhất vùng (trên 1 500 người/km²).",
+                ref: "Hà Nội có mật độ dân số cao nhất vùng Đồng bằng Bắc Bộ (trên 1 500 người/km²)."
+            },
+            {
+                id: "b9_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Địa phương nào ở vùng Đồng bằng Bắc Bộ có mật độ dân số thấp nhất vùng (dưới 500 người/km²)?",
+                opts: ["Quảng Ninh", "Hà Nội", "Hải Phòng", "Bắc Ninh"],
+                ans: 0,
+                wrongReason: "Quảng Ninh có diện tích đồi núi và hải đảo lớn nên mật độ dân số dưới 500 người/km², thấp hơn các tỉnh trung tâm đồng bằng.",
+                ref: "Quảng Ninh có mật độ dân số dưới 500 người/km², thấp nhất trong vùng Đồng bằng Bắc Bộ."
+            },
+            {
+                id: "b9_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Ngoài trồng lúa nước, hoạt động sản xuất nông nghiệp ở vùng Đồng bằng Bắc Bộ còn phát triển những ngành nào?",
+                opts: [
+                    "Trồng rau màu, cây ăn quả, chăn nuôi gia súc, gia cầm và nuôi trồng thuỷ sản",
+                    "Trồng cây cao su, hồ tiêu và điều trên quy mô lớn",
+                    "Chăn nuôi tuần lộc và khai thác gỗ rừng tự nhiên",
+                    "Chỉ trồng duy nhất cây lúa, không trồng thêm cây nào khác"
+                ],
+                ans: 0,
+                wrongReason: "Nông nghiệp Đồng bằng Bắc Bộ rất đa dạng với rau màu vụ đông, cây ăn quả (vải, nhãn...), chăn nuôi lợn, gia cầm và thuỷ sản.",
+                ref: "Ngoài trồng lúa nước, vùng còn trồng nhiều loại rau màu, cây ăn quả và chăn nuôi gia súc, gia cầm, nuôi trồng thuỷ sản."
+            },
+            {
+                id: "b9_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Các sản phẩm thủ công truyền thống của vùng Đồng bằng Bắc Bộ được tiêu thụ như thế nào?",
+                opts: [
+                    "Được sử dụng rộng rãi trong đời sống hằng ngày và xuất khẩu ra nhiều nước trên thế giới",
+                    "Chỉ dùng để trưng bày trong bảo tàng, không bán ra thị trường",
+                    "Chỉ bán cho khách du lịch trong một vài ngày lễ hội",
+                    "Chỉ dùng để trao đổi lấy thóc gạo trong phạm vi từng làng"
+                ],
+                ans: 0,
+                wrongReason: "Đồ gốm Bát Tràng, đồ đồng Đại Bái, hàng thêu Văn Lâm... vừa phục vụ đời sống trong nước vừa xuất khẩu đi nhiều quốc gia.",
+                ref: "Các sản phẩm thủ công truyền thống được sử dụng rộng rãi trong đời sống hằng ngày và xuất khẩu ra nhiều nước trên thế giới."
+            },
+            {
+                id: "b9_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Nghề đúc đồng truyền thống ở làng Đại Bái (tỉnh Bắc Ninh) có đặc điểm gì nổi bật?",
+                opts: [
+                    "Đòi hỏi người thợ phải có tay nghề cao, khéo léo từ khâu tạo mẫu đến hoàn thiện sản phẩm",
+                    "Chỉ cần dùng máy móc tự động hoàn toàn, không cần bàn tay người thợ",
+                    "Nguyên liệu chính làm từ đất sét trắng đem nung ở nhiệt độ cao",
+                    "Chỉ sản xuất được các vật dụng nhỏ bằng tre nứa"
+                ],
+                ans: 0,
+                wrongReason: "Đúc đồng là nghề thủ công tinh xảo, người thợ phải rất khéo léo trong việc tạo khuôn mẫu, nấu đồng và chạm khắc hoa văn.",
+                ref: "Đúc đồng là nghề đòi hỏi người thợ phải có tay nghề cao, khéo léo từ khâu tạo mẫu đến hoàn thiện sản phẩm."
+            },
+            {
+                id: "b9_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Những câu thơ 'Hạt gạo làng ta / Có vị phù sa / Của sông Kinh Thầy' nhắc đến dòng sông nào của vùng Đồng bằng Bắc Bộ?",
+                opts: ["Sông Kinh Thầy", "Sông Sài Gòn", "Sông Hương", "Sông Thu Bồn"],
+                ans: 0,
+                wrongReason: "Sông Kinh Thầy là một nhánh thuộc hệ thống sông Thái Bình chảy qua vùng Đồng bằng Bắc Bộ.",
+                ref: "Sông Kinh Thầy thuộc hệ thống sông Thái Bình bồi đắp phù sa cho những cánh đồng lúa ở Đồng bằng Bắc Bộ."
+            },
+            {
+                id: "b9_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Những nơi nghề thủ công phát triển mạnh, chuyên làm một loại hàng thủ công đã tạo thành các ......................'",
+                ans: ["làng nghề"],
+                displayAns: "làng nghề",
+                wrongReason: "Khi phần lớn người dân trong làng cùng làm một nghề thủ công truyền thống sẽ hình thành nên các làng nghề (như Bát Tràng, Đại Bái...).",
+                ref: "Những nơi nghề thủ công phát triển mạnh đã tạo thành các làng nghề, chuyên làm một loại hàng thủ công."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b9_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Vì sao làng Bát Tràng (Hà Nội) lại hình thành và phát triển nổi tiếng với nghề làm gốm sứ từ hàng trăm năm nay?",
+                opts: [
+                    "Vì có nguồn đất sét trắng tốt làm nguyên liệu và nằm ven sông Hồng thuận tiện chuyên chở sản phẩm đi tiêu thụ",
+                    "Vì ở Bát Tràng có nhiều mỏ đồng và bạc lớn nhất miền Bắc",
+                    "Vì vùng này có khí hậu lạnh giá quanh năm nên đất sét dễ đông cứng",
+                    "Vì người dân ở đây không biết cách trồng lúa nước"
+                ],
+                ans: 0,
+                wrongReason: "Nguồn nguyên liệu đất sét trắng tại chỗ dồi dào kết hợp vị trí ven sông Hồng thuận lợi giao thương đường thuỷ giúp gốm Bát Tràng phát triển.",
+                ref: "Làng Bát Tràng có nguồn nguyên liệu đất sét phù hợp và vị trí thuận lợi giao lưu hàng hoá nên nghề gốm phát triển mạnh."
+            },
+            {
+                id: "b9_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Nếu vùng Đồng bằng Bắc Bộ không có hệ thống đê điều dài hơn 1 000 km dọc hai bên bờ sông, sản xuất nông nghiệp của vùng sẽ gặp khó khăn lớn nhất nào?",
+                opts: [
+                    "Nước lũ mùa hạ tràn vào gây ngập úng đồng ruộng, không thể trồng lúa nhiều vụ trong năm",
+                    "Đất đai sẽ biến thành hoang mạc cát khô cằn",
+                    "Không có nước để tưới cho cây trồng vào mùa hạ",
+                    "Cây lúa sẽ bị nhiễm mặn do nước biển dâng quanh năm"
+                ],
+                ans: 0,
+                wrongReason: "Hệ thống đê giữ nước lũ chảy trong lòng sông, bảo vệ ruộng đồng và làng mạc bên trong đê khỏi ngập lụt vào mùa mưa.",
+                ref: "Nhờ hệ thống đê ngăn lũ lụt nên người dân Đồng bằng Bắc Bộ mới bảo vệ được mùa màng và trồng lúa nhiều vụ trong năm."
+            },
+            {
+                id: "b9_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Việc sử dụng máy cấy, máy gặt đập liên hợp và thiết bị bay phun thuốc trong trồng lúa nước ở Đồng bằng Bắc Bộ hiện nay mang lại lợi ích gì?",
+                opts: [
+                    "Giảm sức lao động vất vả cho người nông dân, tiết kiệm thời gian và nâng cao năng suất lúa",
+                    "Làm cho diện tích đất phù sa ngày càng thu hẹp lại",
+                    "Thay thế hoàn toàn vai trò của nguồn nước và đất đai",
+                    "Khiến người dân bỏ hết nghề trồng lúa để chuyển sang làm công nghiệp"
+                ],
+                ans: 0,
+                wrongReason: "Ứng dụng cơ giới hoá hiện đại giúp giải phóng sức lao động, kịp thời vụ và tăng hiệu quả sản xuất lúa gạo.",
+                ref: "Người dân vùng Đồng bằng Bắc Bộ ngày nay áp dụng nhiều máy móc hiện đại vào làm đất, cấy lúa, chăm sóc và thu hoạch lúa."
+            },
+            {
+                id: "b9_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Để phát triển các làng nghề thủ công truyền thống bền vững mà không gây ô nhiễm môi trường làng quê, các cơ sở sản xuất nên làm gì?",
+                opts: [
+                    "Xử lí nước thải, khói bụi trước khi thải ra môi trường và cải tiến mẫu mã sản phẩm",
+                    "Đổ trực tiếp hoá chất tráng men và nước thải ra sông Hồng",
+                    "Đốt than củi gây khói bụi mù mịt ngay giữa khu dân cư đông đúc",
+                    "Đóng cửa tất cả các làng nghề để chuyển sang nhập khẩu hàng nước ngoài"
+                ],
+                ans: 0,
+                wrongReason: "Phát triển làng nghề phải đi đôi với xử lí chất thải, bảo vệ môi trường nước và không khí cho cộng đồng dân cư.",
+                ref: "Giữ gìn nghề thủ công truyền thống cần gắn với bảo vệ môi trường sống xanh, sạch ở các làng quê."
+            },
+            {
+                id: "b9_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Ngày nay, phần lớn mặt đê sông Hồng được trải nhựa hoặc bê tông vừa để chống lũ kiên cố, vừa kết hợp làm đường ...................... thuận lợi.'",
+                ans: ["giao thông"],
+                displayAns: "giao thông",
+                wrongReason: "Mặt đê cao ráo, bằng phẳng được trải nhựa và bê tông trở thành các tuyến đường giao thông huyết mạch nối liền các địa phương ven sông.",
+                ref: "Mặt đê sông Hồng được trải nhựa hoặc bê tông kiên cố phục vụ chống lũ và giao thông đi lại."
+            }
+        ]
+    },
+    bai10: {
+        title: "Bài 10: Một số nét văn hoá ở vùng Đồng bằng Bắc Bộ",
+        oneLine: "Làng quê truyền thống vùng Đồng bằng Bắc Bộ nổi bật với luỹ tre xanh, cổng làng, cây đa, giếng nước, sân đình, những ngôi nhà ba gian, năm gian ấm cúng cùng nhiều lễ hội mùa xuân đặc sắc như hội Lim, hội Gióng, lễ hội Cổ Loa.",
+        cards: [
+            { tag: "Làng quê truyền thống", title: "Cây đa, giếng nước, sân đình", desc: "Làng quê Bắc Bộ thường có luỹ tre xanh bao quanh, cổng làng là cửa ngõ ra vào, cây đa toả bóng mát, giếng làng cung cấp nước sinh hoạt và đình làng thờ Thành hoàng – nơi diễn ra sinh hoạt văn hoá chung." },
+            { tag: "Nhà ở truyền thống", title: "Nhà ba gian hoặc năm gian", desc: "Thường đắp bằng đất hoặc xây gạch, mái lợp lá hoặc ngói. Gian chính giữa là nơi thờ cúng và tiếp khách; các gian hai bên dùng làm phòng ngủ hoặc chứa thóc gạo, đồ dùng." },
+            { tag: "Nhà ở hiện nay", title: "Khang trang & Tiện nghi", desc: "Ngày nay, nhà ở của người dân vùng Đồng bằng Bắc Bộ có sự thay đổi rõ rệt, được xây dựng kiên cố, nhiều tầng, hiện đại và tiện nghi hơn." },
+            { tag: "Lễ hội tiêu biểu", title: "Hội Lim, hội Gióng, chùa Hương...", desc: "Nổi tiếng với lễ hội Cổ Loa, hội Lim (hát Quan họ), hội chùa Hương, hội Gióng, lễ hội Phủ Giày,... thường tổ chức vào mùa xuân để cầu sức khoẻ, mùa màng bội thu." },
+            { tag: "Hoạt động lễ hội", title: "Tế lễ & Trò chơi dân gian", desc: "Người dân mặc trang phục truyền thống, tổ chức nghi thức tế lễ trang nghiêm cùng nhiều trò chơi dân gian sôi nổi như đánh đu, đấu vật, kéo co, cờ người..." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Không gian văn hoá làng quê & Lễ hội vùng Đồng bằng Bắc Bộ",
+            imgSrc: "images/bai10_vanhoa.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">KHÔNG GIAN VĂN HOÁ LÀNG QUÊ ĐỒNG BẰNG BẮC BỘ</text>
+                <rect x="25" y="48" width="175" height="80" fill="#ffffff" stroke="#15803d" rx="6"/>
+                <text x="112" y="70" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">🌳 Cổng làng & Cây đa</text>
+                <text x="112" y="90" font-size="10" text-anchor="middle">Cửa ngõ ra vào làng,</text>
+                <text x="112" y="105" font-size="10" text-anchor="middle">nơi nghỉ chân, hóng mát</text>
+                <rect x="212" y="48" width="175" height="80" fill="#ffffff" stroke="#0369a1" rx="6"/>
+                <text x="300" y="70" font-size="12" font-weight="bold" text-anchor="middle" fill="#0369a1">💧 Giếng làng</text>
+                <text x="300" y="90" font-size="10" text-anchor="middle">Cung cấp nguồn nước</text>
+                <text x="300" y="105" font-size="10" text-anchor="middle">sinh hoạt chính cho dân</text>
+                <rect x="400" y="48" width="175" height="80" fill="#ffffff" stroke="#b91c1c" rx="6"/>
+                <text x="487" y="70" font-size="12" font-weight="bold" text-anchor="middle" fill="#b91c1c">🏛️ Đình làng</text>
+                <text x="487" y="90" font-size="10" text-anchor="middle">Thờ Thành hoàng &</text>
+                <text x="487" y="105" font-size="10" text-anchor="middle">sinh hoạt văn hoá chung</text>
+                <rect x="25" y="140" width="550" height="50" fill="#dcfce7" stroke="#166534" rx="6"/>
+                <text x="300" y="161" font-size="12" font-weight="bold" text-anchor="middle" fill="#14532d">🎊 LỄ HỘI MÙA XUÂN: Hội Lim (hát Quan họ), Lễ hội Cổ Loa (cờ người), Hội Gióng...</text>
+                <text x="300" y="179" font-size="11" text-anchor="middle" fill="#166534">Ý nghĩa: Cầu mạnh khoẻ, mưa thuận gió hoà, mùa màng bội thu</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b10_p1",
+                    type: "mc",
+                    q: "Quan sát sơ đồ không gian văn hoá làng quê truyền thống Bắc Bộ, công trình nào thường xây ở vị trí trung tâm làng, là nơi thờ Thành hoàng và tổ chức sinh hoạt văn hoá chung?",
+                    opts: ["Đình làng", "Cổng làng", "Giếng làng", "Luỹ tre đầu làng"],
+                    ans: 0,
+                    wrongReason: "Cổng làng là cửa ngõ ra vào; giếng làng cấp nước sinh hoạt; còn đình làng nằm ở trung tâm, thờ Thành hoàng và có sân rộng để tổ chức lễ hội, họp làng.",
+                    ref: "Đình là nơi thờ Thành hoàng, thường được xây dựng ở vị trí trung tâm, sân đình là nơi diễn ra các sinh hoạt văn hoá chung của làng."
+                },
+                {
+                    id: "b10_p2",
+                    type: "mc",
+                    q: "Quan sát hình ảnh các liền anh, liền chị mặc trang phục truyền thống hát giao duyên trên thuyền rồng, đây là hoạt động đặc sắc của lễ hội nào?",
+                    opts: [
+                        "Hội Lim (tỉnh Bắc Ninh)",
+                        "Lễ hội Cổ Loa (thành phố Hà Nội)",
+                        "Lễ hội Cồng chiêng (Tây Nguyên)",
+                        "Lễ hội Ok Om Bok (Đồng bằng Nam Bộ)"
+                    ],
+                    ans: 0,
+                    wrongReason: "Hát Quan họ trên thuyền rồng là nét văn hoá tiêu biểu của hội Lim ở huyện Tiên Du, tỉnh Bắc Ninh.",
+                    ref: "Hát Quan họ là nét sinh hoạt văn hoá dân gian đặc sắc trong hội Lim (tỉnh Bắc Ninh)."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b10_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Hình ảnh nào sau đây là nét đặc trưng quen thuộc của làng quê truyền thống vùng Đồng bằng Bắc Bộ?",
+                opts: [
+                    "Luỹ tre xanh, cổng làng, cây đa, giếng nước, sân đình",
+                    "Nhà rông mái cao vút giữa buôn làng",
+                    "Những khu chợ nổi tấp nập thuyền ghe trên sông",
+                    "Ruộng bậc thang uốn lượn quanh sườn núi cao"
+                ],
+                ans: 0,
+                wrongReason: "Nhà rông thuộc Tây Nguyên, chợ nổi thuộc Đồng bằng Nam Bộ, ruộng bậc thang thuộc miền núi phía Bắc; còn cây đa, giếng nước, sân đình là biểu tượng của làng quê Bắc Bộ.",
+                ref: "Ở các làng quê truyền thống Bắc Bộ thường có luỹ tre xanh, cổng làng, cây đa, giếng nước, sân đình."
+            },
+            {
+                id: "b10_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Đình làng ở vùng Đồng bằng Bắc Bộ là nơi thờ ai?",
+                opts: ["Thờ Thành hoàng", "Thờ thần Biển", "Thờ ông Công, ông Táo", "Thờ các vị vua nước ngoài"],
+                ans: 0,
+                wrongReason: "Mỗi làng quê Bắc Bộ thường thờ một hoặc nhiều vị Thành hoàng (người có công lập làng, dạy nghề hoặc vị thần bảo hộ làng) tại đình làng.",
+                ref: "Đình là nơi thờ Thành hoàng, thường được xây dựng ở vị trí trung tâm làng."
+            },
+            {
+                id: "b10_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Trước đây, giếng làng có vai trò chính nào đối với người dân trong làng?",
+                opts: [
+                    "Cung cấp nguồn nước sinh hoạt chính cho dân làng",
+                    "Làm nơi nuôi trồng các loài hải sản nước mặn",
+                    "Làm nơi tổ chức thi bơi thuyền rồng",
+                    "Làm ranh giới chia cắt các tỉnh thành"
+                ],
+                ans: 0,
+                wrongReason: "Khi chưa có nước máy như ngày nay, giếng làng là nguồn cung cấp nước sạch để ăn uống, tắm giặt cho cả cộng đồng dân cư.",
+                ref: "Giếng làng trước đây là nơi cung cấp nguồn nước sinh hoạt chính cho dân làng."
+            },
+            {
+                id: "b10_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Ngôi nhà ở truyền thống của người dân vùng Đồng bằng Bắc Bộ thường có mấy gian?",
+                opts: ["Ba gian hoặc năm gian", "Một gian duy nhất", "Mười gian dài", "Nhà sàn hai tầng"],
+                ans: 0,
+                wrongReason: "Tuỳ theo điều kiện kinh tế và số người trong gia đình, nhà truyền thống Bắc Bộ thường được làm theo kiểu ba gian hoặc năm gian.",
+                ref: "Nhà ở truyền thống vùng Đồng bằng Bắc Bộ thường có ba gian hoặc năm gian."
+            },
+            {
+                id: "b10_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: Trong ngôi nhà truyền thống vùng Đồng bằng Bắc Bộ, gian chính giữa được dùng để làm gì?",
+                opts: [
+                    "Thờ cúng tổ tiên và tiếp khách",
+                    "Làm phòng ngủ và chứa thóc gạo",
+                    "Làm nhà bếp và chứa củi khô",
+                    "Làm nơi nhốt trâu bò, gia súc"
+                ],
+                ans: 0,
+                wrongReason: "Gian chính giữa nằm ở vị trí trung tâm trang trọng nhất của ngôi nhà nên dùng để đặt bàn thờ tổ tiên và bộ bàn ghế tiếp khách.",
+                ref: "Gian chính giữa là nơi thờ cúng và tiếp khách; các gian hai bên dùng làm phòng ngủ hoặc chứa thóc, gạo và đồ dùng sinh hoạt."
+            },
+            {
+                id: "b10_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Các lễ hội lớn ở vùng Đồng bằng Bắc Bộ thường được tổ chức vào mùa nào trong năm?",
+                opts: ["Mùa xuân", "Mùa hạ", "Mùa thu", "Mùa đông"],
+                ans: 0,
+                wrongReason: "Sau dịp Tết Nguyên đán, tiết trời mùa xuân ấm áp, trăm hoa đua nở là thời điểm diễn ra hầu hết các lễ hội truyền thống ở Bắc Bộ.",
+                ref: "Các lễ hội ở vùng Đồng bằng Bắc Bộ thường được tổ chức vào mùa xuân."
+            },
+            {
+                id: "b10_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Lễ hội nào sau đây KHÔNG thuộc vùng Đồng bằng Bắc Bộ?",
+                opts: ["Lễ hội Cồng chiêng Tây Nguyên", "Hội Lim", "Hội Gióng", "Hội chùa Hương"],
+                ans: 0,
+                wrongReason: "Hội Lim, hội Gióng, hội chùa Hương, lễ hội Cổ Loa là các lễ hội lớn ở Đồng bằng Bắc Bộ; còn lễ hội Cồng chiêng thuộc vùng Tây Nguyên.",
+                ref: "Đồng bằng Bắc Bộ nổi tiếng với nhiều lễ hội lớn như: lễ hội Cổ Loa, hội Lim, hội chùa Hương, hội Gióng, lễ hội Phủ Giày."
+            },
+            {
+                id: "b10_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền từ còn thiếu: 'Cổng làng là cửa ngõ ra vào làng, là nơi người dân dừng nghỉ chân, hóng mát, cũng là nơi trẻ em tụ tập, cùng ......................'",
+                ans: ["vui đùa"],
+                displayAns: "vui đùa",
+                wrongReason: "Dưới bóng cây đa râm mát cạnh cổng làng là không gian sinh hoạt tuổi thơ quen thuộc để trẻ em tụ tập vui đùa.",
+                ref: "Cổng làng là cửa ngõ ra vào làng, nơi người dân dừng nghỉ chân, hóng mát và trẻ em tụ tập vui đùa."
+            },
+            {
+                id: "b10_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền tên trò chơi dân gian: 'Trong lễ hội Cổ Loa (thành phố Hà Nội), trò chơi sử dụng người thật đóng vai các quân cờ tướng trên sân đình được gọi là trò chơi ......................'",
+                ans: ["cờ người"],
+                displayAns: "cờ người",
+                wrongReason: "Cờ người là trò chơi dân gian đặc sắc gồm 32 nam thanh nữ tú mặc trang phục truyền thống đóng vai quân cờ trên sân.",
+                ref: "Trò chơi cờ người là hoạt động vui chơi tiêu biểu trong lễ hội Cổ Loa (thành phố Hà Nội)."
+            },
+            {
+                id: "b10_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Đình làng Đình Bảng – một trong những ngôi đình cổ kính tiêu biểu của vùng Đồng bằng Bắc Bộ – thuộc tỉnh nào?",
+                opts: ["Tỉnh Bắc Ninh", "Tỉnh Hưng Yên", "Tỉnh Ninh Bình", "Tỉnh Quảng Ninh"],
+                ans: 0,
+                wrongReason: "Đình làng Đình Bảng (thành phố Từ Sơn, tỉnh Bắc Ninh) nổi tiếng với kiến trúc gỗ chạm khắc tinh xảo và mái ngói cong vút.",
+                ref: "Đình làng Đình Bảng thuộc tỉnh Bắc Ninh."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b10_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Vật liệu xây dựng phổ biến của những ngôi nhà ở truyền thống vùng Đồng bằng Bắc Bộ trước đây là gì?",
+                opts: [
+                    "Đắp bằng đất hoặc xây bằng gạch, mái lợp lá hoặc ngói",
+                    "Làm hoàn toàn bằng kính cường lực và khung thép",
+                    "Xây bằng đá tảng nguyên khối giống các lâu đài châu Âu",
+                    "Làm bằng băng tuyết nén chặt"
+                ],
+                ans: 0,
+                wrongReason: "Người dân tận dụng vật liệu sẵn có ở đồng bằng như đất, gạch nung, tre nứa, lá cọ hoặc ngói đất nung để dựng nhà.",
+                ref: "Trước đây, người dân vùng Đồng bằng Bắc Bộ thường ở trong những ngôi nhà được đắp bằng đất hoặc xây bằng gạch, mái lợp lá hoặc ngói."
+            },
+            {
+                id: "b10_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Người dân vùng Đồng bằng Bắc Bộ tổ chức các lễ hội vào mùa xuân nhằm mục đích gì?",
+                opts: [
+                    "Cầu cho mọi người được mạnh khoẻ, mưa thuận gió hoà, mùa màng bội thu",
+                    "Để thi xem gia đình nào giàu có nhất vùng",
+                    "Để chuẩn bị thu hoạch vụ lúa mùa đông",
+                    "Để chọn ra người đi khai hoang vùng đất mới"
+                ],
+                ans: 0,
+                wrongReason: "Xuất phát từ đời sống gắn bó với nghề trồng lúa nước, lễ hội mùa xuân gửi gắm ước vọng về sức khoẻ, bình an và một năm mưa thuận gió hoà.",
+                ref: "Các lễ hội thường được tổ chức vào mùa xuân để cầu cho mọi người được mạnh khoẻ, mùa màng bội thu."
+            },
+            {
+                id: "b10_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Ngày nay, nhà ở của người dân vùng Đồng bằng Bắc Bộ có sự thay đổi theo hướng hiện đại và ...................... hơn.'",
+                ans: ["tiện nghi"],
+                displayAns: "tiện nghi",
+                wrongReason: "Kinh tế phát triển giúp đời sống người dân nâng cao, nhà cửa được xây nhiều tầng, khang trang và đầy đủ tiện nghi sinh hoạt.",
+                ref: "Ngày nay, nhà ở của người dân vùng Đồng bằng Bắc Bộ thay đổi theo hướng hiện đại và tiện nghi hơn."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b10_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Trong ngôi nhà ở truyền thống vùng Đồng bằng Bắc Bộ, các gian hai bên (buồng) được sử dụng vào mục đích gì?",
+                opts: [
+                    "Dùng làm phòng ngủ hoặc chứa thóc, gạo và đồ dùng sinh hoạt",
+                    "Dùng làm nơi thờ cúng tổ tiên và đón tiếp khách quý",
+                    "Dùng làm nơi tổ chức lễ hội chung của cả làng",
+                    "Dùng làm lớp học chung cho trẻ em toàn xã"
+                ],
+                ans: 0,
+                wrongReason: "Gian chính giữa để thờ cúng và tiếp khách, còn các gian hai bên kín đáo hơn nên dùng để nghỉ ngơi và cất giữ lương thực, đồ đạc.",
+                ref: "Các gian hai bên dùng làm phòng ngủ hoặc chứa thóc, gạo và đồ dùng sinh hoạt."
+            },
+            {
+                id: "b10_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Cây đa trong làng quê truyền thống vùng Đồng bằng Bắc Bộ thường được trồng ở những vị trí nào?",
+                opts: [
+                    "Ở đầu làng, cuối làng hoặc ở vị trí trung tâm, bên cạnh các di tích lịch sử – văn hoá",
+                    "Trồng dày đặc ở chính giữa các thửa ruộng trồng lúa",
+                    "Chỉ trồng trên mái ngói của các ngôi nhà ba gian",
+                    "Trồng ở ngoài bãi bồi ngập nước mặn ven biển"
+                ],
+                ans: 0,
+                wrongReason: "Cây đa cổ thụ tán rộng toả bóng mát thường gắn liền với cổng làng, bến nước, sân đình hoặc các ngôi đền, chùa.",
+                ref: "Cây đa tạo bóng mát thường được trồng ở đầu làng, cuối làng hoặc ở vị trí trung tâm, bên cạnh các di tích lịch sử – văn hoá."
+            },
+            {
+                id: "b10_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Trong các lễ hội truyền thống vùng Đồng bằng Bắc Bộ, phần hội thường có những trò chơi dân gian tiêu biểu nào?",
+                opts: [
+                    "Đánh đu, đấu vật, kéo co, cờ người",
+                    "Đua xe đạp địa hình và trượt tuyết",
+                    "Đua voi và bắn nỏ trên cao nguyên",
+                    "Đua ghe ngo trên sông rạch"
+                ],
+                ans: 0,
+                wrongReason: "Đánh đu, đấu vật, kéo co, cờ người là những trò chơi dân gian truyền thống sôi nổi, thu hút đông đảo người dân và du khách tham gia.",
+                ref: "Trong các lễ hội có nhiều hoạt động vui chơi, giải trí như: đánh đu, đấu vật, kéo co, cờ người."
+            },
+            {
+                id: "b10_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Khi tham gia các lễ hội truyền thống ở Đồng bằng Bắc Bộ, trang phục của người dân thường có nét gì đặc sắc?",
+                opts: [
+                    "Mặc trang phục truyền thống (áo dài, khăn xếp, áo tứ thân, nón quai thao...)",
+                    "Mặc đồng phục thể thao hiện đại giống nhau",
+                    "Mặc áo khoác dày chống tuyết",
+                    "Mặc trang phục thổ cẩm dệt từ vỏ cây rừng"
+                ],
+                ans: 0,
+                wrongReason: "Trang phục truyền thống mang lại vẻ đẹp trang nghiêm, duyên dáng và đậm đà bản sắc văn hoá Bắc Bộ trong ngày hội.",
+                ref: "Trong các lễ hội, người dân thường mặc trang phục truyền thống, tổ chức tế lễ và các trò chơi dân gian."
+            },
+            {
+                id: "b10_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Cổng làng Đường Lâm (thành phố Hà Nội) và giếng nước cổ ở Hoa Lư (tỉnh Ninh Bình) cho thấy điều gì về làng quê vùng Đồng bằng Bắc Bộ hiện nay?",
+                opts: [
+                    "Nhiều làng quê vẫn gìn giữ được những công trình kiến trúc cổ kính, giàu giá trị văn hoá truyền thống",
+                    "Tất cả các làng quê hiện nay không hề có sự thay đổi nào so với hàng trăm năm trước",
+                    "Người dân ngày nay chỉ sống trong các ngôi nhà cổ, không xây nhà mới",
+                    "Các di tích cổ đều đã bị phá bỏ hoàn toàn"
+                ],
+                ans: 0,
+                wrongReason: "Dù đời sống ngày nay hiện đại hơn nhưng nhiều địa phương vẫn bảo tồn nguyên vẹn cổng làng, giếng cổ, đình làng như những di sản quý giá.",
+                ref: "Nhiều công trình kiến trúc làng quê cổ như cổng làng Đường Lâm, giếng nước Hoa Lư, đình Đình Bảng vẫn được lưu giữ đến ngày nay."
+            },
+            {
+                id: "b10_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Điểm khác nhau rõ rệt nhất giữa nhà ở hiện nay với nhà ở truyền thống của người dân vùng Đồng bằng Bắc Bộ là gì?",
+                opts: [
+                    "Nhà ở hiện nay xây bằng gạch kiên cố, nhiều tầng, kiến trúc hiện đại và tiện nghi hơn",
+                    "Nhà ở hiện nay làm hoàn toàn bằng tre nứa và lợp lá cọ",
+                    "Nhà ở hiện nay không còn gian thờ cúng tổ tiên",
+                    "Nhà ở hiện nay đều dựng trên mặt nước ven sông"
+                ],
+                ans: 0,
+                wrongReason: "Nhà truyền thống thường thấp tầng (một tầng, 3–5 gian, mái ngói/lá), còn nhà hiện nay xây nhiều tầng khang trang, vật liệu và tiện nghi hiện đại.",
+                ref: "Nhà ở hiện nay được xây bằng gạch kiên cố, nhiều tầng, khang trang, hiện đại và tiện nghi hơn so với nhà ở truyền thống."
+            },
+            {
+                id: "b10_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Sân đình là nơi diễn ra các ...................... chung của làng quê vùng Đồng bằng Bắc Bộ.'",
+                ans: ["sinh hoạt văn hoá"],
+                displayAns: "sinh hoạt văn hoá",
+                wrongReason: "Khoảng sân đình rộng lát gạch đỏ là không gian gắn kết cộng đồng qua các buổi họp làng, biểu diễn văn nghệ và tổ chức lễ hội.",
+                ref: "Sân đình là nơi diễn ra các sinh hoạt văn hoá chung của làng."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b10_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Trong ngôi nhà truyền thống vùng Đồng bằng Bắc Bộ, trước hiên nhà thường treo các tấm liếp đan bằng tre, nứa nhằm mục đích gì?",
+                opts: [
+                    "Để che nắng hắt vào mùa hạ và chắn mưa tạt, gió lạnh vào mùa đông",
+                    "Để trang trí cho ngôi nhà giống với cung điện vua chúa",
+                    "Để ngăn không cho khách bước vào gian chính giữa",
+                    "Để làm nơi phơi thóc lúa hằng ngày"
+                ],
+                ans: 0,
+                wrongReason: "Tấm liếp tre nứa dễ dàng cuốn lên hoặc thả xuống, giúp điều chỉnh ánh sáng, che nắng nóng mùa hè và chắn gió rét mùa đông rất hiệu quả.",
+                ref: "Những tấm liếp trước hiên nhà được đan bằng tre, nứa dùng để che nắng, che mưa cho ngôi nhà truyền thống."
+            },
+            {
+                id: "b10_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Vì sao nói đình làng là trung tâm gắn kết cộng đồng của người dân làng quê vùng Đồng bằng Bắc Bộ?",
+                opts: [
+                    "Vì đây vừa là nơi thờ Thành hoàng chung của cả làng, vừa là nơi họp bàn việc làng và tổ chức lễ hội văn hoá",
+                    "Vì đình làng là nơi duy nhất trong làng có bán lương thực, thực phẩm",
+                    "Vì tất cả người dân trong làng đều ngủ tập trung tại đình làng hằng đêm",
+                    "Vì đình làng là trụ sở làm việc của các cơ quan Trung ương"
+                ],
+                ans: 0,
+                wrongReason: "Đình làng hội tụ cả đời sống tâm linh (thờ Thành hoàng) lẫn sinh hoạt cộng đồng (hội họp, vui chơi lễ hội), tạo nên tình làng nghĩa xóm bền chặt.",
+                ref: "Đình làng thờ Thành hoàng và là nơi diễn ra các sinh hoạt văn hoá chung, gắn kết tình cảm cộng đồng dân làng."
+            },
+            {
+                id: "b10_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Quan sát trò chơi cờ người trong lễ hội Cổ Loa (gồm 16 quân cờ nam và 16 quân cờ nữ mặc trang phục truyền thống trên sân), trò chơi này thể hiện nét đẹp văn hoá nào của dân tộc?",
+                opts: [
+                    "Tinh thần thượng võ, trí tuệ và niềm tự hào về truyền thống lịch sử dựng nước, giữ nước",
+                    "Sự cạnh tranh hơn thua bằng bạo lực giữa các làng",
+                    "Lối sống tách biệt, không giao lưu với bên ngoài",
+                    "Sự lãng phí thời gian trong những ngày nông nhàn"
+                ],
+                ans: 0,
+                wrongReason: "Cờ người kết hợp đấu trí cờ tướng với nghi lễ rước cờ, tiếng trống hội rộn ràng, tái hiện khí thế ba quân tướng sĩ thời xưa.",
+                ref: "Trò chơi cờ người là sinh hoạt văn hoá dân gian độc đáo, thể hiện trí tuệ và bản sắc văn hoá truyền thống."
+            },
+            {
+                id: "b10_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Khi đi tham gia lễ hội mùa xuân cùng gia đình, việc làm nào của em thể hiện nếp sống văn minh và ý thức giữ gìn bản sắc văn hoá dân tộc?",
+                opts: [
+                    "Ăn mặc gọn gàng, lịch sự, bỏ rác đúng nơi quy định và trân trọng các nghi lễ truyền thống",
+                    "Chen lấn, xô đẩy để tranh giành đồ lễ trong khu vực tế lễ",
+                    "Vứt vỏ bánh kẹo, chai nhựa bừa bãi ngay trên sân đình",
+                    "Cười đùa, nói chuyện ồn ào khi mọi người đang làm lễ dâng hương"
+                ],
+                ans: 0,
+                wrongReason: "Giữ gìn vệ sinh chung và thái độ tôn nghiêm, lịch sự khi dự lễ hội là cách thiết thực để bảo vệ nét đẹp văn hoá quê hương.",
+                ref: "Mỗi người cần có ý thức trân trọng, giữ gìn vệ sinh và bảo vệ giá trị văn hoá truyền thống trong các lễ hội."
+            },
+            {
+                id: "b10_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Lễ hội hát Quan họ nổi tiếng ở tỉnh Bắc Ninh được tổ chức vào dịp đầu xuân hằng năm tại thị trấn Lim được gọi là ......................'",
+                ans: ["hội Lim", "Hội Lim"],
+                displayAns: "hội Lim",
+                wrongReason: "Hội Lim (huyện Tiên Du, tỉnh Bắc Ninh) diễn ra vào ngày 12, 13 tháng Giêng âm lịch, là nơi hội tụ tinh hoa dân ca Quan họ Kinh Bắc.",
+                ref: "Hội Lim (tỉnh Bắc Ninh) là lễ hội mùa xuân nổi tiếng gắn với làn điệu dân ca Quan họ."
+            }
+        ]
+    },,
+    bai11: {
+        title: "Bài 11: Sông Hồng và văn minh sông Hồng",
+        oneLine: "Sông Hồng bắt nguồn từ Trung Quốc, chảy vào Việt Nam từ Lào Cai đến cửa Ba Lạt (dài khoảng 556 km); trên lưu vực dòng sông này cách ngày nay khoảng 2 700 năm đã hình thành nền văn minh đầu tiên của người Việt cổ với thành tựu tiêu biểu là Nhà nước Văn Lang – Âu Lạc, trống đồng Đông Sơn và thành Cổ Loa.",
+        cards: [
+            { tag: "Vị trí & Tên gọi", title: "Dài 556 km, đổ ra cửa Ba Lạt", desc: "Bắt nguồn từ Trung Quốc, phần chảy trên lãnh thổ Việt Nam dài khoảng 556 km (từ xã A Mú Sung, tỉnh Lào Cai đến cửa Ba Lạt – ranh giới Hưng Yên và Ninh Bình). Tên gọi khác: Nhị Hà, Hồng Hà, sông Xích Đằng, sông Kẻ Chợ, sông Cái..." },
+            { tag: "Thành tựu văn minh", title: "Văn Lang – Âu Lạc, Trống đồng, Cổ Loa", desc: "Hình thành cách ngày nay khoảng 2 700 năm. Tiêu biểu là sự ra đời của Nhà nước Văn Lang (Hùng Vương) và Nhà nước Âu Lạc (An Dương Vương), trống đồng Đông Sơn (đẹp nhất là trống đồng Ngọc Lũ) và thành Cổ Loa ba vòng khép kín." },
+            { tag: "Đời sống vật chất", title: "Gạo nếp, nhà sàn, đi thuyền", desc: "Lương thực chính là gạo (chủ yếu là gạo nếp); ở nhà sàn mái cong; đi lại chủ yếu bằng thuyền; nam đóng khố cởi trần, nữ mặc váy áo yếm; biết trồng dâu, nuôi tằm, dệt vải, làm thuỷ lợi." },
+            { tag: "Đời sống tinh thần", title: "Thờ cúng tổ tiên & Lễ hội", desc: "Có tín ngưỡng thờ cúng tổ tiên, thờ thần Sông, thần Núi; có tục nhuộm răng đen, ăn trầu, gói bánh chưng bánh giầy; ngày hội hoá trang, thổi kèn, nhảy múa." },
+            { tag: "Gìn giữ & Phát huy", title: "Khai thác hợp lí & Bảo vệ nước", desc: "Sông Hồng đang chịu tác động của ô nhiễm nguồn nước, sạt lở bờ sông, khô hạn. Cần khai thác hợp lí, không xả rác thải, trồng cây chống sạt lở và tuyên truyền bảo vệ dòng sông." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Thành Cổ Loa & Hoa văn trên trống đồng Ngọc Lũ",
+            imgSrc: "images/bai11_vanminh.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">THÀNH TỰU TIÊU BIỂU CỦA VĂN MINH SÔNG HỒNG</text>
+                <rect x="25" y="48" width="265" height="90" fill="#ffffff" stroke="#b91c1c" rx="6"/>
+                <text x="157" y="68" font-size="12" font-weight="bold" text-anchor="middle" fill="#b91c1c">🏰 Thành Cổ Loa (Đông Anh, Hà Nội)</text>
+                <ellipse cx="157" cy="105" rx="85" ry="24" fill="none" stroke="#a16207" stroke-width="2"/>
+                <ellipse cx="157" cy="105" rx="58" ry="16" fill="none" stroke="#d97706" stroke-width="2"/>
+                <rect x="135" y="97" width="44" height="16" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <text x="157" y="135" font-size="10" text-anchor="middle">3 vòng khép kín: Thành nội, trung, ngoại</text>
+                <rect x="305" y="48" width="270" height="90" fill="#ffffff" stroke="#15803d" rx="6"/>
+                <text x="440" y="68" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">🥁 Trống đồng Đông Sơn (Ngọc Lũ)</text>
+                <text x="440" y="88" font-size="10" text-anchor="middle">• Hoa văn hình thuyền, nhà sàn mái cong</text>
+                <text x="440" y="104" font-size="10" text-anchor="middle">• Hình người giã gạo, thổi kèn, nhảy múa</text>
+                <text x="440" y="122" font-size="10" font-weight="bold" text-anchor="middle" fill="#166534">Phản ánh đời sống vật chất & tinh thần</text>
+                <rect x="25" y="148" width="550" height="44" fill="#dcfce7" stroke="#166534" rx="6"/>
+                <text x="300" y="167" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532d">🌊 Sông Hồng: Dài 556 km ở Việt Nam · Tên khác: Nhị Hà, Hồng Hà, sông Cái, sông Kẻ Chợ</text>
+                <text x="300" y="183" font-size="10" text-anchor="middle" fill="#166534">Đổ ra biển ở cửa Ba Lạt (ranh giới tỉnh Hưng Yên và tỉnh Ninh Bình)</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b11_p1",
+                    type: "mc",
+                    q: "Quan sát sơ đồ khu di tích thành Cổ Loa, toà thành thời Nhà nước Âu Lạc này có cấu trúc gồm mấy vòng thành khép kín?",
+                    opts: [
+                        "Ba vòng khép kín là thành nội, thành trung và thành ngoại",
+                        "Chỉ có một bức tường thành hình vuông duy nhất",
+                        "Hai vòng thành hình tam giác nằm trên đỉnh núi cao",
+                        "Năm vòng thành xây bằng bê tông cốt thép"
+                    ],
+                    ans: 0,
+                    wrongReason: "Thành Cổ Loa được xây dựng dưới thời An Dương Vương gồm ba vòng khép kín từ trong ra ngoài là: thành nội, thành trung và thành ngoại, giữa các vòng thành đều có hào nước.",
+                    ref: "Thành Cổ Loa (xã Đông Anh, thành phố Hà Nội) có ba vòng khép kín là thành nội, thành trung và thành ngoại."
+                },
+                {
+                    id: "b11_p2",
+                    type: "mc",
+                    q: "Quan sát các hoa văn khắc trên trống đồng Ngọc Lũ (hình thuyền, hình người giã gạo, hình người thổi kèn nhảy múa, hình nhà sàn mái cong), những hình ảnh này phản ánh điều gì?",
+                    opts: [
+                        "Đời sống vật chất và tinh thần phong phú của cư dân Việt cổ",
+                        "Cuộc sống của các thương nhân nước ngoài đến buôn bán",
+                        "Cảnh sinh hoạt trong cung điện các vua triều Nguyễn",
+                        "Hoạt động đánh bắt cá voi ở vùng biển Nam Bộ"
+                    ],
+                    ans: 0,
+                    wrongReason: "Hoa văn trên trống đồng Ngọc Lũ như một bộ sử thu nhỏ khắc hoạ chân thực nhà ở, phương tiện đi lại, lao động sản xuất và lễ hội của người Việt cổ.",
+                    ref: "Hoa văn trên trống đồng Ngọc Lũ khắc hoạ đời sống vật chất và tinh thần của người Việt cổ."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b11_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Sông Hồng bắt nguồn từ đâu và phần chảy trên lãnh thổ Việt Nam dài khoảng bao nhiêu ki-lô-mét?",
+                opts: [
+                    "Bắt nguồn từ Trung Quốc, phần chảy ở Việt Nam dài khoảng 556 km",
+                    "Bắt nguồn từ Lào, phần chảy ở Việt Nam dài khoảng 200 km",
+                    "Bắt nguồn từ Tây Nguyên, dài khoảng 1 000 km",
+                    "Bắt nguồn từ Cam-pu-chia, dài khoảng 350 km"
+                ],
+                ans: 0,
+                wrongReason: "Sông Hồng bắt nguồn từ tỉnh Vân Nam (Trung Quốc), chảy vào nước ta từ xã A Mú Sung (Lào Cai) với chiều dài trên lãnh thổ Việt Nam khoảng 556 km.",
+                ref: "Sông Hồng bắt nguồn từ Trung Quốc, phần chảy trên lãnh thổ Việt Nam dài khoảng 556 km."
+            },
+            {
+                id: "b11_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Sông Hồng chảy vào lãnh thổ Việt Nam đầu tiên ở địa phương nào và đổ ra biển ở cửa sông nào?",
+                opts: [
+                    "Từ xã A Mú Sung (tỉnh Lào Cai) và đổ ra biển ở cửa Ba Lạt",
+                    "Từ thành phố Hà Nội và đổ ra biển ở cửa Đáy",
+                    "Từ tỉnh Thanh Hoá và đổ ra biển ở cửa Văn Úc",
+                    "Từ tỉnh Quảng Ninh và đổ ra biển ở cửa Nam Triệu"
+                ],
+                ans: 0,
+                wrongReason: "Sông Hồng chảy vào nước ta tại xã A Mú Sung (Lào Cai) và đổ ra Vịnh Bắc Bộ tại cửa Ba Lạt (ranh giới giữa Hưng Yên và Ninh Bình).",
+                ref: "Sông Hồng chảy trên lãnh thổ Việt Nam từ xã A Mú Sung, tỉnh Lào Cai và đổ ra biển ở cửa Ba Lạt – ranh giới giữa tỉnh Hưng Yên và tỉnh Ninh Bình."
+            },
+            {
+                id: "b11_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Tên gọi nào sau đây là tên gọi khác của sông Hồng?",
+                opts: [
+                    "Nhị Hà, Hồng Hà, sông Xích Đằng, sông Kẻ Chợ, sông Cái",
+                    "Sông Cửu Long, sông Tiền, sông Hậu",
+                    "Sông Bạch Đằng, sông Cầu, sông Thương",
+                    "Sông Hương, sông Thu Bồn, sông Trà Khúc"
+                ],
+                ans: 0,
+                wrongReason: "Trong lịch sử và dân gian, sông Hồng có nhiều tên gọi khác nhau như Nhị Hà, Hồng Hà, sông Xích Đằng, sông Kẻ Chợ, sông Cái.",
+                ref: "Sông Hồng còn có nhiều tên gọi khác như: Nhị Hà, Hồng Hà, sông Xích Đằng, sông Kẻ Chợ, sông Cái."
+            },
+            {
+                id: "b11_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Nền văn minh đầu tiên của người Việt cổ trên lưu vực sông Hồng, sông Mã, sông Cả hình thành cách ngày nay khoảng bao nhiêu năm?",
+                opts: ["Khoảng 2 700 năm", "Khoảng 500 năm", "Khoảng 1 000 năm", "Khoảng 5 000 năm"],
+                ans: 0,
+                wrongReason: "Cách ngày nay khoảng 2 700 năm, cư dân Việt cổ trên lưu vực các dòng sông lớn ở Bắc Bộ và Bắc Trung Bộ đã sáng tạo nên nền văn minh sông Hồng.",
+                ref: "Cách ngày nay khoảng 2 700 năm, trên lưu vực sông Hồng, sông Mã, sông Cả đã hình thành nền văn minh đầu tiên của người Việt cổ."
+            },
+            {
+                id: "b11_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: Đứng đầu Nhà nước Văn Lang và Nhà nước Âu Lạc lần lượt là ai?",
+                opts: [
+                    "Đứng đầu Văn Lang là Hùng Vương, đứng đầu Âu Lạc là An Dương Vương",
+                    "Đứng đầu Văn Lang là Lý Thái Tổ, đứng đầu Âu Lạc là Lê Thái Tổ",
+                    "Đứng đầu Văn Lang là An Dương Vương, đứng đầu Âu Lạc là Hùng Vương",
+                    "Đứng đầu Văn Lang là Ngô Quyền, đứng đầu Âu Lạc là Đinh Bộ Lĩnh"
+                ],
+                ans: 0,
+                wrongReason: "Các vua Hùng lập nên nước Văn Lang; sau đó Thục Phán (An Dương Vương) lập nên nước Âu Lạc; giúp việc cho vua có Lạc hầu, Lạc tướng.",
+                ref: "Đứng đầu Nhà nước Văn Lang là Hùng Vương, đứng đầu Nhà nước Âu Lạc là An Dương Vương; giúp việc cho vua có Lạc hầu, Lạc tướng."
+            },
+            {
+                id: "b11_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Trong các loại trống đồng Đông Sơn được phát hiện, chiếc trống đồng nào được đánh giá là đẹp nhất?",
+                opts: ["Trống đồng Ngọc Lũ", "Trống đồng Cổ Loa", "Trống đồng Sông Đà", "Trống đồng Quảng Xương"],
+                ans: 0,
+                wrongReason: "Trống đồng Ngọc Lũ (phát hiện ở tỉnh Ninh Bình) có hoa văn tinh xảo, cân đối và phong phú nhất trong các trống đồng Đông Sơn.",
+                ref: "Trống đồng Đông Sơn có nhiều loại, đẹp nhất là trống đồng Ngọc Lũ (tỉnh Ninh Bình)."
+            },
+            {
+                id: "b11_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Thành Cổ Loa được xây dựng dưới thời nhà nước nào và ngày nay thuộc địa phương nào?",
+                opts: [
+                    "Thời Nhà nước Âu Lạc, nay thuộc xã Đông Anh, thành phố Hà Nội",
+                    "Thời Nhà nước Văn Lang, nay thuộc thành phố Việt Trì, tỉnh Phú Thọ",
+                    "Thời nhà Lý, nay thuộc huyện Hoa Lư, tỉnh Ninh Bình",
+                    "Thời nhà Trần, nay thuộc thành phố Hải Phòng"
+                ],
+                ans: 0,
+                wrongReason: "Thành Cổ Loa là kinh đô của nước Âu Lạc do An Dương Vương xây dựng, di tích hiện nay nằm ở Đông Anh, Hà Nội.",
+                ref: "Thành Cổ Loa (xã Đông Anh, thành phố Hà Nội) được xây dựng dưới thời Nhà nước Âu Lạc."
+            },
+            {
+                id: "b11_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền từ còn thiếu: 'Nguồn lương thực chính của cư dân Việt cổ là gạo, chủ yếu là ......................'",
+                ans: ["gạo nếp"],
+                displayAns: "gạo nếp",
+                wrongReason: "Người Việt cổ trồng lúa nước từ rất sớm, nguồn lương thực chính là gạo, phổ biến nhất là gạo nếp dùng đồ xôi, làm bánh chưng, bánh giầy.",
+                ref: "Nguồn lương thực chính của cư dân Việt cổ là gạo, chủ yếu là gạo nếp."
+            },
+            {
+                id: "b11_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền từ còn thiếu: 'Người Việt cổ ở ......................, phương tiện đi lại chủ yếu bằng thuyền.'",
+                ans: ["nhà sàn"],
+                displayAns: "nhà sàn",
+                wrongReason: "Để tránh ẩm thấp, thú dữ và ngập nước vùng châu thổ, người Việt cổ làm nhà sàn mái cong để sinh sống.",
+                ref: "Người Việt cổ ở nhà sàn, phương tiện đi lại chủ yếu bằng thuyền."
+            },
+            {
+                id: "b11_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Trang phục thường ngày của nam và nữ cư dân Việt cổ thời văn minh sông Hồng là gì?",
+                opts: [
+                    "Nam đóng khố, cởi trần; nữ mặc váy và áo yếm",
+                    "Nam mặc áo dài khăn đóng; nữ mặc áo tứ thân",
+                    "Nam và nữ đều mặc áo khoác lông thú dày",
+                    "Nam mặc quần âu áo sơ mi; nữ mặc áo dài trắng"
+                ],
+                ans: 0,
+                wrongReason: "Phù hợp với khí hậu nóng ẩm và lao động sông nước, nam giới Việt cổ thường đóng khố, cởi trần, còn nữ mặc váy và áo yếm.",
+                ref: "Nam thường đóng khố, cởi trần; nữ mặc váy và áo yếm."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b11_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Những thành tựu tiêu biểu nhất của nền văn minh sông Hồng gồm những gì?",
+                opts: [
+                    "Sự ra đời của Nhà nước Văn Lang và Âu Lạc, trống đồng Đông Sơn, thành Cổ Loa",
+                    "Chữ Quốc ngữ, Hoàng thành Thăng Long và Văn Miếu – Quốc Tử Giám",
+                    "Kinh thành Huế, Nhã nhạc cung đình và hệ thống lăng tẩm",
+                    "Bến cảng Nhà Rồng, địa đạo Củ Chi và chợ Bến Thành"
+                ],
+                ans: 0,
+                wrongReason: "Văn minh sông Hồng là nền văn minh thời dựng nước đầu tiên với đỉnh cao là Nhà nước Văn Lang – Âu Lạc, trống đồng Đông Sơn và thành Cổ Loa.",
+                ref: "Một số thành tựu tiêu biểu của nền văn minh sông Hồng là sự ra đời của Nhà nước Văn Lang và Nhà nước Âu Lạc, trống đồng Đông Sơn, thành Cổ Loa."
+            },
+            {
+                id: "b11_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Trống đồng Đông Sơn được cư dân Việt cổ sử dụng chủ yếu vào mục đích gì?",
+                opts: [
+                    "Làm nhạc cụ sử dụng trong các lễ hội và làm hiệu lệnh trong chiến đấu",
+                    "Dùng làm nồi nấu cơm hằng ngày trong gia đình",
+                    "Dùng làm bánh xe để kéo gỗ từ trên núi xuống",
+                    "Dùng làm vật trao đổi thay tiền giấy với nước ngoài"
+                ],
+                ans: 0,
+                wrongReason: "Trống đồng vừa là nhạc cụ linh thiêng trong các lễ hội cầu mùa, vừa dùng để đánh hiệu lệnh tập hợp quân sĩ.",
+                ref: "Trống đồng là nhạc cụ, thường được sử dụng trong các lễ hội và làm hiệu lệnh."
+            },
+            {
+                id: "b11_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Cư dân Việt cổ có tín ngưỡng ...................... tổ tiên, thờ các vị thần như: thần Sông, thần Núi,...'",
+                ans: ["thờ cúng"],
+                displayAns: "thờ cúng",
+                wrongReason: "Thờ cúng tổ tiên và các vị thần tự nhiên (thần Sông, thần Núi) là nét đẹp tâm linh bền vững của người Việt từ thời cổ đại.",
+                ref: "Cư dân Việt cổ có tín ngưỡng thờ cúng tổ tiên, thờ các vị thần như: thần Sông, thần Núi."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b11_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Hoạt động sản xuất nào sau đây cho thấy trình độ lao động sáng tạo của người Việt cổ thời văn minh sông Hồng?",
+                opts: [
+                    "Biết trồng lúa nước, trồng dâu, nuôi tằm, dệt vải, đúc đồng và làm thuỷ lợi",
+                    "Biết chế tạo máy hơi nước, tàu hoả và ô tô chạy bằng xăng",
+                    "Biết xây dựng các nhà máy lọc dầu và nhiệt điện lớn",
+                    "Biết khai thác than đá bằng máy xúc hiện đại"
+                ],
+                ans: 0,
+                wrongReason: "Người Việt cổ đã làm chủ kĩ thuật trồng lúa nước, đắp đê làm thuỷ lợi, trồng dâu nuôi tằm dệt vải và luyện kim đúc đồng tinh xảo.",
+                ref: "Người Việt cổ biết trồng lúa nước, trồng dâu, nuôi tằm, dệt vải, làm thuỷ lợi và đúc đồng."
+            },
+            {
+                id: "b11_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Những phong tục, tập quán nào của người Việt cổ được hình thành từ thời văn minh sông Hồng?",
+                opts: [
+                    "Tục nhuộm răng đen, ăn trầu, gói bánh chưng, bánh giầy",
+                    "Tục uống trà sữa và ăn bánh mì kẹp thịt",
+                    "Tục mặc áo vest và thắt cà vạt trong ngày lễ",
+                    "Tục tổ chức lễ hội hoá trang Ha-lô-uin"
+                ],
+                ans: 0,
+                wrongReason: "Tục nhuộm răng đen, ăn trầu, làm bánh chưng bánh giầy trong ngày Tết là những phong tục truyền thống có từ thời Hùng Vương.",
+                ref: "Người Việt cổ có tục nhuộm răng đen, ăn trầu, gói bánh chưng, bánh giầy và hoá trang, nhảy múa trong ngày hội."
+            },
+            {
+                id: "b11_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Câu chuyện 'Bánh chưng, bánh giầy' cho em biết điều gì về đời sống vật chất và tinh thần của người Việt cổ?",
+                opts: [
+                    "Họ biết trồng lúa nếp, chăn nuôi, gói bánh dâng cúng Trời, Đất và tôn kính tổ tiên",
+                    "Họ chỉ thích ăn các món sơn hào hải vị đắt tiền từ rừng biển",
+                    "Họ chưa biết cách trồng trọt nên chỉ hái lượm quả rừng",
+                    "Họ không có phong tục thờ cúng tổ tiên trong ngày Tết"
+                ],
+                ans: 0,
+                wrongReason: "Nguyên liệu gạo nếp, đậu xanh, thịt lợn phản ánh nền nông nghiệp trồng trọt – chăn nuôi phát triển; ý nghĩa dâng bánh thể hiện đạo lí kính trọng tổ tiên, trời đất.",
+                ref: "Sự tích Bánh chưng, bánh giầy phản ánh nghề trồng lúa nếp và truyền thống thờ cúng Trời, Đất, Tổ tiên của người Việt cổ."
+            },
+            {
+                id: "b11_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Hiện nay, dòng sông Hồng đang phải chịu những tác động tiêu cực nào do tự nhiên và con người gây ra?",
+                opts: [
+                    "Nguồn nước bị ô nhiễm, sạt lở bờ sông và khô hạn cạn nước vào mùa khô",
+                    "Nước sông đóng băng quanh năm khiến tàu thuyền không đi lại được",
+                    "Nước sông luôn tràn ngập mặn làm chết toàn bộ lúa vùng đồng bằng",
+                    "Dòng sông bị núi lửa chặn ngang làm đổi hướng chảy sang phía tây"
+                ],
+                ans: 0,
+                wrongReason: "Việc xả rác, nước thải chưa qua xử lí gây ô nhiễm nguồn nước; khai thác cát quá mức và biến đổi khí hậu gây sạt lở bờ sông, khô cạn.",
+                ref: "Hiện nay sông Hồng đang phải chịu những tác động do tự nhiên và con người gây ra như: nguồn nước bị ô nhiễm, sạt lở bờ sông, khô cạn."
+            },
+            {
+                id: "b11_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Sông Hồng mang lại những lợi ích to lớn nào cho sản xuất và đời sống của người dân hiện nay?",
+                opts: [
+                    "Bồi đắp phù sa cho đồng ruộng, cấp nước tưới tiêu, phát triển giao thông đường thuỷ và du lịch trên sông",
+                    "Cung cấp nguồn băng tuyết để làm khu trượt tuyết mùa hè",
+                    "Là nơi duy nhất cung cấp gỗ quý cho cả nước",
+                    "Làm ranh giới ngăn cách không cho các tỉnh giao lưu với nhau"
+                ],
+                ans: 0,
+                wrongReason: "Sông Hồng tạo nên vựa lúa Đồng bằng Bắc Bộ màu mỡ, đồng thời là tuyến giao thông đường sông và tuyến du lịch văn hoá hấp dẫn ở Hà Nội.",
+                ref: "Sông Hồng bồi đắp phù sa, cung cấp nước cho sản xuất nông nghiệp, phát triển giao thông đường thuỷ và du lịch."
+            },
+            {
+                id: "b11_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Trống đồng Đông Sơn được phát hiện lần đầu tiên ở địa phương nào nước ta?",
+                opts: ["Làng Đông Sơn (tỉnh Thanh Hoá)", "Làng Bát Tràng (thành phố Hà Nội)", "Làng Đình Bảng (tỉnh Bắc Ninh)", "Làng Cổ Loa (thành phố Hà Nội)"],
+                ans: 0,
+                wrongReason: "Tên gọi 'trống đồng Đông Sơn' bắt nguồn từ nơi phát hiện đầu tiên là làng Đông Sơn bên bờ sông Mã (tỉnh Thanh Hoá).",
+                ref: "Trống đồng Đông Sơn được phát hiện lần đầu tiên tại làng Đông Sơn (tỉnh Thanh Hoá)."
+            },
+            {
+                id: "b11_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Để góp phần gìn giữ và phát huy giá trị của sông Hồng, chúng ta cần khai thác hợp lí, bảo vệ môi trường và tuyên truyền mọi người chung tay bảo vệ ...................... sông Hồng.'",
+                ans: ["nguồn nước"],
+                displayAns: "nguồn nước",
+                wrongReason: "Giữ gìn nguồn nước sông Hồng trong sạch là bảo vệ sự sống, sản xuất nông nghiệp và nét đẹp văn hoá của cả vùng châu thổ.",
+                ref: "Chúng ta cần khai thác hợp lí, bảo vệ môi trường và tuyên truyền mọi người chung tay bảo vệ nguồn nước sông Hồng."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b11_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Vì sao người Việt cổ thời văn minh sông Hồng lại làm nhà sàn mái cong và đi lại chủ yếu bằng thuyền?",
+                opts: [
+                    "Vì họ sinh sống ở vùng đồng bằng châu thổ nhiều sông ngòi, kênh rạch và thường có lũ lụt vào mùa mưa",
+                    "Vì ở vùng đồng bằng không có đất liền để đi bộ",
+                    "Vì họ không biết cách đắp đường trên mặt đất",
+                    "Vì nhà sàn giúp tránh tuyết rơi dày vào mùa đông"
+                ],
+                ans: 0,
+                wrongReason: "Địa hình vùng châu thổ sông Hồng chằng chịt sông nước và dễ ngập lụt khi chưa có đê lớn nên ở nhà sàn và đi thuyền là cách thích nghi thông minh với tự nhiên.",
+                ref: "Cuộc sống gắn với sông nước vùng châu thổ nên người Việt cổ ở nhà sàn và dùng thuyền làm phương tiện đi lại chủ yếu."
+            },
+            {
+                id: "b11_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Truyền thuyết 'Sơn Tinh, Thuỷ Tinh' gắn với thời đại Hùng Vương phản ánh công cuộc lao động vĩ đại nào của cư dân Việt cổ trên lưu vực sông Hồng?",
+                opts: [
+                    "Công cuộc trị thuỷ, đắp đê chống lũ lụt hằng năm để bảo vệ mùa màng và cuộc sống",
+                    "Công cuộc khai thác vàng bạc ở các đảo ngoài khơi xa",
+                    "Công cuộc xây dựng các khu đô thị cao tầng ven biển",
+                    "Công cuộc đánh đuổi giặc ngoại xâm từ phương Bắc"
+                ],
+                ans: 0,
+                wrongReason: "Thuỷ Tinh dâng nước đánh Sơn Tinh tượng trưng cho lũ lụt sông Hồng hằng năm; Sơn Tinh nâng núi cao lên phản ánh sức mạnh đắp đê trị thuỷ của cha ông.",
+                ref: "Truyền thuyết Sơn Tinh, Thuỷ Tinh phản ánh công cuộc trị thuỷ, chinh phục thiên nhiên và chống lũ lụt ở châu thổ sông Hồng."
+            },
+            {
+                id: "b11_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Những phong tục, tập quán nào của người Việt cổ thời văn minh sông Hồng vẫn còn được nhân dân ta lưu giữ đến ngày nay?",
+                opts: [
+                    "Tín ngưỡng thờ cúng tổ tiên, gói bánh chưng bánh giầy dịp Tết, tục ăn trầu và tổ chức lễ hội mùa xuân",
+                    "Tục đóng khố cởi trần đi làm hằng ngày",
+                    "Tục ở hoàn toàn trong các hang động trên núi đá",
+                    "Tục dùng trống đồng làm phương tiện đi lại trên sông"
+                ],
+                ans: 0,
+                wrongReason: "Thờ cúng tổ tiên, làm bánh chưng bánh giầy, tục ăn trầu trong lễ cưới hỏi và các lễ hội dân gian là sợi dây văn hoá nối liền quá khứ với hiện tại.",
+                ref: "Nhiều phong tục của người Việt cổ như thờ cúng tổ tiên, gói bánh chưng bánh giầy, tục ăn trầu, lễ hội vẫn được lưu giữ đến ngày nay."
+            },
+            {
+                id: "b11_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Nhìn hình ảnh những chiếc thùng phuy hoá chất và rác thải bị vứt bừa bãi ở bãi bồi ven sông Hồng, hành động nào sau đây giúp ngăn chặn tình trạng này?",
+                opts: [
+                    "Xử lí nghiêm hành vi xả chất thải ra sông, thu gom rác đúng nơi quy định và tuyên truyền bảo vệ dòng sông",
+                    "Tiếp tục đổ rác xuống sông để nước cuốn trôi ra biển",
+                    "Khai thác cát bừa bãi ở lòng sông để lấp kín các bãi bồi",
+                    "Cấm người dân không được đi lại hay du lịch trên sông Hồng"
+                ],
+                ans: 0,
+                wrongReason: "Muốn giữ gìn giá trị sông Hồng phải chấm dứt hành vi xả rác, hoá chất xuống sông, kết hợp xử lí nước thải và nâng cao ý thức cộng đồng.",
+                ref: "Cần xử lí chất thải, không vứt rác bừa bãi và tuyên truyền bảo vệ môi trường để giữ gìn dòng sông Hồng."
+            },
+            {
+                id: "b11_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Sông Hồng được coi là cái nôi hình thành nên nền ...................... đầu tiên của người Việt cổ cách ngày nay khoảng 2 700 năm.'",
+                ans: ["văn minh"],
+                displayAns: "văn minh",
+                wrongReason: "Dòng sông Hồng bồi đắp phù sa màu mỡ đã nuôi dưỡng và hình thành nên nền văn minh sông Hồng rực rỡ của dân tộc Việt Nam.",
+                ref: "Trên lưu vực sông Hồng đã hình thành nền văn minh đầu tiên của người Việt cổ cách ngày nay khoảng 2 700 năm."
+            }
+        ]
+    },,
+    bai12: {
+        title: "Bài 12: Thăng Long – Hà Nội",
+        oneLine: "Hà Nội nằm ở vùng Đồng bằng Bắc Bộ, năm 1010 được vua Lý Thái Tổ chọn làm kinh đô với tên gọi Thăng Long; trải qua hơn một nghìn năm lịch sử với nhiều tên gọi và sự kiện hào hùng, ngày nay Hà Nội là Thủ đô – trung tâm chính trị, kinh tế, văn hoá, giáo dục quan trọng của cả nước.",
+        cards: [
+            { tag: "Vị trí & Tên gọi", title: "Dời đô năm 1010 – Thăng Long", desc: "Hà Nội nằm ở vùng Đồng bằng Bắc Bộ, tiếp giáp nhiều tỉnh[cite: 34]. Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về thành Đại La và đổi tên là Thăng Long (Rồng bay lên)[cite: 34]. Tên gọi khác: Đông Đô (1397), Đông Quan (1408), Đông Kinh (1428), Hà Nội (1831)[cite: 34, 66]; dân gian gọi là Tràng An, Kẻ Chợ, Hà Thành[cite: 34]." },
+            { tag: "Địa thế trong Chiếu dời đô", title: "Rồng cuộn hổ ngồi", desc: "Thành Đại La ở giữa khu vực trời đất, được thế rồng cuộn hổ ngồi, chính giữa nam bắc đông tây, tiện nghi núi sông sau trước; mặt đất rộng mà bằng phẳng, thế đất cao mà sáng sủa[cite: 35]." },
+            { tag: "Truyền thuyết & Văn hiến", title: "Tứ trấn & Sự tích Hồ Gươm", desc: "Thăng Long tứ trấn gồm 4 đền thờ thần trấn giữ bốn phía: Bạch Mã (đông), Voi Phục (tây), Kim Liên (nam), Quán Thánh (bắc)[cite: 35, 70]. Sự tích vua Lê Thái Tổ trả gươm báu cho Rùa Vàng nên hồ Tả Vọng đổi tên thành Hồ Gươm (hồ Hoàn Kiếm)[cite: 35]." },
+            { tag: "Sự kiện lịch sử hào hùng", title: "1882 · 2/9/1945 · 12/1972", desc: "Cuộc chiến đấu chống Pháp bảo vệ thành Hà Nội của Tổng đốc Hoàng Diệu (1882)[cite: 35, 36]; Bác Hồ đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình (2 – 9 – 1945)[cite: 35, 36]; chiến thắng 12 ngày đêm 'Điện Biên Phủ trên không' (12 – 1972)[cite: 35, 36]." },
+            { tag: "Thủ đô Hà Nội ngày nay", title: "Trung tâm lớn của cả nước", desc: "Hà Nội là trung tâm chính trị, kinh tế, văn hoá, giáo dục quan trọng của Việt Nam (Toà nhà Quốc hội, Đại học Bách khoa Hà Nội, Bảo tàng Lịch sử quốc gia...) và được UNESCO trao tặng danh hiệu 'Thành phố vì hoà bình' (16 – 7 – 1999)[cite: 33, 37]." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Trục thời gian tên gọi Thăng Long – Hà Nội & Di tích tiêu biểu",
+            imgSrc: "images/bai12_hanoi.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">TRỤC THỜI GIAN TÊN GỌI THĂNG LONG – HÀ NỘI QUA CÁC THỜI KÌ</text>
+                <line x1="40" y1="85" x2="560" y2="85" stroke="#b45309" stroke-width="3"/>
+                <circle cx="70" cy="85" r="9" fill="#dc2626"/>
+                <text x="70" y="65" font-size="11" font-weight="bold" text-anchor="middle" fill="#dc2626">1010</text>
+                <text x="70" y="110" font-size="11" font-weight="bold" text-anchor="middle">Thăng Long</text>
+                <circle cx="185" cy="85" r="8" fill="#d97706"/>
+                <text x="185" y="65" font-size="11" font-weight="bold" text-anchor="middle">1397</text>
+                <text x="185" y="110" font-size="11" font-weight="bold" text-anchor="middle">Đông Đô</text>
+                <circle cx="300" cy="85" r="8" fill="#d97706"/>
+                <text x="300" y="65" font-size="11" font-weight="bold" text-anchor="middle">1408</text>
+                <text x="300" y="110" font-size="11" font-weight="bold" text-anchor="middle">Đông Quan</text>
+                <circle cx="415" cy="85" r="8" fill="#d97706"/>
+                <text x="415" y="65" font-size="11" font-weight="bold" text-anchor="middle">1428</text>
+                <text x="415" y="110" font-size="11" font-weight="bold" text-anchor="middle">Đông Kinh</text>
+                <circle cx="530" cy="85" r="9" fill="#15803d"/>
+                <text x="530" y="65" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">1831</text>
+                <text x="530" y="110" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">Hà Nội</text>
+                <rect x="25" y="132" width="550" height="58" fill="#dcfce7" stroke="#166534" rx="6"/>
+                <text x="300" y="153" font-size="11" font-weight="bold" text-anchor="middle" fill="#14532d">🏛️ Thăng Long tứ trấn: Đền Bạch Mã (Đông) · Voi Phục (Tây) · Kim Liên (Nam) · Quán Thánh (Bắc)</text>
+                <text x="300" y="173" font-size="11" text-anchor="middle" fill="#166534">Tên gọi dân gian: Tràng An, Kẻ Chợ, Hà Thành · Năm 1999: Thành phố vì hoà bình</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b12_p1",
+                    type: "mc",
+                    q: "Quan sát trục thời gian tên gọi Thăng Long – Hà Nội qua các thời kì lịch sử, vào năm 1831 nơi này được đặt tên là gì?",
+                    opts: ["Hà Nội", "Thăng Long", "Đông Đô", "Đông Kinh"],
+                    ans: 0,
+                    wrongReason: "Năm 1010 là Thăng Long, năm 1397 là Đông Đô, năm 1408 là Đông Quan, năm 1428 là Đông Kinh và đến năm 1831 mang tên Hà Nội[cite: 34, 66].",
+                    ref: "Trên trục thời gian lịch sử, từ năm 1831 nơi này mang tên Hà Nội[cite: 34]."
+                },
+                {
+                    id: "b12_p2",
+                    type: "mc",
+                    q: "Quan sát hình ảnh Toà nhà Quốc hội Việt Nam, Đại học Bách khoa Hà Nội và Bảo tàng Lịch sử quốc gia, các công trình này chứng tỏ điều gì về Thủ đô Hà Nội ngày nay?",
+                    opts: [
+                        "Hà Nội là trung tâm chính trị, kinh tế, văn hoá, giáo dục quan trọng của cả nước",
+                        "Hà Nội chỉ phát triển duy nhất ngành khai thác khoáng sản",
+                        "Hà Nội là vùng trồng lúa nước có diện tích lớn nhất cả nước",
+                        "Hà Nội nằm ở khu vực biên giới phía tây nam của Tổ quốc"
+                    ],
+                    ans: 0,
+                    wrongReason: "Toà nhà Quốc hội thể hiện vai trò trung tâm chính trị; Đại học Bách khoa thể hiện trung tâm giáo dục; Bảo tàng Lịch sử quốc gia thể hiện trung tâm văn hoá[cite: 37, 68].",
+                    ref: "Hà Nội là trung tâm chính trị, kinh tế, văn hoá, giáo dục quan trọng của Việt Nam[cite: 33, 37]."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b12_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Thủ đô Hà Nội nằm ở vùng địa lí nào của nước ta?",
+                opts: ["Vùng Đồng bằng Bắc Bộ", "Vùng Trung du và miền núi phía Bắc", "Vùng Tây Nguyên", "Vùng Đồng bằng Nam Bộ"],
+                ans: 0,
+                wrongReason: "Hà Nội nằm ở vị trí trung tâm của vùng Đồng bằng Bắc Bộ và tiếp giáp với nhiều tỉnh như Thái Nguyên, Bắc Ninh, Hưng Yên, Ninh Bình, Phú Thọ[cite: 34].",
+                ref: "Hà Nội nằm ở vùng Đồng bằng Bắc Bộ, tiếp giáp với nhiều tỉnh[cite: 34]."
+            },
+            {
+                id: "b12_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư (tỉnh Ninh Bình) về thành Đại La và đổi tên thành gì?",
+                opts: ["Thăng Long", "Đông Đô", "Đông Kinh", "Hà Nội"],
+                ans: 0,
+                wrongReason: "Khi thuyền vua tạm đỗ dưới chân thành Đại La, thấy có rồng vàng hiện lên nên vua đổi tên là thành Thăng Long, nghĩa là 'Rồng bay lên'[cite: 34].",
+                ref: "Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư (tỉnh Ninh Bình) về thành Đại La (thành phố Hà Nội) và đổi tên là Thăng Long[cite: 34]."
+            },
+            {
+                id: "b12_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Tên gọi 'Thăng Long' do vua Lý Thái Tổ đặt năm 1010 có ý nghĩa là gì?",
+                opts: ["Rồng bay lên", "Rồng cuộn hổ ngồi", "Thành phố vì hoà bình", "Vùng đất trù phú"],
+                ans: 0,
+                wrongReason: "'Thăng' nghĩa là bay lên, 'Long' nghĩa là rồng; Thăng Long có nghĩa là 'Rồng bay lên'[cite: 34].",
+                ref: "Tên gọi Thăng Long có nghĩa là 'Rồng bay lên'[cite: 34]."
+            },
+            {
+                id: "b12_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Trong dân gian còn lưu truyền những tên gọi nào khác của Thăng Long – Hà Nội?",
+                opts: ["Tràng An, Kẻ Chợ, Hà Thành", "Sài Gòn, Gia Định, Chợ Lớn", "Phú Xuân, Thuận Hoá, Kinh Kỳ", "Hoa Lư, Trường Yên, Cố Đô"],
+                ans: 0,
+                wrongReason: "Bên cạnh các tên gọi hành chính qua các triều đại, trong dân gian Hà Nội còn được gọi thân thương là Tràng An, Kẻ Chợ, Hà Thành[cite: 34].",
+                ref: "Trong dân gian còn lưu truyền nhiều tên gọi khác của Thăng Long – Hà Nội như: Tràng An, Kẻ Chợ, Hà Thành[cite: 34]."
+            },
+            {
+                id: "b12_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: 'Thăng Long tứ trấn' gồm bốn ngôi đền nào trấn giữ bốn phía đông, tây, nam, bắc của Hà Nội?",
+                opts: [
+                    "Đền Bạch Mã, đền Voi Phục, đền Kim Liên và đền Quán Thánh",
+                    "Đền Hùng, đền Gióng, đền Cổ Loa và đền Ngọc Sơn",
+                    "Văn Miếu, chùa Một Cột, đền Hai Bà Trưng và đền Đô",
+                    "Đền Trần, đền Kiếp Bạc, đền Cửa Ông và đền Mẫu"
+                ],
+                ans: 0,
+                wrongReason: "Thăng Long tứ trấn chỉ bốn ngôi đền thờ bốn vị thần trấn giữ bốn phía của kinh thành Thăng Long xưa: Bạch Mã, Voi Phục, Kim Liên và Quán Thánh[cite: 35].",
+                ref: "Thăng Long tứ trấn gồm: đền Bạch Mã, đền Voi Phục, đền Kim Liên và đền Quán Thánh[cite: 35]."
+            },
+            {
+                id: "b12_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Sau khi đánh thắng giặc Minh, vua Lê Thái Tổ đã trả gươm báu cho Rùa Vàng ở hồ nào?",
+                opts: ["Hồ Tả Vọng (nay là Hồ Gươm / hồ Hoàn Kiếm)", "Hồ Tây", "Hồ Trúc Bạch", "Hồ Bảy Mẫu"],
+                ans: 0,
+                wrongReason: "Vua Lê Thái Tổ ngự thuyền rồng dạo quanh hồ Tả Vọng và trả gươm báu cho Rùa Vàng, từ đó hồ mang tên là Hồ Gươm hay hồ Hoàn Kiếm[cite: 35].",
+                ref: "Vua Lê Thái Tổ trả gươm cho Rùa Vàng ở hồ Tả Vọng; từ đó hồ mang tên là Hồ Gươm hay hồ Hoàn Kiếm[cite: 35]."
+            },
+            {
+                id: "b12_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Vào ngày 2 – 9 – 1945, Bác Hồ đã đọc bản 'Tuyên ngôn Độc lập' khai sinh ra nước Việt Nam Dân chủ Cộng hoà tại đâu?",
+                opts: ["Quảng trường Ba Đình (Hà Nội)", "Bến cảng Nhà Rồng (Sài Gòn)", "Khu di tích Đền Hùng (Phú Thọ)", "Thành Cổ Loa (Đông Anh)"],
+                ans: 0,
+                wrongReason: "Ngày 2 – 9 – 1945, tại Quảng trường Ba Đình lịch sử (Hà Nội), trước hàng vạn đồng bào, Chủ tịch Hồ Chí Minh đã đọc Tuyên ngôn Độc lập[cite: 36].",
+                ref: "Ngày 2 – 9 – 1945, tại Quảng trường Ba Đình, Bác Hồ đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hoà[cite: 36]."
+            },
+            {
+                id: "b12_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền tên nhân vật lịch sử: 'Năm 1882, tại thành Hà Nội, nhân dân ta đã anh dũng chiến đấu chống thực dân Pháp xâm lược dưới sự lãnh đạo của Tổng đốc ......................'",
+                ans: ["Hoàng Diệu"],
+                displayAns: "Hoàng Diệu",
+                wrongReason: "Tổng đốc Hoàng Diệu đã chỉ huy quân dân tử thủ bảo vệ thành Hà Nội năm 1882 và tuẫn tiết để bảo toàn khí tiết khi thành thất thủ[cite: 36, 67].",
+                ref: "Năm 1882, nhân dân ta anh dũng chống Pháp bảo vệ thành Hà Nội dưới sự lãnh đạo của Tổng đốc Hoàng Diệu[cite: 36]."
+            },
+            {
+                id: "b12_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền cụm từ còn thiếu: 'Ngày 16 – 7 – 1999, Thủ đô Hà Nội được UNESCO trao tặng danh hiệu Thành phố vì ......................'",
+                ans: ["hoà bình", "hòa bình"],
+                displayAns: "hoà bình",
+                wrongReason: "Với những đóng góp vì hoà bình, hữu nghị và phát triển văn hoá, Hà Nội được UNESCO vinh danh là 'Thành phố vì hoà bình' năm 1999[cite: 37].",
+                ref: "Ngày 16 – 7 – 1999, Hà Nội được UNESCO trao tặng danh hiệu 'Thành phố vì hoà bình'[cite: 37]."
+            },
+            {
+                id: "b12_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Trong Thăng Long tứ trấn, ngôi đền nào trấn giữ ở phía bắc của kinh thành Thăng Long xưa?",
+                opts: ["Đền Quán Thánh", "Đền Bạch Mã", "Đền Voi Phục", "Đền Kim Liên"],
+                ans: 0,
+                wrongReason: "Đền Quán Thánh (thờ Huyền Thiên Trấn Vũ) trấn giữ phía bắc; Bạch Mã phía đông; Voi Phục phía tây và Kim Liên phía nam[cite: 35, 67, 70].",
+                ref: "Đền Quán Thánh trấn giữ phía bắc của Thăng Long – Hà Nội[cite: 35]."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b12_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Trong 'Chiếu dời đô' của Lý Công Uẩn, thành Đại La được miêu tả có địa thế thuận lợi như thế nào?",
+                opts: [
+                    "Ở giữa khu vực trời đất, được thế rồng cuộn hổ ngồi, chính giữa nam bắc đông tây, mặt đất rộng mà bằng phẳng, thế đất cao mà sáng sủa",
+                    "Nằm cheo leo trên đỉnh núi cao hiểm trở, xung quanh có vách đá dựng đứng bao bọc",
+                    "Nằm ở tận cùng phía nam đất nước, quanh năm ngập nước thuỷ triều",
+                    "Là một hòn đảo nhỏ nằm tách biệt hoàn toàn giữa biển khơi"
+                ],
+                ans: 0,
+                wrongReason: "Chiếu dời đô nêu rõ Đại La có thế 'rồng cuộn hổ ngồi', chính giữa nam bắc đông tây, tiện nghi núi sông, đất rộng bằng phẳng, cao ráo sáng sủa[cite: 35].",
+                ref: "Thành Đại La ở giữa khu vực trời đất, được thế rồng cuộn hổ ngồi, chính giữa nam bắc đông tây, đất rộng bằng phẳng, cao mà sáng sủa[cite: 35]."
+            },
+            {
+                id: "b12_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Thứ tự các tên gọi chính thức của Thăng Long – Hà Nội từ năm 1010 đến năm 1831 là gì?",
+                opts: [
+                    "Thăng Long (1010) → Đông Đô (1397) → Đông Quan (1408) → Đông Kinh (1428) → Hà Nội (1831)",
+                    "Hà Nội (1010) → Đông Kinh (1397) → Thăng Long (1428) → Đông Đô (1831)",
+                    "Đông Đô (1010) → Thăng Long (1397) → Đông Kinh (1408) → Hà Nội (1831)",
+                    "Thăng Long (1010) → Đông Kinh (1397) → Đông Đô (1408) → Hà Nội (1831)"
+                ],
+                ans: 0,
+                wrongReason: "Trục thời gian lịch sử ghi nhận các mốc tên gọi lần lượt là: Thăng Long (1010), Đông Đô (1397), Đông Quan (1408), Đông Kinh (1428) và Hà Nội (1831)[cite: 34].",
+                ref: "Tên gọi Thăng Long – Hà Nội qua các thời kì: Thăng Long (1010), Đông Đô (1397), Đông Quan (1408), Đông Kinh (1428), Hà Nội (1831)[cite: 34]."
+            },
+            {
+                id: "b12_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Cuối tháng 12 – 1972, quân và dân Hà Nội đã anh dũng chiến đấu chống chiến tranh phá hoại của Mỹ ở miền Bắc trong 12 ngày đêm, làm nên chiến thắng Điện Biên Phủ ......................'",
+                ans: ["trên không"],
+                displayAns: "trên không",
+                wrongReason: "Quân và dân Hà Nội đã bắn rơi nhiều máy bay ném bom B52 của Mỹ trong 12 ngày đêm cuối năm 1972, lập nên chiến thắng 'Điện Biên Phủ trên không'[cite: 36].",
+                ref: "Cuối tháng 12 – 1972, quân và dân Hà Nội làm nên chiến thắng 'Điện Biên Phủ trên không'[cite: 36]."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b12_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Chiến thắng 'Điện Biên Phủ trên không' (12 – 1972) của quân và dân Hà Nội có ý nghĩa lịch sử to lớn nào?",
+                opts: [
+                    "Buộc Mỹ phải chấm dứt hoàn toàn chiến tranh phá hoại miền Bắc và kí kết Hiệp định Pa-ri về chấm dứt chiến tranh, lập lại hoà bình ở Việt Nam",
+                    "Mở đầu cuộc kháng chiến chống thực dân Pháp xâm lược lần thứ nhất",
+                    "Kết thúc hoàn toàn 1 000 năm Bắc thuộc của dân tộc ta",
+                    "Đánh tan quân xâm lược nhà Minh và giành lại độc lập cho Đại Việt"
+                ],
+                ans: 0,
+                wrongReason: "Thất bại nặng nề trên bầu trời Hà Nội buộc chính quyền Mỹ phải ngừng ném bom miền Bắc và kí Hiệp định Pa-ri (1973)[cite: 36].",
+                ref: "Chiến thắng 'Điện Biên Phủ trên không' đã buộc Mỹ phải chấm dứt hoàn toàn chiến tranh phá hoại miền Bắc và kí kết Hiệp định Pa-ri[cite: 36]."
+            },
+            {
+                id: "b12_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Những biểu hiện nào chứng tỏ Thủ đô Hà Nội ngày nay là trung tâm chính trị quan trọng nhất của cả nước?",
+                opts: [
+                    "Là nơi đặt trụ sở làm việc của các cơ quan Trung ương như Toà nhà Quốc hội, Phủ Chủ tịch, Chính phủ",
+                    "Là nơi có nhiều bãi tắm biển nghỉ dưỡng nhất cả nước",
+                    "Là nơi tập trung toàn bộ các nhà máy thuỷ điện lớn nhất Việt Nam",
+                    "Là nơi có diện tích trồng cà phê và cao su lớn nhất nước ta"
+                ],
+                ans: 0,
+                wrongReason: "Thủ đô Hà Nội là đầu não chính trị của quốc gia, nơi đặt trụ sở làm việc của Quốc hội, Chính phủ và các cơ quan Trung ương[cite: 37, 68].",
+                ref: "Thủ đô Hà Nội là nơi đặt trụ sở làm việc của các cơ quan Trung ương của cả nước[cite: 37]."
+            },
+            {
+                id: "b12_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Vì sao nói Hà Nội là trung tâm giáo dục và văn hoá hàng đầu của Việt Nam?",
+                opts: [
+                    "Nơi đây tập trung nhiều trường đại học, viện nghiên cứu, bảo tàng, thư viện hàng đầu và có nhiều di tích lịch sử – văn hoá nhất cả nước",
+                    "Vì ở Hà Nội chỉ có các trường đại học mà không có trường tiểu học",
+                    "Vì toàn bộ người dân Hà Nội đều làm nghề nghệ nhân nặn tò he",
+                    "Vì Hà Nội là địa phương duy nhất trong cả nước có bảo tàng lịch sử"
+                ],
+                ans: 0,
+                wrongReason: "Hà Nội quy tụ các trường đại học lớn (như Đại học Bách khoa Hà Nội), Bảo tàng Lịch sử quốc gia cùng kho tàng di sản văn hoá đồ sộ[cite: 37].",
+                ref: "Hà Nội tập trung nhiều trường đại học, viện nghiên cứu, bảo tàng hàng đầu và có nhiều di tích lịch sử – văn hoá nhất cả nước[cite: 37]."
+            },
+            {
+                id: "b12_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Ngành kinh tế của Thủ đô Hà Nội ngày nay phát triển như thế nào?",
+                opts: [
+                    "Là trung tâm kinh tế quan trọng của đất nước với nhiều nhà máy, khu công nghệ cao, trung tâm thương mại, hệ thống ngân hàng",
+                    "Chỉ dựa vào nghề đánh bắt hải sản xa bờ và làm muối",
+                    "Chỉ sản xuất thủ công nghiệp nhỏ lẻ trong các hộ gia đình",
+                    "Không có các khu công nghệ cao hay trung tâm thương mại lớn"
+                ],
+                ans: 0,
+                wrongReason: "Hà Nội là đầu tàu kinh tế của miền Bắc và cả nước với hệ thống khu công nghệ cao, công nghiệp hiện đại, thương mại và tài chính – ngân hàng phát triển[cite: 37].",
+                ref: "Hà Nội là trung tâm kinh tế quan trọng của đất nước với nhiều nhà máy, khu công nghệ cao, trung tâm thương mại, hệ thống ngân hàng[cite: 37]."
+            },
+            {
+                id: "b12_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Khi thành Hà Nội thất thủ trước cuộc tấn công của thực dân Pháp năm 1882, Tổng đốc Hoàng Diệu đã hành động như thế nào?",
+                opts: [
+                    "Soạn một tờ biểu dâng vua rồi tự vẫn để bảo toàn khí tiết",
+                    "Đầu hàng quân Pháp để giữ lấy chức vụ Tổng đốc",
+                    "Bỏ chạy sang nước ngoài sinh sống",
+                    "Kí hiệp ước dâng toàn bộ miền Bắc cho thực dân Pháp"
+                ],
+                ans: 0,
+                wrongReason: "Tấm gương anh dũng chiến đấu đến hơi thở cuối cùng và tuẫn tiết để giữ trọn khí tiết của Hoàng Diệu được nhân dân đời đời kính trọng[cite: 36, 70].",
+                ref: "Trong cuộc chiến đấu không cân sức năm 1882, thành Hà Nội thất thủ, Hoàng Diệu đã soạn một tờ biểu dâng vua rồi tự vẫn để bảo toàn khí tiết[cite: 36]."
+            },
+            {
+                id: "b12_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Sau khi vua Lý Thái Tổ dời đô về Thăng Long năm 1010, nơi đây đã trở thành kinh đô của những triều đại phong kiến nào?",
+                opts: [
+                    "Triều đại Lý, Trần, Hậu Lê,...",
+                    "Triều đại Hùng Vương và An Dương Vương",
+                    "Triều đại nhà Ngô và nhà Đinh",
+                    "Triều đại nhà Tiền Lê và nhà Nguyễn"
+                ],
+                ans: 0,
+                wrongReason: "Từ năm 1010, Thăng Long trở thành kinh đô lâu đời của các triều đại Lý, Trần, Hậu Lê,...[cite: 34] (còn thời Hùng Vương đóng đô ở Phong Châu, Đinh – Tiền Lê ở Hoa Lư, nhà Nguyễn ở Huế).",
+                ref: "Từ năm 1010, Thăng Long là kinh đô của các triều đại: Lý, Trần, Hậu Lê,...[cite: 34]"
+            },
+            {
+                id: "b12_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Bức ảnh nghệ nhân dạy các bạn nhỏ nặn ...................... thể hiện hoạt động bảo tồn và phát huy nét đẹp văn hoá dân gian của Hà Nội.'",
+                ans: ["tò he"],
+                displayAns: "tò he",
+                wrongReason: "Tò he là đồ chơi dân gian truyền thống nặn từ bột gạo nếp nhuộm màu tự nhiên (nổi tiếng ở làng Xuân La, Hà Nội)[cite: 37, 68].",
+                ref: "Hoạt động nghệ nhân dạy các bạn nhỏ nặn tò he góp phần giữ gìn và phát huy truyền thống văn hoá của Thăng Long – Hà Nội[cite: 37, 68]."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b12_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Vì sao năm 1010 vua Lý Thái Tổ lại quyết định dời đô từ vùng núi Hoa Lư (Ninh Bình) ra vùng đồng bằng Đại La (Thăng Long)?",
+                opts: [
+                    "Vì Hoa Lư chật hẹp, nhiều núi đá không thuận lợi mở mang đất nước; còn Đại La ở vị trí trung tâm, đất rộng bằng phẳng, giao thông thuận tiện để phát triển lâu dài",
+                    "Vì ở Hoa Lư không có nước ngọt để sinh hoạt",
+                    "Vì thành Đại La nằm ở sát bờ biển nên dễ đánh bắt cá",
+                    "Vì Hoa Lư bị động đất phá huỷ hoàn toàn"
+                ],
+                ans: 0,
+                wrongReason: "Hoa Lư thuận lợi cho phòng thủ buổi đầu dựng nước, nhưng khi đất nước thái bình phát triển thì Đại La ở trung tâm đồng bằng rộng lớn mới là nơi định đô muôn đời[cite: 35].",
+                ref: "Đại La có địa thế trung tâm thuận lợi, đất rộng bằng phẳng, cao ráo, thuận tiện giao lưu phát triển đất nước phồn thịnh[cite: 35]."
+            },
+            {
+                id: "b12_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Truyền thuyết 'Sự tích Hồ Gươm' (vua Lê Thái Tổ trả gươm báu cho Rùa Vàng) thể hiện khát vọng cao đẹp nào của nhân dân Thăng Long – Hà Nội và dân tộc Việt Nam?",
+                opts: [
+                    "Khát vọng hoà bình, chấm dứt chiến tranh, xây dựng cuộc sống ấm no hạnh phúc sau khi đánh thắng giặc ngoại xâm",
+                    "Mong muốn tiếp tục mở rộng chiến tranh sang các nước láng giềng",
+                    "Thể hiện tài năng bơi lội của các võ tướng thời nhà Lê",
+                    "Giải thích nguồn gốc nghề đúc kiếm ở kinh thành Thăng Long"
+                ],
+                ans: 0,
+                wrongReason: "Trả lại thanh gươm chiến đấu khi đất nước sạch bóng quân thù thể hiện tinh thần yêu chuộng hoà bình sâu sắc của dân tộc ta[cite: 35].",
+                ref: "Sự tích Hồ Gươm ca ngợi chiến công chống giặc giữ nước và khát vọng hoà bình của nhân dân ta[cite: 35]."
+            },
+            {
+                id: "b12_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Nhìn chiếc bảng tên phố 'Hoàng Hoa Thám' gắn với sự kiện xác máy bay B52 của Mỹ bị bắn rơi tháng 12 – 1972[cite: 36] hay tên phố 'Hoàng Diệu'[cite: 36], việc đặt tên đường phố theo tên danh nhân và sự kiện lịch sử có ý nghĩa gì?",
+                opts: [
+                    "Giúp thế hệ sau luôn ghi nhớ, tri ân công lao của các anh hùng dân tộc và những chiến công bảo vệ Thủ đô",
+                    "Chỉ để giúp người đưa thư dễ tìm địa chỉ nhà hơn",
+                    "Để thay thế hoàn toàn việc học môn Lịch sử trong nhà trường",
+                    "Để chứng tỏ Hà Nội có rất nhiều con đường dài"
+                ],
+                ans: 0,
+                wrongReason: "Mỗi tên đường, tên phố ở Hà Nội đều mang dấu ấn lịch sử, giáo dục lòng yêu nước và niềm tự hào dân tộc cho mọi thế hệ.",
+                ref: "Tên các tuyến phố như Hoàng Diệu, Hoàng Hoa Thám gắn với những trang sử đấu tranh anh dũng bảo vệ Thăng Long – Hà Nội[cite: 36]."
+            },
+            {
+                id: "b12_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Là học sinh lớp 4, việc làm nào sau đây của em thể hiện ý thức giữ gìn và phát huy truyền thống văn hoá tốt đẹp của Thăng Long – Hà Nội?",
+                opts: [
+                    "Tích cực tìm hiểu lịch sử, giữ gìn vệ sinh khi tham quan di tích và trân trọng các giá trị văn hoá truyền thống",
+                    "Viết vẽ bậy lên tường các ngôi đền trong Thăng Long tứ trấn",
+                    "Chê bai các trò chơi dân gian và nghệ thuật múa rối nước là lạc hậu",
+                    "Xả rác bừa bãi xung quanh khu vực Hồ Gươm và Quảng trường Ba Đình"
+                ],
+                ans: 0,
+                wrongReason: "Bảo vệ cảnh quan di tích, học tập chăm chỉ và tự hào, giới thiệu văn hoá dân tộc là hành động thiết thực của học sinh.",
+                ref: "Mỗi học sinh cần có ý thức giữ gìn vệ sinh, bảo vệ di tích lịch sử – văn hoá và phát huy truyền thống của Thăng Long – Hà Nội[cite: 33, 37]."
+            },
+            {
+                id: "b12_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Khu Trung tâm Hoàng thành Thăng Long ngày nay nằm ở phường ......................, thành phố Hà Nội.'",
+                ans: ["Ba Đình"],
+                displayAns: "Ba Đình",
+                wrongReason: "Quan sát lược đồ vị trí địa lí Thăng Long – Hà Nội[cite: 34], Khu Trung tâm Hoàng thành Thăng Long nằm tại địa bàn Ba Đình (trung tâm Thủ đô Hà Nội)[cite: 34, 65].",
+                ref: "Khu Trung tâm Hoàng thành Thăng Long nằm ở Ba Đình, thành phố Hà Nội[cite: 34, 65]."
+            }
+        ]
+    },,
+    bai13: {
+        title: "Bài 13: Văn Miếu – Quốc Tử Giám",
+        oneLine: "Khu di tích Văn Miếu – Quốc Tử Giám ở Thủ đô Hà Nội là biểu tượng của nền giáo dục và truyền thống hiếu học lâu đời của dân tộc Việt Nam, nổi bật với Khuê Văn Các, nhà bia Tiến sĩ, Văn Miếu (Điện Đại Thành) và Quốc Tử Giám (khu Thái Học).",
+        cards: [
+            { tag: "Công trình tiêu biểu", title: "Khuê Văn Các – Biểu tượng Thủ đô", desc: "Khu di tích Văn Miếu – Quốc Tử Giám gồm các công trình chính: Khuê Văn Các (năm 1999 được chọn làm biểu tượng của Thủ đô Hà Nội), nhà bia Tiến sĩ, Văn Miếu và Quốc Tử Giám[cite: 37, 72]." },
+            { tag: "Văn Miếu & Quốc Tử Giám", title: "Thờ Khổng Tử & Trường đại học đầu tiên", desc: "Khu Đại Thành (Văn Miếu trước đây) là nơi thờ Khổng Tử và các bậc hiền triết[cite: 72]; khu Thái Học (Quốc Tử Giám trước đây) là trường đại học đầu tiên của nước ta, nơi đào tạo nhân tài và in ấn sách học[cite: 72, 74]." },
+            { tag: "Nhà bia Tiến sĩ", title: "82 bia đá trên lưng rùa", desc: "Gồm 82 bia Tiến sĩ đặt trên lưng rùa đá ở hai bên giếng Thiên Quang, khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc nhằm tôn vinh nhân tài và khuyến khích tinh thần hiếu học[cite: 72, 73]." },
+            { tag: "Truyền thống hiếu học", title: "Tôn sư trọng đạo & Hiếu học", desc: "Văn Miếu – Quốc Tử Giám là nơi tổ chức các hoạt động tôn vinh tinh thần hiếu học như cuộc thi Trạng nguyên nhỏ tuổi, thu hút đông đảo học sinh, sinh viên và du khách tham quan, học tập[cite: 73, 74]." },
+            { tag: "Gìn giữ & Phát huy", title: "Bảo vệ di tích lịch sử – văn hoá", desc: "Cần giữ gìn vệ sinh, không sờ tay lên đầu rùa hay viết vẽ bậy lên bia đá, tuyên truyền bảo vệ cảnh quan và nỗ lực học tập để phát huy truyền thống hiếu học của dân tộc[cite: 37, 74]." }
+        ],
+        puzzle: {
+            title: "Đố tranh: Sơ đồ Khu di tích Văn Miếu – Quốc Tử Giám & Khuê Văn Các",
+            imgSrc: "images/bai13_vanmieu.jpg",
+            svgFallback: `<svg width="100%" height="215" viewBox="0 0 600 215" style="background:#fffbeb; border-radius:8px;">
+                <rect x="10" y="10" width="580" height="195" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="8"/>
+                <text x="300" y="32" font-size="14" font-weight="bold" text-anchor="middle" fill="#78350f">SƠ ĐỒ CÁC CÔNG TRÌNH CHÍNH Ở VĂN MIẾU – QUỐC TỬ GIÁM</text>
+                <rect x="25" y="50" width="125" height="80" fill="#ffffff" stroke="#b91c1c" rx="6"/>
+                <text x="87" y="75" font-size="11" font-weight="bold" text-anchor="middle" fill="#b91c1c">🏯 Khuê Văn Các</text>
+                <text x="87" y="95" font-size="9.5" text-anchor="middle">Biểu tượng của</text>
+                <text x="87" y="110" font-size="9.5" text-anchor="middle">Thủ đô Hà Nội (1999)</text>
+                <rect x="162" y="50" width="135" height="80" fill="#ffffff" stroke="#0369a1" rx="6"/>
+                <text x="229" y="75" font-size="11" font-weight="bold" text-anchor="middle" fill="#0369a1">🐢 Nhà bia Tiến sĩ</text>
+                <text x="229" y="95" font-size="9.5" text-anchor="middle">82 bia đá trên lưng rùa</text>
+                <text x="229" y="110" font-size="9.5" text-anchor="middle">hai bên giếng Thiên Quang</text>
+                <rect x="309" y="50" width="130" height="80" fill="#ffffff" stroke="#15803d" rx="6"/>
+                <text x="374" y="75" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">🏛️ Văn Miếu</text>
+                <text x="374" y="95" font-size="9.5" text-anchor="middle">Khu Đại Thành</text>
+                <text x="374" y="110" font-size="9.5" text-anchor="middle">Thờ Khổng Tử, hiền triết</text>
+                <rect x="451" y="50" width="125" height="80" fill="#ffffff" stroke="#6d28d9" rx="6"/>
+                <text x="513" y="75" font-size="11" font-weight="bold" text-anchor="middle" fill="#6d28d9">🎓 Quốc Tử Giám</text>
+                <text x="513" y="95" font-size="9.5" text-anchor="middle">Khu Thái Học</text>
+                <text x="513" y="110" font-size="9.5" text-anchor="middle">Đào tạo nhân tài, in sách</text>
+                <rect x="25" y="142" width="550" height="48" fill="#dcfce7" stroke="#166534" rx="6"/>
+                <text x="300" y="162" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#14532d">📚 Ý nghĩa: Tôn vinh truyền thống hiếu học và tôn sư trọng đạo của dân tộc Việt Nam</text>
+                <text x="300" y="179" font-size="10.5" text-anchor="middle" fill="#166534">Bảo vệ di tích: Giữ vệ sinh chung, không sờ đầu rùa đá hay viết vẽ bậy lên bia</text>
+            </svg>`,
+            questions: [
+                {
+                    id: "b13_p1",
+                    type: "mc",
+                    q: "Quan sát sơ đồ khu di tích Văn Miếu – Quốc Tử Giám, công trình nào được chọn làm biểu tượng của Thủ đô Hà Nội từ năm 1999?",
+                    opts: ["Khuê Văn Các", "Nhà Tiền Đường", "Điện Đại Thành", "Cổng Đại Trung"],
+                    ans: 0,
+                    wrongReason: "Năm 1999, công trình kiến trúc Khuê Văn Các trong khu di tích Văn Miếu – Quốc Tử Giám được chọn là biểu tượng của Thủ đô Hà Nội[cite: 37, 72].",
+                    ref: "Năm 1999, Khuê Văn Các trong khu di tích Văn Miếu – Quốc Tử Giám được chọn là biểu tượng của Thủ đô Hà Nội[cite: 37, 72]."
+                },
+                {
+                    id: "b13_p2",
+                    type: "mc",
+                    q: "Quan sát hình ảnh các tấm bia Tiến sĩ đặt trên lưng rùa đá trong khu di tích Văn Miếu – Quốc Tử Giám, trên mặt các tấm bia này khắc nội dung gì?",
+                    opts: [
+                        "Khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc",
+                        "Khắc sơ đồ đường đi từ Hoa Lư ra kinh thành Thăng Long",
+                        "Khắc danh sách các làng nghề thủ công ở vùng Đồng bằng Bắc Bộ",
+                        "Khắc lời bài hát Quan họ của vùng Kinh Bắc"
+                    ],
+                    ans: 0,
+                    wrongReason: "82 bia Tiến sĩ đặt ở hai bên giếng Thiên Quang khắc tên những người đỗ Tiến sĩ trong các khoa thi thời Hậu Lê và thời Mạc nhằm tôn vinh nhân tài[cite: 72].",
+                    ref: "Trên bia đá trong nhà bia Tiến sĩ khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc[cite: 72]."
+                }
+            ]
+        },
+        de1: [
+            // --- 10 CÂU NHẬN BIẾT (DỄ) ---
+            {
+                id: "b13_d1_1", type: "mc", level: "Nhận biết",
+                q: "Câu 1: Khu di tích lịch sử – văn hoá Văn Miếu – Quốc Tử Giám nằm ở tỉnh/thành phố nào của nước ta?",
+                opts: ["Thành phố Hà Nội", "Tỉnh Bắc Ninh", "Tỉnh Phú Thọ", "Tỉnh Ninh Bình"],
+                ans: 0,
+                wrongReason: "Văn Miếu – Quốc Tử Giám nằm ở trung tâm Thủ đô Hà Nội, là di tích tiêu biểu cho truyền thống hiếu học của dân tộc[cite: 71, 73].",
+                ref: "Khu di tích Văn Miếu – Quốc Tử Giám toạ lạc tại Thủ đô Hà Nội[cite: 73]."
+            },
+            {
+                id: "b13_d1_2", type: "mc", level: "Nhận biết",
+                q: "Câu 2: Công trình nào trong khu di tích Văn Miếu – Quốc Tử Giám được chọn làm biểu tượng của Thủ đô Hà Nội vào năm 1999?",
+                opts: ["Khuê Văn Các", "Nhà bia Tiến sĩ", "Điện Đại Thành", "Nhà Tiền Đường"],
+                ans: 0,
+                wrongReason: "Khuê Văn Các với kiến trúc gác vuông tám mái độc đáo đã được chọn là biểu tượng của Thủ đô Hà Nội năm 1999[cite: 37, 72].",
+                ref: "Năm 1999, Khuê Văn Các trong khu di tích Văn Miếu – Quốc Tử Giám được chọn là biểu tượng của Thủ đô Hà Nội[cite: 37, 72]."
+            },
+            {
+                id: "b13_d1_3", type: "mc", level: "Nhận biết",
+                q: "Câu 3: Trên sơ đồ khu di tích Văn Miếu – Quốc Tử Giám, khu vực Văn Miếu trước đây có tên gọi là gì?",
+                opts: ["Khu Đại Thành", "Khu Thái Học", "Giếng Thiên Quang", "Vườn Giám"],
+                ans: 0,
+                wrongReason: "Theo sơ đồ khu di tích, khu Đại Thành là Văn Miếu trước đây, còn khu Thái Học là Quốc Tử Giám trước đây[cite: 72].",
+                ref: "Trên sơ đồ khu di tích Văn Miếu – Quốc Tử Giám, khu Đại Thành là Văn Miếu trước đây[cite: 72]."
+            },
+            {
+                id: "b13_d1_4", type: "mc", level: "Nhận biết",
+                q: "Câu 4: Trên sơ đồ khu di tích Văn Miếu – Quốc Tử Giám, khu vực Quốc Tử Giám trước đây có tên gọi là gì?",
+                opts: ["Khu Thái Học", "Khu Đại Thành", "Khuê Văn Các", "Cổng Văn Miếu"],
+                ans: 0,
+                wrongReason: "Khu Thái Học chính là vị trí của Quốc Tử Giám trước đây – nơi giảng dạy, học tập và đào tạo nhân tài của đất nước[cite: 72].",
+                ref: "Trên sơ đồ khu di tích, khu Thái Học là Quốc Tử Giám trước đây[cite: 72]."
+            },
+            {
+                id: "b13_d1_5", type: "mc", level: "Nhận biết",
+                q: "Câu 5: Trong khu di tích Văn Miếu – Quốc Tử Giám hiện còn lưu giữ bao nhiêu bia Tiến sĩ?",
+                opts: ["82 bia Tiến sĩ", "18 bia Tiến sĩ", "54 bia Tiến sĩ", "100 bia Tiến sĩ"],
+                ans: 0,
+                wrongReason: "Khu di tích hiện còn bảo tồn nguyên vẹn 82 tấm bia Tiến sĩ đặt trên lưng các con rùa đá ở hai bên giếng Thiên Quang[cite: 72].",
+                ref: "Trong khu di tích Văn Miếu – Quốc Tử Giám có 82 bia Tiến sĩ đặt trên lưng rùa đá[cite: 72]."
+            },
+            {
+                id: "b13_d1_6", type: "mc", level: "Nhận biết",
+                q: "Câu 6: Các tấm bia Tiến sĩ trong khu di tích Văn Miếu – Quốc Tử Giám được đặt trên lưng của con vật nào?",
+                opts: ["Con rùa", "Con rồng", "Con voi", "Con ngựa"],
+                ans: 0,
+                wrongReason: "Rùa là loài vật tượng trưng cho sự trường tồn, bền vững; đặt bia Tiến sĩ trên lưng rùa mang ý nghĩa lưu danh muôn đời[cite: 72].",
+                ref: "Các bia Tiến sĩ được dựng ở hai bên giếng Thiên Quang và đặt trên lưng của các con rùa đá[cite: 72]."
+            },
+            {
+                id: "b13_d1_7", type: "mc", level: "Nhận biết",
+                q: "Câu 7: Nhà Tiền Đường trong khu Thái Học hiện nay có chức năng gì?",
+                opts: [
+                    "Là nơi trưng bày các hiện vật liên quan đến truyền thống hiếu học của dân tộc Việt Nam",
+                    "Là nơi tổ chức các cuộc thi đấu vật và kéo co mùa xuân",
+                    "Là trụ sở làm việc của Toà nhà Quốc hội Việt Nam",
+                    "Là nơi sản xuất và bán các sản phẩm gốm sứ Bát Tràng"
+                ],
+                ans: 0,
+                wrongReason: "Nhà Tiền Đường trong khu Thái Học trưng bày nhiều tư liệu, hiện vật quý về lịch sử khoa cử và truyền thống hiếu học của dân tộc[cite: 72].",
+                ref: "Nhà Tiền Đường trong khu Thái Học là nơi trưng bày các hiện vật liên quan đến truyền thống hiếu học của dân tộc Việt Nam[cite: 72]."
+            },
+            {
+                id: "b13_d1_8", type: "fill", level: "Nhận biết",
+                q: "Câu 8: Điền từ còn thiếu: 'Văn Miếu – Quốc Tử Giám được xem là biểu tượng của tri thức và truyền thống ...................... của dân tộc Việt Nam.'",
+                ans: ["hiếu học"],
+                displayAns: "hiếu học",
+                wrongReason: "Nơi đây gắn liền với lịch sử giáo dục, khoa cử lâu đời và tinh thần ham học, trọng nhân tài của người Việt Nam[cite: 37, 73].",
+                ref: "Văn Miếu – Quốc Tử Giám là biểu tượng của truyền thống hiếu học của dân tộc Việt Nam[cite: 37, 73]."
+            },
+            {
+                id: "b13_d1_9", type: "fill", level: "Nhận biết",
+                q: "Câu 9: Điền tên triều đại: 'Trên các bia đá trong nhà bia Tiến sĩ khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời ......................'",
+                ans: ["Mạc"],
+                displayAns: "Mạc",
+                wrongReason: "82 bia đá tại Văn Miếu – Quốc Tử Giám ghi danh các vị đỗ Tiến sĩ trong các khoa thi từ thời Hậu Lê đến thời Mạc[cite: 72].",
+                ref: "Trên bia đá khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc[cite: 72]."
+            },
+            {
+                id: "b13_d1_10", type: "mc", level: "Nhận biết",
+                q: "Câu 10: Các nhà bia Tiến sĩ trong khu di tích Văn Miếu – Quốc Tử Giám được dựng ở hai bên của công trình nào?",
+                opts: ["Giếng Thiên Quang", "Hồ Hoàn Kiếm", "Sông Tô Lịch", "Hồ Tây"],
+                ans: 0,
+                wrongReason: "Hai khu nhà bia Tiến sĩ nằm đối xứng ở phía đông và phía tây của giếng Thiên Quang (giếng hình vuông tượng trưng cho đất)[cite: 72].",
+                ref: "Các bia Tiến sĩ được dựng ở hai bên giếng Thiên Quang trong khu di tích Văn Miếu – Quốc Tử Giám[cite: 72]."
+            },
+
+            // --- 3 CÂU THÔNG HIỂU (TRUNG BÌNH) TRONG ĐỀ 1 ---
+            {
+                id: "b13_d1_11", type: "mc", level: "Thông hiểu",
+                q: "Câu 11: Việc khắc tên những người đỗ Tiến sĩ lên bia đá đặt ở Văn Miếu – Quốc Tử Giám có ý nghĩa gì?",
+                opts: [
+                    "Tôn vinh những người đỗ đạt, trọng dụng nhân tài và khuyến khích tinh thần hiếu học trong nhân dân",
+                    "Để thu tiền lệ phí của những người đến xem bia đá",
+                    "Để làm tường rào bao quanh khu vực giếng Thiên Quang",
+                    "Để ghi chép lại danh sách các vị vua qua các triều đại"
+                ],
+                ans: 0,
+                wrongReason: "Khắc tên trên bia đá để lưu danh muôn đời những người học giỏi, đỗ đạt cao, qua đó khích lệ thế hệ sau noi gương học tập[cite: 73].",
+                ref: "Việc ghi danh những người đỗ Tiến sĩ ở Văn Miếu – Quốc Tử Giám nhằm tôn vinh nhân tài và khuyến khích tinh thần hiếu học trong nhân dân[cite: 73]."
+            },
+            {
+                id: "b13_d1_12", type: "mc", level: "Thông hiểu",
+                q: "Câu 12: Ngoài chức năng giáo dục và đào tạo nhân tài tại kinh sư thời quân chủ, Quốc Tử Giám còn thực hiện nhiệm vụ quan trọng nào khác?",
+                opts: [
+                    "In ấn tài liệu và phát hành sách học cho thầy, trò tại các trường lớp trong cả nước",
+                    "Đúc tiền đồng và vũ khí cung cấp cho quân đội",
+                    "Tổ chức sản xuất đồ gốm sứ xuất khẩu ra nước ngoài",
+                    "Đào kênh mương dẫn nước tưới cho toàn vùng Đồng bằng Bắc Bộ"
+                ],
+                ans: 0,
+                wrongReason: "Thời xưa Quốc Tử Giám có kho Bí thư lưu giữ ván khắc gỗ để in ấn các bộ sách học mẫu mực phát hành cho trường học cả nước[cite: 74, 75].",
+                ref: "Quốc Tử Giám còn thực hiện nhiệm vụ in ấn tài liệu, phát hành sách học cho thầy và trò tại các trường, lớp trong cả nước[cite: 74]."
+            },
+            {
+                id: "b13_d1_13", type: "fill", level: "Thông hiểu",
+                q: "Câu 13: Điền từ còn thiếu: 'Điện Đại Thành (trong khu Văn Miếu) gồm 9 gian, chính giữa có khám và ngai lớn thờ bậc tiên sư ......................'",
+                ans: ["Khổng Tử"],
+                displayAns: "Khổng Tử",
+                wrongReason: "Văn Miếu là nơi thờ Khổng Tử – nhà tư tưởng, nhà giáo dục lớn thời xưa cùng các bậc hiền triết Nho học[cite: 72].",
+                ref: "Điện Đại Thành trong khu Văn Miếu là nơi thờ Khổng Tử và các bậc hiền triết[cite: 72]."
+            }
+        ],
+        de2: [
+            // --- 7 CÂU THÔNG HIỂU (TRUNG BÌNH) TIẾP THEO ---
+            {
+                id: "b13_d2_1", type: "mc", level: "Thông hiểu",
+                q: "Câu 1: Hoạt động văn hoá – giáo dục tiêu biểu nào thường được tổ chức tại khu di tích Văn Miếu – Quốc Tử Giám nhằm khuyến khích tinh thần hiếu học của học sinh?",
+                opts: [
+                    "Cuộc thi Trạng nguyên nhỏ tuổi và lễ tuyên dương học sinh, sinh viên xuất sắc",
+                    "Lễ hội đua thuyền rồng trên mặt hồ lớn",
+                    "Hội thi giã bánh giầy và đấu vật dân tộc",
+                    "Biểu diễn hát Quan họ trên thuyền rồng"
+                ],
+                ans: 0,
+                wrongReason: "Nhiều trường học và cơ quan chọn Văn Miếu – Quốc Tử Giám để tổ chức cuộc thi Trạng nguyên nhỏ tuổi, lễ dâng hương báo công và tuyên dương học sinh giỏi[cite: 73, 74].",
+                ref: "Cuộc thi Trạng nguyên nhỏ tuổi thường được tổ chức tại khu di tích Văn Miếu – Quốc Tử Giám nhằm tôn vinh, khuyến khích tinh thần hiếu học[cite: 73]."
+            },
+            {
+                id: "b13_d2_2", type: "mc", level: "Thông hiểu",
+                q: "Câu 2: Kiến trúc của Điện Đại Thành trong khu Văn Miếu có đặc điểm nổi bật nào?",
+                opts: [
+                    "Xây song song với toà Đại Bái, nối với nhau bằng một phương đình, gồm 9 gian, xây tường 3 mặt",
+                    "Xây hình tháp nhọn cao 15 tầng bằng bê tông cốt thép",
+                    "Làm hoàn toàn bằng tre nứa nổi trên mặt nước giếng Thiên Quang",
+                    "Chỉ gồm một gian nhỏ nằm trên đỉnh núi cao"
+                ],
+                ans: 0,
+                wrongReason: "Điện Đại Thành có kiến trúc truyền thống uy nghiêm gồm 9 gian, nối với toà Đại Bái qua một phương đình, phía trước có cửa bức bàn[cite: 72].",
+                ref: "Điện Đại Thành xây song song với toà Đại Bái, nối với nhau bằng phương đình, gồm 9 gian, xây tường 3 mặt[cite: 72]."
+            },
+            {
+                id: "b13_d2_3", type: "mc", level: "Thông hiểu",
+                q: "Câu 3: Vì sao khu di tích Văn Miếu – Quốc Tử Giám luôn thu hút rất đông học sinh, sinh viên và du khách trong, ngoài nước đến tham quan?",
+                opts: [
+                    "Vì đây là nhân chứng lịch sử cho tinh hoa giáo dục, kiến trúc cổ kính và truyền thống hiếu học của Việt Nam",
+                    "Vì nơi đây có khu vui chơi giải trí hiện đại và vườn thú lớn nhất Thủ đô",
+                    "Vì nơi đây là trung tâm mua sắm thương mại sầm uất nhất Hà Nội",
+                    "Vì nơi đây có bãi tắm biển nhân tạo thu hút khách du lịch"
+                ],
+                ans: 0,
+                wrongReason: "Văn Miếu – Quốc Tử Giám vừa là di tích lịch sử – kiến trúc đặc sắc vừa là biểu tượng của nền học vấn Việt Nam nên luôn hấp dẫn du khách và học trò[cite: 73, 74].",
+                ref: "Văn Miếu – Quốc Tử Giám là nhân chứng lịch sử cho tinh hoa giáo dục của Thủ đô Hà Nội và đất nước, thu hút đông đảo du khách, học sinh, sinh viên[cite: 73, 74]."
+            },
+            {
+                id: "b13_d2_4", type: "mc", level: "Thông hiểu",
+                q: "Câu 4: Khu Thái Học (Quốc Tử Giám trước đây) có vai trò lịch sử quan trọng nào đối với nền giáo dục nước ta?",
+                opts: [
+                    "Là nơi học tập, rèn luyện và đào tạo nhân tài cho đất nước thời xưa",
+                    "Là nơi chuyên đào tạo các nghệ nhân làm gốm và đúc đồng",
+                    "Là doanh trại huấn luyện thuỷ quân của kinh thành Thăng Long",
+                    "Là nơi cất giữ kho lương thực dự trữ của triều đình"
+                ],
+                ans: 0,
+                wrongReason: "Quốc Tử Giám được coi là trường đại học đầu tiên của nước ta, nơi đào tạo nhiều bậc hiền tài giúp vua trị nước[cite: 72, 74].",
+                ref: "Quốc Tử Giám (khu Thái Học) là nơi giáo dục, đào tạo nhân tài cho đất nước[cite: 72, 74]."
+            },
+            {
+                id: "b13_d2_5", type: "mc", level: "Thông hiểu",
+                q: "Câu 5: Khi đi tham quan khu di tích Văn Miếu – Quốc Tử Giám, em sẽ thấy các bia Tiến sĩ được bố trí như thế nào?",
+                opts: [
+                    "Xếp thành hai hàng thẳng tắp trong các nhà bia ở hai bên giếng Thiên Quang",
+                    "Đặt rải rác ngoài đường phố xung quanh khu di tích",
+                    "Treo trên các bức tường của Khuê Văn Các",
+                    "Xếp chồng lên nhau ở giữa sân khu Thái Học"
+                ],
+                ans: 0,
+                wrongReason: "82 bia Tiến sĩ được bảo vệ trong các dãy nhà bia hai bên giếng Thiên Quang, tạo nên không gian trang nghiêm, cân đối[cite: 72].",
+                ref: "Các bia Tiến sĩ được dựng thành dãy ở hai bên giếng Thiên Quang trong khu di tích[cite: 72]."
+            },
+            {
+                id: "b13_d2_6", type: "mc", level: "Thông hiểu",
+                q: "Câu 6: Công trình nào sau đây KHÔNG nằm trong quần thể khu di tích Văn Miếu – Quốc Tử Giám?",
+                opts: ["Tháp Rùa", "Khuê Văn Các", "Nhà bia Tiến sĩ", "Điện Đại Thành"],
+                ans: 0,
+                wrongReason: "Tháp Rùa nằm giữa Hồ Gươm (hồ Hoàn Kiếm), còn Khuê Văn Các, nhà bia Tiến sĩ và Điện Đại Thành đều thuộc khu di tích Văn Miếu – Quốc Tử Giám[cite: 35, 72].",
+                ref: "Các công trình tiêu biểu trong khu di tích Văn Miếu – Quốc Tử Giám gồm: Khuê Văn Các, nhà bia Tiến sĩ, Văn Miếu (Điện Đại Thành), Quốc Tử Giám (khu Thái Học)[cite: 72]."
+            },
+            {
+                id: "b13_d2_7", type: "fill", level: "Thông hiểu",
+                q: "Câu 7: Điền từ còn thiếu: 'Năm 1483, vua Lê Thánh Tông cho mở rộng nhà Thái Học, dựng Minh Luân đường, Giảng đường và xây dựng kho ...................... để in sách học cho học trò.'",
+                ans: ["Bí thư"],
+                displayAns: "Bí thư",
+                wrongReason: "Kho Bí thư của Quốc Tử Giám gồm 4 gian dùng để cất giữ các bản ván khắc gỗ in sách giáo khoa thời xưa[cite: 75].",
+                ref: "Vua Lê Thánh Tông cho xây dựng kho Bí thư trong Quốc Tử Giám để cất ván in sách học cho học trò[cite: 75]."
+            },
+
+            // --- 5 CÂU VẬN DỤNG (KHÓ) ---
+            {
+                id: "b13_d2_8", type: "mc", level: "Vận dụng",
+                q: "Câu 8: Vì sao hình ảnh Khuê Văn Các trong khu di tích Văn Miếu – Quốc Tử Giám lại xứng đáng được chọn làm biểu tượng của Thủ đô Hà Nội?",
+                opts: [
+                    "Vì Khuê Văn Các có kiến trúc hài hoà, tinh tế và là biểu tượng tiêu biểu cho truyền thống hiếu học, trọng tri thức của Thăng Long – Hà Nội nghìn năm văn hiến",
+                    "Vì Khuê Văn Các là toà nhà cao tầng hiện đại nhất ở thành phố Hà Nội",
+                    "Vì Khuê Văn Các nằm ở vị trí sát bờ sông Hồng thuận tiện buôn bán",
+                    "Vì Khuê Văn Các được xây dựng hoàn toàn bằng vàng ròng"
+                ],
+                ans: 0,
+                wrongReason: "Khuê Văn Các (gác vẻ đẹp của sao Khuê – ngôi sao chủ về văn học) kết tinh vẻ đẹp kiến trúc cổ và tinh thần tôn vinh tri thức của Thủ đô.",
+                ref: "Khuê Văn Các là công trình kiến trúc tiêu biểu trong Văn Miếu – Quốc Tử Giám, tượng trưng cho tri thức và văn hiến của Thủ đô Hà Nội[cite: 37, 73]."
+            },
+            {
+                id: "b13_d2_9", type: "mc", level: "Vận dụng",
+                q: "Câu 9: Khi đến tham quan khu di tích Văn Miếu – Quốc Tử Giám, một số bạn nhỏ có thói quen sờ tay lên đầu các con rùa đá đỡ bia Tiến sĩ để 'cầu may' trong thi cử. Theo em, việc làm đó đúng hay sai và vì sao?",
+                opts: [
+                    "Sai, vì việc sờ tay nhiều lần sẽ làm mòn, hư hại bề mặt di vật đá quý giá cần được bảo tồn",
+                    "Đúng, vì sờ đầu rùa đá sẽ giúp học sinh không cần học bài vẫn đỗ đạt cao",
+                    "Đúng, vì rùa đá được dựng lên chỉ để du khách chạm tay vào chụp ảnh",
+                    "Sai, vì đầu rùa đá rất sắc nhọn dễ làm đứt tay du khách"
+                ],
+                ans: 0,
+                wrongReason: "Mồ hôi và ma sát từ bàn tay của hàng triệu lượt khách sẽ làm bào mòn, biến dạng các tác phẩm điêu khắc đá cổ hàng trăm năm tuổi.",
+                ref: "Không sờ tay lên đầu rùa đá và hiện vật là biện pháp thiết thực để giữ gìn, bảo vệ di tích Văn Miếu – Quốc Tử Giám[cite: 37, 74]."
+            },
+            {
+                id: "b13_d2_10", type: "mc", level: "Vận dụng",
+                q: "Câu 10: Câu nói nổi tiếng khắc trên bia Tiến sĩ ở Văn Miếu: 'Hiền tài là nguyên khí của quốc gia' khuyên nhủ chúng ta điều gì?",
+                opts: [
+                    "Người có tài năng, đạo đức là sức sống, là nền tảng giúp đất nước phát triển hưng thịnh nên phải luôn coi trọng việc học và bồi dưỡng nhân tài",
+                    "Chỉ những người giàu có mới được phép đi học và tham gia thi cử",
+                    "Đất nước muốn giàu mạnh chỉ cần khai thác thật nhiều tài nguyên khoáng sản",
+                    "Học sinh chỉ cần học thuộc lòng sách vở mà không cần rèn luyện đạo đức"
+                ],
+                ans: 0,
+                wrongReason: "Đất nước hưng thịnh hay suy yếu phụ thuộc rất lớn vào đội ngũ người tài đức; vì vậy thế hệ trẻ phải chăm chỉ học tập, rèn luyện để cống hiến cho Tổ quốc.",
+                ref: "Văn Miếu – Quốc Tử Giám thể hiện truyền thống hiếu học, coi trọng nhân tài của dân tộc Việt Nam[cite: 37, 73]."
+            },
+            {
+                id: "b13_d2_11", type: "mc", level: "Vận dụng",
+                q: "Câu 11: Là học sinh lớp 4, hành động nào sau đây của em vừa góp phần bảo vệ khu di tích Văn Miếu – Quốc Tử Giám vừa phát huy truyền thống hiếu học của dân tộc?",
+                opts: [
+                    "Chăm chỉ học tập, lễ phép với thầy cô, giữ trật tự và không xả rác hay vẽ bậy khi tham quan di tích",
+                    "Khắc tên mình lên tường gạch cổ ở khu Thái Học để lưu làm kỉ niệm",
+                    "Chạy nhảy, leo trèo lên bệ đá của các tấm bia Tiến sĩ",
+                    "Chỉ tham quan cho vui mà không tìm hiểu ý nghĩa các công trình lịch sử"
+                ],
+                ans: 0,
+                wrongReason: "Nỗ lực học tập tốt, kính trọng thầy cô (tôn sư trọng đạo) và giữ gìn vệ sinh, tôn trọng nội quy di tích là cách thiết thực nhất để phát huy truyền thống.",
+                ref: "Cần giữ gìn vệ sinh, bảo vệ cảnh quan di tích và chăm chỉ học tập để phát huy truyền thống hiếu học của dân tộc[cite: 37, 74]."
+            },
+            {
+                id: "b13_d2_12", type: "fill", level: "Vận dụng",
+                q: "Câu 12: Điền từ còn thiếu: 'Truyền thống kính trọng thầy giáo, cô giáo và coi trọng việc học hành của dân tộc ta được gọi là truyền thống tôn sư ...................... và hiếu học.'",
+                ans: ["trọng đạo"],
+                displayAns: "trọng đạo",
+                wrongReason: "'Tôn sư trọng đạo' và 'hiếu học' là hai truyền thống đạo lí tốt đẹp gắn liền với biểu tượng Văn Miếu – Quốc Tử Giám.",
+                ref: "Văn Miếu – Quốc Tử Giám là nơi tôn vinh truyền thống tôn sư trọng đạo và hiếu học của dân tộc Việt Nam[cite: 37, 73]."
+            }
+        ]
+    }
 
 // ================= ĐỀ TỔNG HỢP BẤM GIỜ (10 CÂU = THANG ĐIỂM 10) =================
 const EXAM_QUESTIONS = [
@@ -911,7 +2939,240 @@ const EXAM_QUESTIONS = [
         opts: ["Tỉnh Tuyên Quang – ngày 15 tháng Giêng âm lịch", "Tỉnh Phú Thọ – ngày 10 tháng 3 âm lịch", "Tỉnh Lào Cai – ngày 10 tháng 3 dương lịch", "Tỉnh Sơn La – ngày 30 tháng 4 dương lịch"],
         ans: 1, ref: "SGK Bài 7: Đền Hùng nằm trên núi Nghĩa Lĩnh (tỉnh Phú Thọ), lễ chính Giỗ Tổ vào mồng 10 tháng 3 âm lịch."
     }
-];
+];,
+    // ================= ĐỀ TỔNG HỢP CHỦ ĐỀ 3: ĐỒNG BẰNG BẮC BỘ (15 CÂU) =================
+    {
+        id: "ex11", q: "Câu 11 (Bài 8): Địa hình vùng Đồng bằng Bắc Bộ có đặc điểm nổi bật nào?",
+        opts: [
+            "Phần lớn tương đối bằng phẳng, độ cao trung bình dưới 25 m",
+            "Toàn bộ là núi cao hiểm trở trên 1 000 m",
+            "Có nhiều cao nguyên xếp tầng rộng lớn",
+            "Bị chia cắt bởi nhiều dãy núi cao đâm ngang ra biển"
+        ],
+        ans: 0, ref: "Địa hình vùng Đồng bằng Bắc Bộ phần lớn tương đối bằng phẳng, độ cao trung bình dưới 25 m."
+    },
+    {
+        id: "ex12", q: "Câu 12 (Bài 8): Hai hệ thống sông lớn nhất bồi đắp nên vùng Đồng bằng Bắc Bộ là gì?",
+        opts: ["Sông Tiền và sông Hậu", "Sông Hồng và sông Thái Bình", "Sông Đà và sông Lô", "Sông Mã và sông Cả"],
+        ans: 1, ref: "Vùng Đồng bằng Bắc Bộ có hệ thống sông Hồng và sông Thái Bình cung cấp lượng nước và phù sa lớn."
+    },
+    {
+        id: "ex13", q: "Câu 13 (Bài 8): Khí hậu vùng Đồng bằng Bắc Bộ có đặc điểm nào khác biệt so với vùng Đồng bằng Nam Bộ?",
+        opts: [
+            "Có một mùa đông lạnh, ít mưa",
+            "Nóng quanh năm và không có mùa đông",
+            "Khô hạn quanh năm, hầu như không có mưa",
+            "Chỉ có hai mùa là mùa khô và mùa tuyết rơi"
+        ],
+        ans: 0, ref: "Vùng Đồng bằng Bắc Bộ có khí hậu nhiệt đới gió mùa với một mùa đông lạnh, ít mưa; mùa hạ nóng, mưa nhiều."
+    },
+    {
+        id: "ex14", q: "Câu 14 (Bài 9): Dân cư ở vùng Đồng bằng Bắc Bộ phân bố như thế nào so với cả nước?",
+        opts: [
+            "Thưa thớt nhất cả nước",
+            "Tập trung đông đúc nhất cả nước",
+            "Chỉ tập trung ở khu vực đồi núi phía đông bắc",
+            "Đứng thứ năm cả nước"
+        ],
+        ans: 1, ref: "Nhờ điều kiện tự nhiên thuận lợi cho sinh sống, giao thông và sản xuất nên Đồng bằng Bắc Bộ có dân cư tập trung đông đúc nhất nước ta."
+    },
+    {
+        id: "ex15", q: "Câu 15 (Bài 9): Cặp làng nghề – sản phẩm thủ công truyền thống nào sau đây ở Đồng bằng Bắc Bộ là đúng?",
+        opts: [
+            "Làng Bát Tràng (Hà Nội) – đúc đồng",
+            "Làng Đại Bái (Bắc Ninh) – đúc đồng",
+            "Làng Văn Lâm (Ninh Bình) – làm gốm",
+            "Làng Đồng Xâm (Hưng Yên) – thêu ren"
+        ],
+        ans: 1, ref: "Làng Đại Bái (Bắc Ninh) chuyên đúc đồng; Bát Tràng (Hà Nội) làm gốm; Văn Lâm (Ninh Bình) thêu ren; Đồng Xâm (Hưng Yên) chạm bạc."
+    },
+    {
+        id: "ex16", q: "Câu 16 (Bài 9): Hệ thống đê sông Hồng có chiều dài hơn 1 000 km giữ vai trò quan trọng nhất nào đối với vùng Đồng bằng Bắc Bộ?",
+        opts: [
+            "Ngăn lũ lụt và giúp người dân trồng lúa nhiều vụ trong năm",
+            "Tạo ra các hồ nước lớn để xây dựng nhà máy thuỷ điện",
+            "Ngăn không cho tàu thuyền đi lại trên sông",
+            "Làm ranh giới phân chia các dân tộc trong vùng"
+        ],
+        ans: 0, ref: "Hệ thống đê sông Hồng giúp ngăn lũ lụt, bảo vệ cuộc sống người dân và giúp vùng trồng lúa nhiều vụ trong năm."
+    },
+    {
+        id: "ex17", q: "Câu 17 (Bài 10): Trong ngôi nhà truyền thống ba gian hoặc năm gian ở vùng Đồng bằng Bắc Bộ, gian chính giữa dùng để làm gì?",
+        opts: [
+            "Thờ cúng tổ tiên và tiếp khách",
+            "Chứa thóc gạo và đồ dùng nông nghiệp",
+            "Làm phòng ngủ cho các thành viên",
+            "Làm bếp nấu ăn hằng ngày"
+        ],
+        ans: 0, ref: "Gian chính giữa ngôi nhà truyền thống Bắc Bộ là nơi thờ cúng tổ tiên và tiếp khách; các gian hai bên dùng để ngủ hoặc chứa đồ."
+    },
+    {
+        id: "ex18", q: "Câu 18 (Bài 10): Nét sinh hoạt văn hoá dân gian đặc sắc nào diễn ra trong hội Lim (tỉnh Bắc Ninh) vào mùa xuân?",
+        opts: ["Hát Quan họ", "Hát Xoan", "Đờn ca tài tử", "Múa cồng chiêng"],
+        ans: 0, ref: "Hội Lim (tỉnh Bắc Ninh) nổi tiếng với làn điệu dân ca Quan họ của các liền anh, liền chị."
+    },
+    {
+        id: "ex19", q: "Câu 19 (Bài 11): Sông Hồng chảy trên lãnh thổ Việt Nam dài khoảng bao nhiêu ki-lô-mét và đổ ra biển ở cửa sông nào?",
+        opts: [
+            "Dài khoảng 556 km, đổ ra biển ở cửa Ba Lạt",
+            "Dài khoảng 200 km, đổ ra biển ở cửa Đáy",
+            "Dài khoảng 1 000 km, đổ ra biển ở cửa Văn Úc",
+            "Dài khoảng 350 km, đổ ra biển ở cửa Nam Triệu"
+        ],
+        ans: 0, ref: "Phần sông Hồng chảy trên lãnh thổ Việt Nam dài khoảng 556 km (từ Lào Cai) và đổ ra biển ở cửa Ba Lạt (ranh giới Hưng Yên và Ninh Bình)."
+    },
+    {
+        id: "ex20", q: "Câu 20 (Bài 11): Những thành tựu tiêu biểu nhất của nền văn minh sông Hồng cách ngày nay khoảng 2 700 năm là gì?",
+        opts: [
+            "Sự ra đời của Nhà nước Văn Lang và Âu Lạc, trống đồng Đông Sơn, thành Cổ Loa",
+            "Hoàng thành Thăng Long, Văn Miếu – Quốc Tử Giám và chữ Quốc ngữ",
+            "Kinh thành Huế, Nhã nhạc cung đình và hệ thống lăng tẩm",
+            "Cảng Nhà Rồng, địa đạo Củ Chi và chợ Bến Thành"
+        ],
+        ans: 0, ref: "Thành tựu tiêu biểu của văn minh sông Hồng là sự ra đời của Nhà nước Văn Lang – Âu Lạc, trống đồng Đông Sơn (đẹp nhất là Ngọc Lũ) và thành Cổ Loa."
+    },
+    {
+        id: "ex21", q: "Câu 21 (Bài 12): Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về thành Đại La và đổi tên thành Thăng Long. Tên gọi 'Thăng Long' có nghĩa là gì?",
+        opts: ["Rồng bay lên", "Rồng cuộn hổ ngồi", "Thành phố vì hoà bình", "Kinh đô phương Đông"],
+        ans: 0, ref: "Khi thuyền vua đỗ dưới chân thành Đại La thấy rồng vàng hiện lên, vua đổi tên thành Thăng Long nghĩa là 'Rồng bay lên'."
+    },
+    {
+        id: "ex22", q: "Câu 22 (Bài 12): Thăng Long tứ trấn gồm bốn ngôi đền trấn giữ bốn phía đông, tây, nam, bắc của Hà Nội là những đền nào?",
+        opts: [
+            "Đền Bạch Mã, đền Voi Phục, đền Kim Liên và đền Quán Thánh",
+            "Đền Hùng, đền Gióng, đền Cổ Loa và đền Ngọc Sơn",
+            "Văn Miếu, chùa Một Cột, đền Hai Bà Trưng và đền Đô",
+            "Đền Trần, đền Kiếp Bạc, đền Cửa Ông và đền Mẫu"
+        ],
+        ans: 0, ref: "Thăng Long tứ trấn gồm 4 đền: Bạch Mã (đông), Voi Phục (tây), Kim Liên (nam) và Quán Thánh (bắc)."
+    },
+    {
+        id: "ex23", q: "Câu 23 (Bài 12): Sự kiện lịch sử trọng đại nào đã diễn ra tại Quảng trường Ba Đình (Hà Nội) vào ngày 2 – 9 – 1945?",
+        opts: [
+            "Bác Hồ đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hoà",
+            "Quân dân Hà Nội làm nên chiến thắng 'Điện Biên Phủ trên không'",
+            "Tổng đốc Hoàng Diệu chỉ huy quân dân chống Pháp bảo vệ thành Hà Nội",
+            "Vua Lê Thái Tổ trả gươm báu cho Rùa Vàng"
+        ],
+        ans: 0, ref: "Ngày 2 – 9 – 1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hoà."
+    },
+    {
+        id: "ex24", q: "Câu 24 (Bài 13): Công trình kiến trúc nào trong khu di tích Văn Miếu – Quốc Tử Giám được chọn làm biểu tượng của Thủ đô Hà Nội từ năm 1999?",
+        opts: ["Khuê Văn Các", "Nhà bia Tiến sĩ", "Điện Đại Thành", "Nhà Tiền Đường"],
+        ans: 0, ref: "Năm 1999, Khuê Văn Các trong khu di tích Văn Miếu – Quốc Tử Giám được chọn làm biểu tượng của Thủ đô Hà Nội."
+    },
+    {
+        id: "ex25", q: "Câu 25 (Bài 13): Trong khu di tích Văn Miếu – Quốc Tử Giám, 82 tấm bia Tiến sĩ đặt trên lưng rùa đá có ý nghĩa gì?",
+        opts: [
+            "Ghi danh những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc nhằm tôn vinh nhân tài và khuyến khích tinh thần hiếu học",
+            "Ghi chép bản đồ đường thuỷ trên hệ thống sông Hồng",
+            "Đánh dấu ranh giới giữa các phường của Thủ đô Hà Nội",
+            "Ghi lại danh sách các làng nghề thủ công của cả nước"
+        ],
+        ans: 0, ref: "82 bia Tiến sĩ khắc tên những người đỗ Tiến sĩ thời Hậu Lê và thời Mạc, thể hiện sự trọng dụng nhân tài và truyền thống hiếu học của dân tộc."
+    },
+
+    // ================= ĐỀ THI THỬ HỌC KÌ 1 TỔNG HỢP (10 CÂU NÂNG CAO) =================
+    {
+        id: "ex26", q: "Câu 26 (Tổng hợp HK1): Điểm giống nhau cơ bản về địa hình giữa vùng Đồng bằng Bắc Bộ và khu vực trung du ở miền Bắc là gì?",
+        opts: [
+            "Đều không có những dãy núi cao hiểm trở như vùng Hoàng Liên Sơn",
+            "Đều có độ cao trung bình trên 2 000 m so với mực nước biển",
+            "Đều bị ngập mặn quanh năm do thuỷ triều lên xuống",
+            "Đều là vùng cao nguyên đá vôi khô cằn"
+        ],
+        ans: 0, ref: "Đồng bằng Bắc Bộ thấp phẳng (dưới 25 m), còn vùng trung du là nơi chuyển tiếp với các đồi bát úp đỉnh tròn sườn thoải, không có núi cao hiểm trở."
+    },
+    {
+        id: "ex27", q: "Câu 27 (Tổng hợp HK1): Vì sao vùng Đồng bằng Bắc Bộ lại có thể trồng được nhiều loại rau màu ôn đới (như su hào, bắp cải, khoai tây) vào vụ đông?",
+        opts: [
+            "Do chịu ảnh hưởng của gió mùa Đông Bắc tạo nên một mùa đông lạnh",
+            "Do đất đai ở đây toàn bộ là đất đỏ ba-dan màu mỡ",
+            "Do lượng mưa vào mùa đông lớn nhất trong năm",
+            "Do nước sông Hồng dâng cao tràn vào đồng ruộng vào mùa đông"
+        ],
+        ans: 0, ref: "Nhờ có một mùa đông lạnh nên ngoài cây nhiệt đới, vùng Đồng bằng Bắc Bộ còn trồng được nhiều cây ưa lạnh vào vụ đông."
+    },
+    {
+        id: "ex28", q: "Câu 28 (Tổng hợp HK1): Hoa văn khắc hình ngôi nhà sàn mái cong và chiếc thuyền trên mặt trống đồng Ngọc Lũ phản ánh điều gì về đời sống người Việt cổ?",
+        opts: [
+            "Người Việt cổ ở nhà sàn để thích nghi với vùng châu thổ nhiều sông nước và đi lại chủ yếu bằng thuyền",
+            "Người Việt cổ chỉ sống trên các đỉnh núi cao quanh năm có tuyết phủ",
+            "Người Việt cổ chưa biết làm nhà nên phải sống hoàn toàn trên mặt biển",
+            "Người Việt cổ sử dụng thuyền để đi lại trên sa mạc"
+        ],
+        ans: 0, ref: "Hoa văn trống đồng Ngọc Lũ cho thấy cư dân Việt cổ ở nhà sàn mái cong và dùng thuyền làm phương tiện đi lại chủ yếu."
+    },
+    {
+        id: "ex29", q: "Câu 29 (Tổng hợp HK1): Nội dung nào sau đây thể hiện đúng địa thế thuận lợi của thành Đại La trong 'Chiếu dời đô' của vua Lý Thái Tổ?",
+        opts: [
+            "Ở giữa khu vực trời đất, được thế rồng cuộn hổ ngồi, chính giữa nam bắc đông tây, đất rộng mà bằng phẳng, cao mà sáng sủa",
+            "Nằm cheo leo trên núi cao, đường đi hiểm trở rất khó giao lưu với bên ngoài",
+            "Nằm ở cực Bắc của Tổ quốc, quanh năm khí hậu lạnh giá",
+            "Là vùng đầm lầy trũng thấp, thường xuyên ngập nước quanh năm"
+        ],
+        ans: 0, ref: "Chiếu dời đô khẳng định Đại La ở vị trí trung tâm, thế rồng cuộn hổ ngồi, đất rộng bằng phẳng, cao ráo sáng sủa, thuận lợi phát triển đất nước."
+    },
+    {
+        id: "ex30", q: "Câu 30 (Tổng hợp HK1): Mối liên hệ giữa truyền thuyết 'Bánh chưng, bánh giầy' (Bài 7) với đời sống của cư dân văn minh sông Hồng (Bài 11) là gì?",
+        opts: [
+            "Cho thấy nguồn lương thực chính của người Việt cổ là gạo nếp và họ có tín ngưỡng thờ cúng Trời, Đất, Tổ tiên",
+            "Cho thấy người Việt cổ chỉ thích ăn các món sơn hào hải vị đắt tiền",
+            "Cho thấy nghề trồng lúa nước chỉ mới xuất hiện ở nước ta khoảng 100 năm nay",
+            "Cho thấy người Việt cổ không biết sử dụng lá cây rừng để gói bánh"
+        ],
+        ans: 0, ref: "Sự tích Bánh chưng, bánh giầy phản ánh nghề trồng lúa nếp lâu đời cùng truyền thống kính trọng tổ tiên, trời đất của người Việt cổ."
+    },
+    {
+        id: "ex31", q: "Câu 31 (Tổng hợp HK1): Chiến thắng 'Điện Biên Phủ trên không' (12 – 1972) của quân và dân Hà Nội đã buộc đế quốc Mỹ phải làm gì?",
+        opts: [
+            "Chấm dứt hoàn toàn chiến tranh phá hoại miền Bắc và kí kết Hiệp định Pa-ri lập lại hoà bình ở Việt Nam",
+            "Rút toàn bộ quân đội ra khỏi khu vực châu Á ngay lập tức",
+            "Bồi thường toàn bộ thiệt hại cho các nước Đông Nam Á",
+            "Chuyển thủ đô của nước Mỹ sang châu Âu"
+        ],
+        ans: 0, ref: "Chiến thắng 12 ngày đêm cuối năm 1972 tại Hà Nội đã buộc Mỹ ngừng ném bom miền Bắc và kí Hiệp định Pa-ri năm 1973."
+    },
+    {
+        id: "ex32", q: "Câu 32 (Tổng hợp HK1): Những công trình như Toà nhà Quốc hội, Đại học Bách khoa Hà Nội, Bảo tàng Lịch sử quốc gia khẳng định vai trò gì của Thủ đô Hà Nội ngày nay?",
+        opts: [
+            "Là trung tâm chính trị, kinh tế, văn hoá, giáo dục quan trọng của Việt Nam",
+            "Là trung tâm khai thác dầu khí và hải sản lớn nhất cả nước",
+            "Là vùng chuyên canh cây công nghiệp lâu năm lớn nhất nước ta",
+            "Là khu vực biên giới hải đảo tiền tiêu phía nam của Tổ quốc"
+        ],
+        ans: 0, ref: "Hà Nội là nơi đặt trụ sở các cơ quan Trung ương, tập trung nhiều trường đại học, viện nghiên cứu, bảo tàng và cơ sở kinh tế hàng đầu cả nước."
+    },
+    {
+        id: "ex33", q: "Câu 33 (Tổng hợp HK1): Việc thành lập các khu bảo tồn thiên nhiên như Vườn quốc gia Cát Bà (Hải Phòng) và Vườn quốc gia Xuân Thuỷ (Ninh Bình) có tác dụng gì?",
+        opts: [
+            "Bảo vệ các loài động, thực vật tự nhiên quý hiếm và giữ gìn đa dạng sinh học cho vùng Đồng bằng Bắc Bộ",
+            "Mở rộng diện tích xây dựng các nhà máy công nghiệp nặng",
+            "Khai thác gỗ quý và săn bắt chim di cư phục vụ xuất khẩu",
+            "Ngăn không cho nước ngọt từ sông Hồng chảy ra Vịnh Bắc Bộ"
+        ],
+        ans: 0, ref: "Vườn quốc gia Cát Bà và Xuân Thuỷ giúp bảo tồn các hệ sinh thái đặc trưng và nhiều loài sinh vật quý hiếm của vùng."
+    },
+    {
+        id: "ex34", q: "Câu 34 (Tổng hợp HK1): Theo em, vì sao làng quê truyền thống vùng Đồng bằng Bắc Bộ lại có luỹ tre xanh bao bọc và ngôi đình nằm ở trung tâm làng?",
+        opts: [
+            "Luỹ tre bảo vệ làng trước gió bão, kẻ gian và tạo không gian gắn kết; đình làng là trung tâm tâm linh và sinh hoạt văn hoá chung của cộng đồng",
+            "Vì ở đồng bằng không có gỗ để làm nhà nên phải trồng tre lấy gỗ",
+            "Vì quy định bắt buộc mọi ngôi nhà đều phải xây bên trong sân đình",
+            "Vì luỹ tre giúp ngăn nước biển dâng tràn vào trung tâm thành phố Hà Nội"
+        ],
+        ans: 0, ref: "Luỹ tre xanh, cổng làng, cây đa, giếng nước, sân đình tạo nên không gian văn hoá khép kín, gắn bó tình làng nghĩa xóm bền chặt."
+    },
+    {
+        id: "ex35", q: "Câu 35 (Tổng hợp HK1): Khi tham quan các di tích lịch sử – văn hoá như Đền Hùng, Hoàng thành Thăng Long hay Văn Miếu – Quốc Tử Giám, hành động nào của học sinh thể hiện lòng tự hào và ý thức bảo vệ di sản?",
+        opts: [
+            "Ăn mặc lịch sự, giữ gìn vệ sinh, không sờ tay vào hiện vật hay viết vẽ bậy lên tường, bia đá",
+            "Sờ tay lên đầu rùa đá ở Văn Miếu để cầu may đạt điểm cao trong kì thi",
+            "Khắc tên mình lên thân cây cổ thụ hoặc gạch cổ để làm kỉ niệm",
+            "Xả rác bừa bãi và chạy nhảy, la hét ồn ào trong khu vực điện thờ"
+        ],
+        ans: 0, ref: "Giữ gìn vệ sinh, tôn trọng nội quy và bảo vệ nguyên vẹn di vật là trách nhiệm của mỗi học sinh đối với di sản của cha ông."
+    }
 
 // ================= TRẠNG THÁI & LƯU TRỮ TỰ ĐỘNG (LOCALSTORAGE) =================
 const STORAGE_KEY = "lsdl4_kntt_b4_b7_v1";
