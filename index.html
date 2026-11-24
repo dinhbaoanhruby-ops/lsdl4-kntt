@@ -3252,31 +3252,32 @@ function handleFill(qId, validAnswers) {
 
 function resetLessonProgress(lessonKey) {
   if (!confirm("Em có chắc muốn xoá kết quả làm bài của phần này để làm lại từ đầu không?")) return;
-  const numMatch = String(lessonKey).match(/\d+/);
+  
+  // 1. Xóa theo lessonKey (giữ nguyên tương thích cho Bài 1-7)
+  const numMatch = String(lessonKey || "").match(/\d+/);
   const bPrefix = numMatch ? "b" + numMatch[0] + "_" : "";
   Object.keys(state.answers).forEach(k => {
-    if (k.startsWith(lessonKey + "_") || (bPrefix && k.toLowerCase().startsWith(bPrefix))) {
+    if ((lessonKey && k.startsWith(lessonKey + "_")) || (bPrefix && k.toLowerCase().startsWith(bPrefix))) {
       delete state.answers[k];
     }
   });
-  // Cho phép tráo lại đáp án mới khi làm lại bài
-  for (let key in window) {
-    try {
-      if (Array.isArray(window[key])) {
-        window[key].forEach(item => {
-          if (item && bPrefix && String(item.id || '').toLowerCase().startsWith(bPrefix)) {
-            item._shuffled = false;
-          }
-        });
+
+  // 2. Xóa trực tiếp mọi ID câu hỏi đang hiển thị trên màn hình (chắc chắn 100% cho Bài 8-13)
+  if (Array.isArray(window._currentRenderedQuestions)) {
+    window._currentRenderedQuestions.forEach(item => {
+      if (item && item.id) {
+        delete state.answers[item.id];
+        item._shuffled = false;
       }
-    } catch (e) {}
+    });
   }
+
   saveState();
   render();
 }
-
 // ================= RENDER CÂU HỎI TƯƠNG TÁC =================
 function renderQuestionList(questions, lessonKey) {
+    window._currentRenderedQuestions = questions;
     questions.forEach(item => {
     if (typeof item.q === 'string') item.q = item.q.replace(/\[cite:[^\]]+\]/g, '');
     if (item.type === 'mc' && Array.isArray(item.opts)) {
@@ -3295,9 +3296,8 @@ function renderQuestionList(questions, lessonKey) {
   });
     let html = `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
         <span style="color:var(--text-light); font-size:0.9rem;">💡 Chọn đáp án để xem giải thích và căn cứ SGK ngay lập tức.</span>
-        <button class="btn-reset" onclick="resetLessonProgress('${lessonKey}')">🔄 Làm lại phần này</button>
-    </div>`;
-
+<button class="btn-reset" onclick="resetLessonProgress(state.currentLesson)">🔄 Làm lại phần này</button>
+</div>`;
     questions.forEach(item => {
         const saved = state.answers[item.id];
         let boxClass = "q-item";
